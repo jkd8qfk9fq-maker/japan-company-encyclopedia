@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { preload } from "react-dom";
 import { TRAINING_APP_METADATA } from "@/lib/site";
 import Link from "next/link";
 import { BetaOffer } from "@/components/engagement/beta-offer";
@@ -32,6 +33,10 @@ const STEPS: { n: number; title: string; text: string; href: string; link: strin
 ];
 
 export default function LearnPage() {
+  // Start the course data downloads with the page itself (JCE-148): the path used to sit on
+  // 「レッスンを用意しています…」 while hydration finished before the first fetch even began.
+  preload("/lessons.json", { as: "fetch", crossOrigin: "anonymous" });
+  preload("/predictions.json", { as: "fetch", crossOrigin: "anonymous" });
   return (
     <div className="mx-auto max-w-2xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="eyebrow" aria-hidden>Reading filings</p>

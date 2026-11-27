@@ -242,7 +242,7 @@ export function IndustryFiguresOverview({ data }: { data: IndustryFiguresData })
                 <li key={s.id} className="min-w-0">
                   <p className="truncate text-sm">
                     <Link href={`/industries/${s.id}#figures`} className="hover:underline"><L s={s.name} /></Link>
-                    <span className="figures ml-1 text-xs text-muted-foreground"><span data-l="ja">{s.companies}社</span><span data-l="en">{s.companies} companies</span></span>
+                    <span className="figures ml-1 text-xs text-muted-foreground"><span data-l="ja">{s.companies}社</span><span data-l="en">{`${s.companies} companies`}</span></span>
                   </p>
                   <IndexSparkline series={s} reference={set.all} />
                 </li>

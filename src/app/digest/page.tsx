@@ -31,7 +31,7 @@ export default async function DigestPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
-      <p className="eyebrow" aria-hidden>Earnings digest</p>
+      <p className="eyebrow" aria-hidden>分析訓練 ・ 決算定期便</p>
       <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">決算定期便</h1>
       <p className="prose-ja mt-3 text-muted-foreground">
         ここは、学んだ読み方を実際の決算で試す、分析訓練の実践の場です。使い方の順序は、まず自分の予測を立てる（STEP 1）、開示された実績を確認する（STEP 2）、予測と実績を照合する（STEP 3）。予測の型はマイクロレッスンで学べます。各社の開示には、対象期間と検証済みの実績、その決算の読み方（マイクロレッスン）と企業レポート（分析5観点）への道筋を付けています。数字は各社の開示が載せた売上高と純利益そのものです。
@@ -39,14 +39,20 @@ export default async function DigestPage() {
       <p className="mt-3 text-sm">
         <Link href="/learn/lesson/predict-with-clues" className="underline underline-offset-4">STEP 1：先読みのレッスンで予測の型を学ぶ</Link>
         <span className="mx-2 text-muted-foreground">・</span>
+        <Link href="#digest-filings" className="underline underline-offset-4">STEP 2：開示された実績を確認する</Link>
+        <span className="mx-2 text-muted-foreground">・</span>
+        <Link href="#digest-verify" className="underline underline-offset-4">STEP 3：予測と実績を照合する</Link>
+        <span className="mx-2 text-muted-foreground">・</span>
         <Link href="/learn/review" className="underline underline-offset-4">STEP 4：復習キュー</Link>
         <span className="mx-2 text-muted-foreground">・</span>
         <Link href="/learn#training-history" className="underline underline-offset-4">STEP 5：訓練の記録</Link>
       </p>
 
-      <DigestVerifications />
+      <div id="digest-verify" className="scroll-mt-24">
+        <DigestVerifications />
+      </div>
 
-      <DigestSection title="今週の決算" events={digest.thisWeek} empty="今週（月曜から日曜まで）の開示は、まだありません。" />
+      <DigestSection id="digest-filings" title="今週の決算" events={digest.thisWeek} empty="今週（月曜から日曜まで）の開示は、まだありません。" />
       <DigestSection title="先週の決算" events={digest.lastWeek} empty="先週の開示はありません。" />
 
       <p className="mt-10 text-sm leading-6 text-muted-foreground">
@@ -58,9 +64,9 @@ export default async function DigestPage() {
   );
 }
 
-function DigestSection({ title, events, empty }: { title: string; events: DigestEvent[]; empty: string }) {
+function DigestSection({ id, title, events, empty }: { id?: string; title: string; events: DigestEvent[]; empty: string }) {
   return (
-    <section aria-label={title} className="mt-10">
+    <section id={id} aria-label={title} className="mt-10 scroll-mt-24">
       <h2 className="font-serif text-[1.375rem] font-semibold">
         <L s={title} />
         <span className="figures ml-3 text-sm font-normal text-muted-foreground">{events.length} 件</span>

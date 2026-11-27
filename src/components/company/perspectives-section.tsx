@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { ArrowDown, ArrowRight, MapPin, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
 import { SourceList } from "@/components/sources/source-list";
 import { companyMetrics } from "@/lib/company-metrics";
@@ -13,10 +14,10 @@ import { T } from "@/components/i18n/t";
 import { F } from "@/components/i18n/figure";
 import { L } from "@/components/i18n/label";
 
-const ITEMS: { key: keyof Perspectives; question: string; label: React.ReactNode; icon: LucideIcon }[] = [
-  { key: "strategy", question: "どうやって成長する？", label: <T m={{ ja: "成長戦略", en: "Growth strategy" }} />, icon: TrendingUp },
-  { key: "competitiveAdvantage", question: "なぜ勝てる？", label: <T m={{ ja: "競争優位性", en: "Competitive advantage" }} />, icon: ShieldCheck },
-  { key: "industryPosition", question: "業界の中での立ち位置", label: <T m={{ ja: "業界内の位置づけ", en: "Position in the industry" }} />, icon: MapPin },
+const ITEMS: { key: keyof Perspectives; question: string; label: React.ReactNode; labelJa: string; icon: LucideIcon }[] = [
+  { key: "strategy", question: "どうやって成長する？", label: <T m={{ ja: "成長戦略", en: "Growth strategy" }} />, labelJa: "成長戦略", icon: TrendingUp },
+  { key: "competitiveAdvantage", question: "なぜ勝てる？", label: <T m={{ ja: "競争優位性", en: "Competitive advantage" }} />, labelJa: "競争優位性", icon: ShieldCheck },
+  { key: "industryPosition", question: "業界の中での立ち位置", label: <T m={{ ja: "業界内の位置づけ", en: "Position in the industry" }} />, labelJa: "業界内の位置づけ", icon: MapPin },
 ];
 
 /**
@@ -47,7 +48,15 @@ export async function PerspectivesSection({ company }: { company: Company }) {
               answers rather than a long column of text; a wide screen stacks them as before. CSS only (scroll snap). */}
           {present.length > 1 && (
             <p className="mb-2 flex items-center gap-1.5 text-xs text-muted-foreground lg:hidden">
-              {present.map((i) => i.label).join("・")}
+              {/* The labels are React nodes (<T>), never strings: joining them stringified the elements
+                  into "[object Object]" on the public page (audit part 1, major 2). Render the nodes
+                  with separators; the aria-label below uses the plain-text labelJa instead. */}
+              {present.map((i, idx) => (
+                <Fragment key={i.key}>
+                  {idx > 0 && <span aria-hidden>・</span>}
+                  {i.label}
+                </Fragment>
+              ))}
               <span aria-hidden className="inline-flex items-center gap-0.5 border-l border-border pl-1.5">
                 <span data-l="ja">横にスワイプ
                 <ArrowRight className="size-3" /></span><span data-l="en">Swipe sideways <ArrowRight className="size-3" /></span>
@@ -56,7 +65,7 @@ export async function PerspectivesSection({ company }: { company: Company }) {
           )}
           <div
             role="region"
-            aria-label={present.map((i) => i.label).join("・")}
+            aria-label={present.map((i) => i.labelJa).join("・")}
             tabIndex={0}
             className="-mx-5 flex snap-x snap-mandatory items-start gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 md:-mx-8 md:scroll-px-8 md:px-8 lg:mx-0 lg:block lg:space-y-6 lg:overflow-visible lg:px-0 lg:pb-0"
           >

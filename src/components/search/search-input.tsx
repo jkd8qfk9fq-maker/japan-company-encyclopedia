@@ -35,7 +35,7 @@ export function SearchInput({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="企業名・証券コード・業界・用語"
-        className="h-14 w-full rounded-full border border-input bg-background pr-14 pl-14 text-lg outline-none placeholder:text-muted-foreground focus-visible:border-foreground"
+        className="h-14 w-full rounded-full border border-input bg-background pr-14 pl-14 text-lg outline-none placeholder:text-muted-foreground focus-visible:border-foreground [&::-webkit-search-cancel-button]:hidden"
       />
       {value && (
         <button

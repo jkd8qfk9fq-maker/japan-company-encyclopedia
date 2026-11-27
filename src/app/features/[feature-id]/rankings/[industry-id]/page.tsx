@@ -59,7 +59,7 @@ export default async function FeatureRankingPage({ params }: Props) {
       </p>
       <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">
         <span data-l="ja">{ranking.industryName}の{ranking.metric}ランキング
-      </span><span data-l="en">{ranking.metric} ranking of {ranking.industryName}</span></h1>
+      </span><span data-l="en">{`${ranking.metric} ranking of ${ranking.industryName}`}</span></h1>
       <p className="mt-2 text-sm leading-7 text-muted-foreground">
         <span data-l="ja">特集「<L s={feature.title} />」で業界の中央値を並べた{ranking.metric}を、{ranking.industryName}に属する会社ごとに
         高い順に並べたものです。対象は{ranking.valueLabel}が分かる{ranking.rows.length.toLocaleString("ja-JP")}社で、
@@ -126,7 +126,7 @@ export default async function FeatureRankingPage({ params }: Props) {
           <dd>
             <Link href={`/industries/${ranking.industryId}`} className="underline underline-offset-2">
               <span data-l="ja">{ranking.industryName}の業界ページ
-            </span><span data-l="en">{ranking.industryName} industry page</span></Link>
+            </span><span data-l="en">{`${ranking.industryName} industry page`}</span></Link>
           </dd>
           <dt className="text-muted-foreground"><T m={{ ja: "更新", en: "Updated" }} /></dt>
           <dd><T m={{ ja: "掲載データの更新にあわせて、サイトの公開時に自動で集計し直します。", en: "Recalculated automatically when the site is published, in step with updates to the data." }} /></dd>

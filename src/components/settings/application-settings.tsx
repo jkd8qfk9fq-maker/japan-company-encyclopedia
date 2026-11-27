@@ -2,8 +2,11 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { T } from "@/components/i18n/t";
+import { loadLessons } from "@/components/engagement/load";
 import { useLocalStore } from "@/hooks/use-local-store";
-import { activityStore, discoveredStore, exploreStepsStore, favoritesStore, quizStore, recentlyViewedStore, settingsStore } from "@/lib/storage/stores";
+import { courseAnswerCount, courseFraction } from "@/lib/learning-ui";
+import type { MicroUnit } from "@/lib/micro-lessons";
+import { activityStore, discoveredStore, exploreStepsStore, favoritesStore, microProgressStore, quizStore, recentlyViewedStore, settingsStore } from "@/lib/storage/stores";
 
 /** A confirm() dialog cannot hold markup, so it reads the chosen language itself (JCE-123). */
 const ask = (ja: string, en: string) => window.confirm(settingsStore.get().language === "en" ? en : ja);
@@ -22,7 +25,11 @@ export function ApplicationSettings() {
   const discovered = useLocalStore(discoveredStore);
   const days = useLocalStore(activityStore);
   const quiz = useLocalStore(quizStore);
+  const micro = useLocalStore(microProgressStore);
   const recent = useLocalStore(recentlyViewedStore);
+  // The training record is counted the way /learn counts it (M4): the course decides which lessons are
+  // finished and which answers belong to it, so this page loads the same course before showing a count.
+  const [units, setUnits] = useState<MicroUnit[] | null>(null);
   const [installEvent, setInstallEvent] = useState<InstallPromptEvent | null>(null);
   const standalone = useSyncExternalStore(
     subscribeNothing,
@@ -34,6 +41,10 @@ export function ApplicationSettings() {
     () => /iPad|iPhone|iPod/.test(navigator.userAgent),
     () => false,
   );
+
+  useEffect(() => {
+    loadLessons().then(setUnits, () => setUnits(null));
+  }, []);
 
   useEffect(() => {
     const onPrompt = (event: Event) => {
@@ -111,16 +122,22 @@ export function ApplicationSettings() {
         <div>
           <p className="font-medium"><T m={{ ja: "マイ企業図鑑と記録", en: "My collection and records" }} /></p>
           <p className="figures mt-1 text-sm text-muted-foreground"><T m={{ ja: `出会った企業${discovered.length}社・会社を知った日${days.length}日・今日の1問の答え${Object.keys(quiz).length}件。`, en: `${discovered.length} companies met, ${days.length} active days, ${Object.keys(quiz).length} daily answers.` }} /></p>
+          {units && (
+            <p className="figures mt-1 text-sm text-muted-foreground">
+              <T m={{ ja: `分析訓練の記録：レッスン完了${courseFraction(units, micro).done}／${courseFraction(units, micro).total}・レッスンで答えた問題${courseAnswerCount(units, micro)}問。`, en: `Training record: ${courseFraction(units, micro).done}/${courseFraction(units, micro).total} lessons finished, ${courseAnswerCount(units, micro)} lesson questions answered.` }} />
+            </p>
+          )}
         </div>
         <button
           type="button"
-          disabled={discovered.length + days.length + Object.keys(quiz).length === 0}
+          disabled={discovered.length + days.length + Object.keys(quiz).length + Object.keys(micro.answers).length + Object.keys(micro.lessons).length + Object.keys(micro.review).length === 0}
           onClick={() => {
-            if (ask("マイ企業図鑑、連続日数、今日の1問の答え、つながりの記録をすべて消去しますか？", "Clear your collection, streak, daily answers and exploration record?")) {
+            if (ask("マイ企業図鑑、連続日数、今日の1問の答え、つながりの記録、分析訓練の記録をすべて消去しますか？", "Clear your collection, streak, daily answers, exploration record and training record?")) {
               discoveredStore.clear();
               activityStore.clear();
               quizStore.clear();
               exploreStepsStore.clear();
+              microProgressStore.clear();
             }
           }}
           className="inline-flex min-h-11 items-center rounded-full border border-border px-5 text-sm hover:border-foreground disabled:opacity-40"

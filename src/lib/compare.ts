@@ -30,6 +30,28 @@ export type CompareRow = {
 
 export type CompareIndex = { asOf: string; rows: CompareRow[] };
 
+/** The light index the tool opens with: enough to search and to suggest peers, a fraction of the full rows. */
+export type CompareLightRow = Pick<CompareRow, "id" | "name" | "industry" | "revenue">;
+export type CompareLightIndex = { asOf: string; rows: CompareLightRow[] };
+
+/** One shard of the full rows, holding every company whose id hashes to it. */
+export type CompareShard = { asOf: string; rows: CompareRow[] };
+
+/**
+ * The full index is split into this many shards (JCE-148): the tool downloads only the shards holding the
+ * companies being compared — two or three companies live in at most three shards — instead of every
+ * company's row before anything can be shown. The hash is a plain string hash, identical on the server
+ * that builds the shards and in the browser that asks for them; it must never change casually, or a shard
+ * would silently hold the wrong companies (tests pin the distribution).
+ */
+export const COMPARE_SHARDS = 8;
+
+export function compareShardOf(id: string): number {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+  return h % COMPARE_SHARDS;
+}
+
 /**
  * How many companies a reader can line up: free and with the premium plan (JCE-043). A setting, so the plan can be
  * redesigned (P2-1) without touching the page.

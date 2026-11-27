@@ -31,10 +31,18 @@ export function SectionTabs({
   sections,
   containerId,
   tabbed,
+  trailingLink,
 }: {
   sections: SectionLink[];
   containerId: string;
   tabbed: "mobile" | "always";
+  /**
+   * A link that belongs with the sections but is not one: it leads off the page (the company page's
+   * 分析・レポート）, so it is rendered after the section anchors as a plain link — never a tab, never
+   * active. The hero's own table of contents already lists it; without this the two tables of contents
+   * disagree about what the page offers (audit part 1, minor 9).
+   */
+  trailingLink?: { href: string; label: React.ReactNode };
 }) {
   const [active, setActive] = useState(sections[0]?.id);
   // Whether the current width shows one panel at a time. False on the server and before hydration: nothing hidden.
@@ -189,6 +197,16 @@ export function SectionTabs({
             </a>
           </li>
         ))}
+        {trailingLink && (
+          <li className="shrink-0">
+            <a
+              href={trailingLink.href}
+              className="flex min-h-10 items-center rounded-full border border-border px-4 text-[0.8125rem] whitespace-nowrap text-foreground transition-colors hover:border-foreground"
+            >
+              {trailingLink.label}
+            </a>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -128,7 +128,7 @@ export async function CompanyView({ company }: { company: Company }) {
           the 財務 section, where only a reader who scrolled to the bottom of the figures ever met it. */}
       <ReportCta companyId={company.id} />
       <CompanyNotes notes={publicNotes(company)} />
-      <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />
+      <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" trailingLink={{ href: `/companies/${company.id}/report`, label: <T m={{ ja: "分析・レポート", en: "Analysis & report" }} /> }} />
       <div id="company-sections">
 
       {hasConnections && (
@@ -153,7 +153,7 @@ export async function CompanyView({ company }: { company: Company }) {
               )}
               {relations.length === 0 && inbound.length > 0 && <><T m={{ ja: "（ほかの会社の項目に書かれた関係）", en: "(relationships written in other companies' entries)" }} /></>}
               です。
-            </span><span data-l="en">{relations.length + inbound.length} companies are connected to this company{relations.length > 0 && (
+            </span><span data-l="en">{`${relations.length + inbound.length} companies are connected to this company`}{relations.length > 0 && (
                 <>
                   （
                   {[...tieKindCounts.entries()].map(([kind, count]) => `${RELATIONSHIP_LABEL[kind]} ${count}件`).join("・")}
@@ -173,7 +173,7 @@ export async function CompanyView({ company }: { company: Company }) {
                     </Link>
                   </li>
                 ))}
-                {relations.length > 3 && <li className="text-xs text-muted-foreground"><span data-l="ja">ほか{relations.length - 3}件は下の一覧に</span><span data-l="en">{relations.length - 3} more in the list below</span></li>}
+                {relations.length > 3 && <li className="text-xs text-muted-foreground"><span data-l="ja">ほか{relations.length - 3}件は下の一覧に</span><span data-l="en">{`${relations.length - 3} more in the list below`}</span></li>}
               </ul>
             )}
           </div>

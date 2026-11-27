@@ -23,7 +23,7 @@ function Items({ label, items }: { label: React.ReactNode; items?: string[] }) {
             <RichText text={item} />
           </span>
         ))}
-        {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> <span data-l="ja">ほか{items.length - MAX_ITEMS}件</span><span data-l="en">{items.length - MAX_ITEMS} more</span></span>}
+        {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> <span data-l="ja">ほか{items.length - MAX_ITEMS}件</span><span data-l="en">{`${items.length - MAX_ITEMS} more`}</span></span>}
       </dd>
     </div>
   );

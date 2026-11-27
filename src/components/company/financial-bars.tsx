@@ -56,7 +56,18 @@ export function FinancialBars({
     const text = Math.abs(n).toLocaleString("ja-JP", { maximumFractionDigits: 0 });
     return v < 0 ? `−${text}` : text;
   };
-  const scale = chooseScale(Math.min(0, ...present), Math.max(0, ...present));
+  const dataMax = Math.max(0, ...present);
+  const dataMin = Math.min(0, ...present);
+  const picked = chooseScale(dataMin, dataMax);
+  // Headroom for the value labels (audit part 1, major 1): chooseScale's domain can end within a
+  // fraction of a step of the largest column, so that column reaches the plot's top edge and its
+  // label — drawn 7 units above the column at fontSize 13 — is clipped away (Toyota's net income).
+  // This component draws no axis ticks, so widening the domain by a step on a tight side only buys
+  // label room; it changes no printed figure and no column's relative height beyond the shared scale.
+  const scale = {
+    domainMax: dataMax > 0 && picked.domainMax - dataMax < picked.step * 0.6 ? picked.domainMax + picked.step : picked.domainMax,
+    domainMin: dataMin < 0 && dataMin - picked.domainMin < picked.step * 0.6 ? picked.domainMin - picked.step : picked.domainMin,
+  };
   const y = (v: number) =>
     PLOT.bottom - ((v - scale.domainMin) / (scale.domainMax - scale.domainMin)) * (PLOT.bottom - PLOT.top);
   const baseline = y(0);

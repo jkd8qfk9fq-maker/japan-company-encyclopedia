@@ -149,11 +149,16 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
               <IndustryNetwork industryId={listing.id} data={map} />
             </div>
           </div>
-          {companies.length > 0 && <JobPath industryName={listing.name} companies={companies} />}
+          {companies.length > 0 && <JobPath industryName={listing.name} industryId={listing.id as IndustryId} companies={companies} />}
           {industry && <p className="figures mt-10 text-xs text-muted-foreground"><span data-l="ja">最終更新 <F s={formatDateJa(industry.updatedAt)} /></span><span data-l="en">Last updated <F s={formatDateJa(industry.updatedAt)} /></span></p>}
         </CompanySection>
 
         <CompanySection id="companies" eyebrow="Companies" title={`${listing.name}業界の企業`}>
+          {/* `companies` is listByIndustry: every company related to this industry, including ones whose
+              primary industry is another (the figures block below counts primary industry only). */}
+          <p className="mb-4 text-xs leading-5 text-muted-foreground">
+            <T m={{ ja: "この業界に関係する企業を表示しています（主たる業界が他の業界の企業を含みます）。", en: "This list shows every company related to this industry, including companies whose primary industry is another one." }} />
+          </p>
           {companies.length > 0 ? (
             <ul className="grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {companies.map((company) => (
@@ -173,7 +178,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
             id="figures"
             eyebrow="Figures"
             title={`${listing.name}業界の数字`}
-            lead={`掲載企業${figures.companies}社の有価証券報告書の数値を足し合わせたものです。推定はしていません。`}
+            lead={`主たる業界がこの業界の掲載企業${figures.companies}社の有価証券報告書の数値を足し合わせたものです。推定はしていません。`}
             tone="paper"
           >
             {/* Premium since JCE-051 (operator, 2026-11-15). */}
@@ -237,7 +242,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
                             <Link href={`/industries/${side.other(flow)}`} className="font-serif font-semibold hover:underline">
                               {name(side.other(flow))}
                             </Link>
-                            <span className="figures text-xs text-muted-foreground"><span data-l="ja">{flow.pairs.length}組</span><span data-l="en">{flow.pairs.length} pairs</span></span>
+                            <span className="figures text-xs text-muted-foreground"><span data-l="ja">{flow.pairs.length}組</span><span data-l="en">{`${flow.pairs.length} pairs`}</span></span>
                           </p>
                           <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                             {flow.pairs.map((pair) => (

@@ -5,9 +5,9 @@
 
 import Link from "next/link";
 import { X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { PremiumGate } from "@/components/company/premium-gate";
-import { barShares, COMPARE_LIMITS, compareHref, parseIds, type CompareIndex, type CompareRow } from "@/lib/compare";
+import { barShares, COMPARE_LIMITS, compareHref, compareShardOf, parseIds, type CompareLightIndex, type CompareRow, type CompareShard } from "@/lib/compare";
 import { PREMIUM_FEATURES_OPEN, usePlan } from "@/lib/plan";
 import { formatYen } from "@/lib/utils/format";
 
@@ -24,14 +24,20 @@ const distinct = (values: (string | null)[]) => [...new Set(values.filter((v): v
 const METRICS: Metric[] = [
   { key: "revenue", label: "売上高", note: (rows) => distinct(rows.map((r) => r.revenueLabel)) || "印字どおり", format: formatYen },
   { key: "netIncome", label: "純利益", note: (rows) => distinct(rows.map((r) => r.netIncomeLabel)) || "印字どおり", format: formatYen },
-  { key: "netMargin", label: "純利益率", note: () => "計算値：純利益 ÷ 売上高（同じ期）", format: (v) => `${v}%` },
-  { key: "growth5y", label: "5期の売上高の伸び", note: () => "計算値：最新期の売上高 ÷ 5期前の売上高", format: (v) => `${v.toFixed(2)}倍` },
+  { key: "netMargin", label: "純利益率", note: () => "計算値", format: (v) => `${v}%` },
+  { key: "growth5y", label: "5期の売上高の伸び", note: () => "計算値", format: (v) => `${v.toFixed(2)}倍` },
   { key: "employees", label: "従業員数（連結）", note: () => "印字どおり", format: (v) => `${v.toLocaleString("ja-JP")}人` },
-  { key: "overseas", label: "海外売上高比率", note: () => "計算値：国内以外の地域の売上 ÷ 地域別の売上の合計", format: (v) => `${v}%` },
+  { key: "overseas", label: "海外売上高比率", note: () => "計算値", format: (v) => `${v}%` },
 ];
 
+/** The computed figures' formulas, stated once under the table instead of inside every row heading (JCE-148). */
+const METRIC_DEFINITIONS =
+  "計算値の定義：純利益率＝純利益 ÷ 売上高（同じ期）。5期の売上高の伸び＝最新期の売上高 ÷ 5期前の売上高。海外売上高比率＝国内以外の地域の売上 ÷ 地域別の売上の合計。";
+
 export function CompareTool() {
-  const [index, setIndex] = useState<CompareIndex | null>(null);
+  const [light, setLight] = useState<CompareLightIndex | null>(null);
+  const [shards, setShards] = useState<Map<number, CompareRow[]>>(new Map());
+  const loadingShards = useRef(new Set<number>());
   const [failed, setFailed] = useState(false);
   const [ids, setIds] = useState<string[] | null>(null);
   const [query, setQuery] = useState("");
@@ -40,19 +46,40 @@ export function CompareTool() {
 
   useEffect(() => {
     // The address is read after hydration: the static page cannot know it, and a shared link must open as sent.
-    fetch("/compare.json")
-      .then((r) => (r.ok ? (r.json() as Promise<CompareIndex>) : Promise.reject(new Error(String(r.status)))))
-      .then(
-        (data) => {
-          setIds(parseIds(new URLSearchParams(window.location.search).get("ids")));
-          setIndex(data);
-        },
-        () => setFailed(true),
-      );
+    // The ids are known as soon as the address is read — they no longer wait on any download (JCE-148).
+    // (Delivered through a promise callback like the fetches below: a synchronous setState in the effect
+    // body is what the hooks lint forbids, and the ids still land before the first paint settles.)
+    void Promise.resolve(parseIds(new URLSearchParams(window.location.search).get("ids"))).then(setIds);
+    fetch("/compare-index.json")
+      .then((r) => (r.ok ? (r.json() as Promise<CompareLightIndex>) : Promise.reject(new Error(String(r.status)))))
+      .then(setLight, () => setFailed(true));
   }, []);
 
-  const byId = useMemo(() => new Map((index?.rows ?? []).map((r) => [r.id, r])), [index]);
+  // Full rows arrive per shard (JCE-148): only the shards holding the chosen companies are downloaded —
+  // at most three — and each is kept for the rest of the visit, so adding a company from an already
+  // downloaded shard costs nothing.
+  useEffect(() => {
+    for (const id of ids ?? []) {
+      const shard = compareShardOf(id);
+      if (shards.has(shard) || loadingShards.current.has(shard)) continue;
+      loadingShards.current.add(shard);
+      fetch(`/compare-shards/${shard}.json`)
+        .then((r) => (r.ok ? (r.json() as Promise<CompareShard>) : Promise.reject(new Error(String(r.status)))))
+        .then(
+          (data) => setShards((prev) => new Map(prev).set(shard, data.rows)),
+          () => setFailed(true),
+        );
+    }
+  }, [ids, shards]);
+
+  const byId = useMemo(() => {
+    const map = new Map<string, CompareRow>();
+    for (const rows of shards.values()) for (const r of rows) map.set(r.id, r);
+    return map;
+  }, [shards]);
   const chosen = useMemo(() => (ids ?? []).map((id) => byId.get(id)).filter((r): r is CompareRow => r !== undefined), [ids, byId]);
+  // An id is settled once its shard is in: either the row is here, or the company is not in the index.
+  const ready = (ids ?? []).every((id) => byId.has(id) || shards.has(compareShardOf(id)));
   const shown = chosen.slice(0, limit);
   const held = chosen.length - shown.length;
 
@@ -64,33 +91,36 @@ export function CompareTool() {
 
   const matches = useMemo(() => {
     const q = query.trim();
-    if (!index || q === "") return [];
-    return index.rows.filter((r) => !chosen.some((c) => c.id === r.id) && r.name.includes(q)).slice(0, 8);
-  }, [index, query, chosen]);
+    if (!light || q === "") return [];
+    return light.rows.filter((r) => !(ids ?? []).includes(r.id) && r.name.includes(q)).slice(0, 8);
+  }, [light, query, ids]);
 
   // Same-industry companies of the first pick, largest revenue first: a starting point, not a recommendation.
   const peers = useMemo(() => {
     const first = chosen[0];
-    if (!index || !first?.industry) return [];
-    return index.rows
+    if (!light || !first?.industry) return [];
+    return light.rows
       .filter((r) => r.industry === first.industry && !chosen.some((c) => c.id === r.id) && r.revenue !== null)
       .sort((a, b) => b.revenue! - a.revenue!)
       .slice(0, 4);
-  }, [index, chosen]);
+  }, [light, chosen]);
 
   if (failed) return <p className="text-sm text-muted-foreground">データを読み込めませんでした。通信状態を確かめて、もう一度開いてください。</p>;
-  if (!index || ids === null) return <p className="text-sm text-muted-foreground">読み込んでいます…</p>;
+  if (!light || ids === null) return <p className="text-sm text-muted-foreground">読み込んでいます…</p>;
 
-  const canAdd = chosen.length < COMPARE_LIMITS.premium;
+  // The chips name every picked company from the light index at once — a pick never waits on its shard.
+  const lightById = new Map(light.rows.map((r) => [r.id, r]));
+  const picks = (ids ?? []).map((id) => ({ id, name: byId.get(id)?.name ?? lightById.get(id)?.name ?? id }));
+  const canAdd = picks.length < COMPARE_LIMITS.premium;
 
   return (
     <div className="space-y-8">
       <section aria-label="見比べる企業" className="space-y-3">
         <ul className="flex flex-wrap gap-2">
-          {chosen.map((r) => (
+          {picks.map((r) => (
             <li key={r.id} className="inline-flex min-h-11 items-center gap-1 rounded-full border border-border pl-4 pr-1 text-sm">
               {r.name}
-              <button type="button" onClick={() => update(chosen.filter((c) => c.id !== r.id).map((c) => c.id))} className="inline-flex size-9 items-center justify-center rounded-full hover:bg-muted" aria-label={`${r.name}を外す`}>
+              <button type="button" onClick={() => update(picks.filter((c) => c.id !== r.id).map((c) => c.id))} className="inline-flex size-9 items-center justify-center rounded-full hover:bg-muted" aria-label={`${r.name}を外す`}>
                 <X className="size-4" aria-hidden />
               </button>
             </li>
@@ -99,7 +129,7 @@ export function CompareTool() {
         {canAdd && (
           <div className="max-w-md">
             <label className="block text-sm">
-              <span className="font-medium">企業を追加（{chosen.length}/{COMPARE_LIMITS.premium}社）</span>
+              <span className="font-medium">企業を追加（{picks.length}/{COMPARE_LIMITS.premium}社）</span>
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -111,7 +141,7 @@ export function CompareTool() {
               <ul className="mt-1 divide-y divide-border rounded-md border border-border">
                 {matches.map((r) => (
                   <li key={r.id}>
-                    <button type="button" onClick={() => update([...chosen.map((c) => c.id), r.id])} className="flex min-h-11 w-full items-center justify-between px-3 text-left text-sm hover:bg-muted">
+                    <button type="button" onClick={() => update([...picks.map((c) => c.id), r.id])} className="flex min-h-11 w-full items-center justify-between px-3 text-left text-sm hover:bg-muted">
                       {r.name}
                       <span className="text-xs text-muted-foreground">{r.industry ?? ""}</span>
                     </button>
@@ -123,7 +153,7 @@ export function CompareTool() {
               <p className="mt-3 flex flex-wrap items-center gap-2 text-sm">
                 <span className="text-xs text-muted-foreground">同じ業界（{chosen[0]!.industry}）から：</span>
                 {peers.map((r) => (
-                  <button key={r.id} type="button" onClick={() => update([...chosen.map((c) => c.id), r.id])} className="min-h-9 rounded-full border border-border px-3 text-xs hover:border-foreground">
+                  <button key={r.id} type="button" onClick={() => update([...picks.map((c) => c.id), r.id])} className="min-h-9 rounded-full border border-border px-3 text-xs hover:border-foreground">
                     ＋ {r.name}
                   </button>
                 ))}
@@ -133,7 +163,9 @@ export function CompareTool() {
         )}
       </section>
 
-      {shown.length < 2 ? (
+      {!ready ? (
+        <p className="text-sm text-muted-foreground">読み込んでいます…</p>
+      ) : shown.length < 2 ? (
         <p className="text-sm leading-7 text-muted-foreground">
           {shown.length === 0 ? "見比べる企業を2社以上選んでください。" : "もう1社選ぶと、横に並べて見比べられます。"}
           企業のページの「見比べる」からも追加できます。
@@ -183,6 +215,7 @@ export function CompareTool() {
               })}
             </tbody>
           </table>
+          <p className="mt-3 text-xs leading-6 text-muted-foreground">{METRIC_DEFINITIONS}</p>
         </section>
       )}
 
@@ -215,7 +248,7 @@ export function CompareTool() {
             ))}
           </ul>
           <p className="mt-2">
-            数値は各社の最新期の有価証券報告書に印字された値と、そこから計算した値です（{index.asOf} 時点の掲載データ）。決算期・会計基準・連結の範囲が会社ごとに異なることがあります。事実を並べたもので、良し悪しや投資の判断を示すものではありません。
+            数値は各社の最新期の有価証券報告書に印字された値と、そこから計算した値です（{light.asOf} 時点の掲載データ）。決算期・会計基準・連結の範囲が会社ごとに異なることがあります。事実を並べたもので、良し悪しや投資の判断を示すものではありません。
           </p>
         </section>
       )}

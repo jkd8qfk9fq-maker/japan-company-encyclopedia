@@ -36,12 +36,10 @@ export const PLAN_PAGE = "https://shindan.kigyo-hyakka.com/plan/";
  */
 export const PLAN_TRIAL_DAYS = 7;
 /**
- * JCE-075: while the encyclopedia runs on advertising and reader growth, every premium-gated feature on THIS
- * site is open to all readers. The plan itself is unchanged — still sold on the 診断 site, still what removes
- * ads here (the ad unit reads the real plan, never this flag) — and setting this back to false restores the
- * gates exactly as they were.
+ * JCE-075's open-features flag, defined in src/lib/premium-open.ts (a module without "use client") so Server
+ * Components can read it for the labels beside the gates; re-exported here for the gate and the tools.
  */
-export const PREMIUM_FEATURES_OPEN = true;
+export { PREMIUM_FEATURES_OPEN } from "@/lib/premium-open";
 /**
  * JCE-078: the analysis layer (5観点の分析レポート) is a NEW paid layer, gated independently of
  * PREMIUM_FEATURES_OPEN. JCE-075 opened this site's existing features for good; this flag never

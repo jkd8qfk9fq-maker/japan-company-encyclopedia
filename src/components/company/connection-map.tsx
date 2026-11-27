@@ -114,7 +114,7 @@ function LaneBox({ lane, items, className }: { lane: Lane; items: Connection[]; 
           <li>
             <a href="#related-companies-list" className="link-ink inline-flex min-h-11 items-center px-1 text-sm">
               <span data-l="ja">ほか{items.length - MAX_PER_LANE}社
-            </span><span data-l="en">{items.length - MAX_PER_LANE} more companies</span></a>
+            </span><span data-l="en">{`${items.length - MAX_PER_LANE} more companies`}</span></a>
           </li>
         )}
       </ul>
