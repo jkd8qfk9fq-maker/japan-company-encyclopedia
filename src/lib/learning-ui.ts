@@ -17,7 +17,7 @@ import type { MicroProgress } from "@/lib/storage/stores";
  */
 
 export type UnitStyle = {
-  /** The unit's colour: banner, nodes, bars. Three colours, cycling by unit (six units since JCE-090). */
+  /** The unit's colour: banner, nodes, bars. Three colours, cycling by unit (eight units since JCE-145). */
   main: string;
   /** The darker shade under a raised button and at the edge of a filled node. */
   dark: string;

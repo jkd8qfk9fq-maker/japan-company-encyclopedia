@@ -18,8 +18,8 @@ import { STRUCTURE_QUESTION_BY_ID } from "@/lib/structure-questions";
  * The JCE-090 rebuild follows the stumbling-point design: the course is ordered by where a first reader
  * of a filing actually gets stuck — the five stages of profit, why the last line moves, the consolidated
  * yardstick, the balance sheet as a photograph of one day, the two statements' connection, and finally
- * the map of the filing itself. A question asks for a reading — an item's place, a stage, a section, an
- * order, a procedure, a relation — never for a value the next period replaces. Questions come from three
+ * the map of the filing itself. A question asks for a reading — a stage, a section, a procedure, a
+ * relation — never for a value the next period replaces. Questions come from three
  * sources: the generated per-company pool (src/lib/lesson-questions.ts, figures printed as filed, with
  * citations), the authored structure questions (src/lib/structure-questions.ts, no company figures, the
  * general basis named instead), and the comparison pool's company-identification questions
@@ -28,6 +28,17 @@ import { STRUCTURE_QUESTION_BY_ID } from "@/lib/structure-questions";
  * The binding is a pure function of the pools, so a lesson means the same questions on every build and
  * for every reader. Lesson prose teaches how a filing is read in general; it states no company fact.
  * Every figure a reader meets arrives inside a generated question, from the entries, with its source.
+ *
+ * JCE-145 rebuilds the course's climb on the operator's direction: progression modelled on how
+ * bookkeeping is learned — graded levels, each level's units building on the last — and more content,
+ * under one premise: the goal is to read and analyse a filing, not to memorise the arrangement of its
+ * rows. The units are grouped into four levels （入門級 the P/L's shape and meaning, 基礎級 the
+ * consolidated yardstick and the two statements' link, 実践級 the real filing, 分析級 analysis itself).
+ * The three authored "order" questions and the generated row-finding questions are no longer bound
+ * into any lesson: what a lesson asks now is what the figures say — a margin's move, the stage or the
+ * business that drove a change, the relation among the cash-flow figures. Two analysis units
+ * (reading-changes, reading-business-and-cash) are added at the top level, and lessons whose pools
+ * supply a third reading take one.
  */
 
 export type MicroQuestion = {
@@ -80,6 +91,8 @@ export type MicroLesson = {
 export type MicroUnit = {
   id: string;
   title: string;
+  /** The graded level the unit belongs to (JCE-145): the course climbs 入門級 → 基礎級 → 実践級 → 分析級， the way bookkeeping study climbs its grades. */
+  level: string;
   intro: string;
   lessons: MicroLesson[];
   /** Units whose structure is fixed but whose lessons are not written yet: titles only, shown as 準備中. */
@@ -95,9 +108,10 @@ type LessonSpec = {
   slots: ({ from: "pool" | "lesson"; kind: string; count: number } | { from: "authored"; questionId: string })[];
 };
 
-const UNIT_ONE: { id: string; title: string; intro: string; lessons: LessonSpec[] } = {
+const UNIT_ONE: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
   id: "five-profits",
   title: "利益は5つある：P/Lの骨格",
+  level: "入門級",
   intro: "損益計算書の骨格を読む単元です。「利益」は1つではなく、売上から最後の利益まで、費用を引くたびに名前が変わります。その並びと段の差が読めれば、決算の見出しに振り回されなくなります。",
   lessons: [
     {
@@ -106,11 +120,12 @@ const UNIT_ONE: { id: string; title: string; intro: string; lessons: LessonSpec[
       minutes: 3,
       body: [
         "損益計算書は、売上から費用を順に引いていく「段階計算」の表です。売上総利益、営業利益、経常利益、税引前当期純利益、当期純利益——段階ごとに名前の違う利益が並び、それぞれが別のものを測っています。",
-        "読み方のコツは、最下段だけを見ないことです。どの段で増えたのか、どの段で減ったのか。まず地図——行の並び順——を体に入れてから、実在の会社の表で確かめます。",
+        "読み方のコツは、最下段だけを見ないことです。どの段で増えたのか、どの段で減ったのか。まず地図——各段が何を測っているか——を押さえてから、実在の会社の表で確かめます。",
       ],
       slots: [
-        { from: "authored", questionId: "order-pl-stages" },
-        { from: "lesson", kind: "find-row", count: 1 },
+        { from: "authored", questionId: "diff-revenue-gross" },
+        { from: "lesson", kind: "relation-stages", count: 1 },
+        { from: "lesson", kind: "label-reading", count: 1 },
       ],
     },
     {
@@ -138,19 +153,21 @@ const UNIT_ONE: { id: string; title: string; intro: string; lessons: LessonSpec[
       slots: [
         { from: "authored", questionId: "diff-operating-ordinary" },
         { from: "lesson", kind: "label-reading", count: 1 },
+        { from: "lesson", kind: "margin-shift", count: 1 },
       ],
     },
     {
       id: "find-the-stages",
-      title: "実物の表で、段階を探す",
+      title: "実物の表で、段階を読む",
       minutes: 3,
       body: [
         "地図が頭に入ったら、実在の会社の表で確かめます。有価証券報告書の巻頭にある「主要な経営指標等の推移」は本体の要約で、売上、中間の利益、純利益が並んでいます。",
-        "ここで問うのは金額ではなく、行の位置です。金額は期が変われば変わりますが、どの行がどの段階かという読み方は、どの会社の表でもそのまま使えます。",
+        "ここで問うのは、金額そのものではなく、数字が何を言っているかです。2期分を並べて利益率の動きを読む、中間の行の名前から物差しを読む——金額は期が変われば変わりますが、この読み方はどの会社の表でもそのまま使えます。",
       ],
       slots: [
-        { from: "lesson", kind: "find-row", count: 1 },
+        { from: "lesson", kind: "margin-shift", count: 1 },
         { from: "authored", questionId: "classify-interest" },
+        { from: "lesson", kind: "label-reading", count: 1 },
       ],
     },
     {
@@ -164,14 +181,16 @@ const UNIT_ONE: { id: string; title: string; intro: string; lessons: LessonSpec[
       slots: [
         { from: "lesson", kind: "relation-stages", count: 1 },
         { from: "lesson", kind: "segment-top", count: 1 },
+        { from: "lesson", kind: "segment-driver", count: 1 },
       ],
     },
   ],
 };
 
-const UNIT_TWO: { id: string; title: string; intro: string; lessons: LessonSpec[] } = {
+const UNIT_TWO: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
   id: "why-net-moves",
   title: "最終利益が動く理由：特別損益・税金・赤字の段階",
+  level: "入門級",
   intro: "最終利益は、本業以外の理由でも大きく動きます。一度きりの損益、税金、そして赤字の「段」。最終利益の増減を見たときに、その理由を切り分ける読み方を身につける単元です。",
   lessons: [
     {
@@ -197,7 +216,7 @@ const UNIT_TWO: { id: string; title: string; intro: string; lessons: LessonSpec[
         "だから税引前と当期純利益の差は「何かの費用が増えた」のではありません。前期との比較で最終利益が動いたときは、税金の段の動きと業績の動きを混同しないことが大切です。",
       ],
       slots: [
-        { from: "authored", questionId: "order-tax-steps" },
+        { from: "authored", questionId: "diff-pretax-net" },
         { from: "lesson", kind: "relation-stages", count: 1 },
       ],
     },
@@ -211,7 +230,7 @@ const UNIT_TWO: { id: string; title: string; intro: string; lessons: LessonSpec[
       ],
       slots: [
         { from: "authored", questionId: "concept-red-stage" },
-        { from: "lesson", kind: "find-row", count: 1 },
+        { from: "lesson", kind: "relation-stages", count: 1 },
       ],
     },
     {
@@ -225,14 +244,16 @@ const UNIT_TWO: { id: string; title: string; intro: string; lessons: LessonSpec[
       slots: [
         { from: "authored", questionId: "classify-impairment" },
         { from: "lesson", kind: "relation-stages", count: 1 },
+        { from: "lesson", kind: "detail-special", count: 1 },
       ],
     },
   ],
 };
 
-const UNIT_THREE: { id: string; title: string; intro: string; lessons: LessonSpec[] } = {
+const UNIT_THREE: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
   id: "consolidated-yardstick",
   title: "連結という物差し",
+  level: "基礎級",
   intro: "同じ会社に、連結と単体、基準の違う表が並ぶ理由を読む単元です。最下段の長い名前、IFRSに経常利益がない理由、銀行の表の形——「物差し」の違いを見分けられるようにします。",
   lessons: [
     {
@@ -246,6 +267,7 @@ const UNIT_THREE: { id: string; title: string; intro: string; lessons: LessonSpe
       slots: [
         { from: "authored", questionId: "concept-consolidated" },
         { from: "lesson", kind: "growth-employees", count: 1 },
+        { from: "lesson", kind: "label-reading", count: 1 },
       ],
     },
     {
@@ -272,6 +294,7 @@ const UNIT_THREE: { id: string; title: string; intro: string; lessons: LessonSpe
       slots: [
         { from: "lesson", kind: "label-reading", count: 1 },
         { from: "authored", questionId: "concept-no-ordinary-ifrs" },
+        { from: "lesson", kind: "margin-shift", count: 1 },
       ],
     },
     {
@@ -284,15 +307,17 @@ const UNIT_THREE: { id: string; title: string; intro: string; lessons: LessonSpe
       ],
       slots: [
         { from: "authored", questionId: "concept-bank-form" },
-        { from: "lesson", kind: "find-row", count: 1 },
+        { from: "lesson", kind: "label-reading", count: 1 },
+        { from: "lesson", kind: "relation-stages", count: 1 },
       ],
     },
   ],
 };
 
-const UNIT_FOUR: { id: string; title: string; intro: string; lessons: LessonSpec[] } = {
+const UNIT_FOUR: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
   id: "balance-sheet-photo",
   title: "B/Sは一時点の写真：左右と流動／固定",
+  level: "基礎級",
   intro: "貸借対照表の骨格を読む単元です。期末日という一時点の残高であること、左が使い道で右が調達であること、流動と固定の分かれ目、そして借金の探し方までを扱います。",
   lessons: [
     {
@@ -305,7 +330,8 @@ const UNIT_FOUR: { id: string; title: string; intro: string; lessons: LessonSpec
       ],
       slots: [
         { from: "authored", questionId: "concept-stock-flow" },
-        { from: "lesson", kind: "find-row", count: 1 },
+        { from: "lesson", kind: "relation-net-assets", count: 1 },
+        { from: "lesson", kind: "detail-working-capital", count: 1 },
       ],
     },
     {
@@ -317,7 +343,7 @@ const UNIT_FOUR: { id: string; title: string; intro: string; lessons: LessonSpec
         "この構造が見えると、貸借対照表は「財産の一覧」ではなくなります。借金で資産を膨らませた会社と、自己資金で持つ会社は、同じ大きさでも中身が違うことが読めます。",
       ],
       slots: [
-        { from: "authored", questionId: "order-bs-sections" },
+        { from: "authored", questionId: "classify-payables-section" },
         { from: "authored", questionId: "concept-balance" },
       ],
     },
@@ -332,6 +358,7 @@ const UNIT_FOUR: { id: string; title: string; intro: string; lessons: LessonSpec
       slots: [
         { from: "authored", questionId: "classify-receivable" },
         { from: "authored", questionId: "classify-borrowing-due" },
+        { from: "lesson", kind: "detail-borrowings", count: 1 },
       ],
     },
     {
@@ -365,9 +392,10 @@ const UNIT_FOUR: { id: string; title: string; intro: string; lessons: LessonSpec
   ],
 };
 
-const UNIT_FIVE: { id: string; title: string; intro: string; lessons: LessonSpec[] } = {
+const UNIT_FIVE: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
   id: "two-statements-linked",
   title: "2つの表はつながっている：純資産と利益の行き先",
+  level: "基礎級",
   intro: "損益計算書の利益が、貸借対照表の純資産に積み上がる接続を読む単元です。純資産の中身、利益の行き先、割合の作り方、見えない資産と帳簿価額までを扱います。",
   lessons: [
     {
@@ -381,6 +409,7 @@ const UNIT_FIVE: { id: string; title: string; intro: string; lessons: LessonSpec
       slots: [
         { from: "authored", questionId: "concept-net-assets-vs-equity" },
         { from: "authored", questionId: "classify-nci" },
+        { from: "lesson", kind: "relation-net-assets", count: 1 },
       ],
     },
     {
@@ -440,9 +469,10 @@ const UNIT_FIVE: { id: string; title: string; intro: string; lessons: LessonSpec
   ],
 };
 
-const UNIT_SIX: { id: string; title: string; intro: string; lessons: LessonSpec[] } = {
+const UNIT_SIX: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
   id: "reading-the-real-thing",
   title: "実物で読む：有報の地図と、予測へ",
+  level: "実践級",
   intro: "仕上げの単元です。有価証券報告書のどこに何があるかという地図、単位と符号の約束、比べられない年の見分け方を押さえ、最後に手がかりを読んでから予測する形へ進みます。",
   lessons: [
     {
@@ -456,6 +486,7 @@ const UNIT_SIX: { id: string; title: string; intro: string; lessons: LessonSpec[
       slots: [
         { from: "authored", questionId: "procedure-where-stages" },
         { from: "authored", questionId: "procedure-progress-yardstick" },
+        { from: "lesson", kind: "quarterly-direction", count: 1 },
       ],
     },
     {
@@ -502,7 +533,127 @@ const UNIT_SIX: { id: string; title: string; intro: string; lessons: LessonSpec[
   ],
 };
 
-const UNITS = [UNIT_ONE, UNIT_TWO, UNIT_THREE, UNIT_FOUR, UNIT_FIVE, UNIT_SIX];
+const UNIT_SEVEN: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
+  id: "reading-changes",
+  title: "増減と利益率を読む",
+  level: "分析級",
+  intro: "分析級の入口です。1期の数字を見る読み方から、2期を並べて「何が、どれだけ、どの段で動いたか」を読む読み方へ進みます。利益率の変化と、段階ごとの増減の比べ方が、この単元の道具です。",
+  lessons: [
+    {
+      id: "two-period-reading",
+      title: "2期並べる読み方",
+      minutes: 4,
+      body: [
+        "分析の基本の型は、2期を並べることです。1期だけの表は「大きさ」しか語りませんが、前期と並べると「動き」が読めます。増減額と増減率、そして利益率——比べる道具はこの3つです。",
+        "この単元ではまず、利益率の動きと、段階ごとの増減の比べ方を1問ずつ確かめます。どちらも、金額そのものを覚える問題ではありません。2つの数字の関係を読む問題です。",
+      ],
+      slots: [
+        { from: "lesson", kind: "margin-shift", count: 1 },
+        { from: "lesson", kind: "stage-driver", count: 1 },
+      ],
+    },
+    {
+      id: "reading-margin-shift",
+      title: "利益率の変化を読む",
+      minutes: 4,
+      body: [
+        "利益が増えても、利益率が下がっている年があります。売上がそれ以上に伸びれば、利益の額は増えても、売上に対する割合は下がるからです。額と割合は、別のことを語ります。",
+        "利益率の変化は「ポイント」で読みます。10%から12%への変化は「2ポイントの上昇」で、率そのものの伸び（+20%）とは区別します。この区別が、増益の見出しを額と割合の両面から読む作法です。",
+      ],
+      slots: [
+        { from: "lesson", kind: "margin-shift", count: 2 },
+      ],
+    },
+    {
+      id: "which-stage-moved",
+      title: "どの段が動かしたか",
+      minutes: 4,
+      body: [
+        "純利益が動いた理由は、段階ごとの増減を比べると見えてきます。各段階の増減額を並べ、いちばん大きく動いた段を探す——それが「どの段が動かしたか」の読み方です。",
+        "段階は積み上がりです。上の段の変化は下の段の変化に含まれます。だから比べるのは、各段そのものの増減額です。いちばん上の段だけが大きく動いた年と、下の段で差が開いた年では、理由のありかが違います。",
+      ],
+      slots: [
+        { from: "lesson", kind: "stage-driver", count: 2 },
+      ],
+    },
+    {
+      id: "toward-prediction",
+      title: "予想→照合への接続",
+      minutes: 5,
+      body: [
+        "利益の増減は、2つの力に分けられます。売上が増減した分と、利益率が変化した分です。この分解が読めると、「増益」という一言の裏側——量で稼いだのか、割合で稼いだのか——が見えます。",
+        "この分解は、各社のページの予測→照合でも使われています。開示前に分解の型で予想を立て、開示後に印字値と照合する。その繰り返しの入口として、分解を読む問題を置きます。",
+      ],
+      slots: [
+        { from: "pool", kind: "decompose", count: 2 },
+        { from: "lesson", kind: "stage-driver", count: 1 },
+      ],
+    },
+  ],
+};
+
+const UNIT_EIGHT: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] } = {
+  id: "reading-business-and-cash",
+  title: "事業とお金の流れを読む",
+  level: "分析級",
+  intro: "仕上げの分析級です。会社全体の数字を、事業ごとと、お金の流れとに分けて読みます。どの事業が全体を動かしたか、投資と利益がどう関係しているか——意味の層の3つの問いに、自分の読みで答える単元です。",
+  lessons: [
+    {
+      id: "segment-changes",
+      title: "事業別の増減",
+      minutes: 4,
+      body: [
+        "会社全体の増減は、事業ごとの増減の合計です。事業別の売上を2期並べると、全体の動きをいちばん大きく動かした事業が見えます。伸びた事業と縮んだ事業が相殺し合う年もあるため、合計だけでは読めません。",
+        "読む手順は、事業ごとの増減額を出し、合計の増減と比べることです。合計の半分以上を1つの事業が占めていれば、その年の会社の動きは、その事業の動きです。",
+      ],
+      slots: [
+        { from: "lesson", kind: "segment-driver", count: 1 },
+        { from: "lesson", kind: "segment-top", count: 1 },
+      ],
+    },
+    {
+      id: "heavy-and-profitable",
+      title: "儲かっている事業・重い事業",
+      minutes: 4,
+      body: [
+        "事業の「重さ」は、売上の構成比で読みます。いちばん大きな事業が売上のどれだけを占めるかで、会社の重心が分かります。重心の事業の増減は、そのまま会社全体の増減の主役になります。",
+        "このレッスンでは、構成比の読み（最大の事業）と増減の読み（全体を動かした事業）を並べます。重い事業が全体を動かしているときと、軽い事業の大きな変化が目立つときとでは、決算の読みどころが変わります。",
+      ],
+      slots: [
+        { from: "lesson", kind: "segment-driver", count: 1 },
+        { from: "lesson", kind: "segment-top", count: 1 },
+      ],
+    },
+    {
+      id: "investment-and-profit",
+      title: "投資と利益の関係",
+      minutes: 4,
+      body: [
+        "設備投資を増やす会社は、減価償却費が後から増え、利益が薄く見える時期があります。投資の大きさそのものは、損益計算書ではなくキャッシュ・フロー計算書に印字されます。",
+        "読み方は3つの数字の関係です。設備投資が減価償却費を上回るか下回るか、そしてその支出を営業キャッシュフローがまかなえているか。この2つの関係が、その年の投資の姿を語ります。",
+      ],
+      slots: [
+        { from: "lesson", kind: "cf-investment", count: 2 },
+      ],
+    },
+    {
+      id: "capstone-three-questions",
+      title: "総合演習：3つの問いに答える",
+      minutes: 6,
+      body: [
+        "仕上げは、意味の層の3つの問いを、自分の読みでたどる演習です。儲かっているかは段階と利益率で、何が儲かっているかは事業別の増減で、何に力を入れているかは投資とお金の流れで読みます。",
+        "3問は別々の会社の表から出ます。1社を深く読む前に、読み方の型そのものが身についているかを確かめる演習です。型が入れば、初めて見る会社の決算でも、同じ順序で読めます。",
+      ],
+      slots: [
+        { from: "lesson", kind: "segment-driver", count: 1 },
+        { from: "lesson", kind: "cf-investment", count: 1 },
+        { from: "lesson", kind: "stage-driver", count: 1 },
+      ],
+    },
+  ],
+};
+
+const UNITS = [UNIT_ONE, UNIT_TWO, UNIT_THREE, UNIT_FOUR, UNIT_FIVE, UNIT_SIX, UNIT_SEVEN, UNIT_EIGHT];
 
 /**
  * Every lesson id in the course, derived from the unit specs above — the single source the static
@@ -565,7 +716,8 @@ const fromAuthored = (questionId: string): MicroQuestion | undefined => {
 };
 
 /**
- * The course: six units bound to questions (the JCE-090 rebuild; the `plannedLessons` form remains for
+ * The course: eight units bound to questions (the JCE-090 rebuild, graded into four levels and
+ * extended with the two analysis units in JCE-145; the `plannedLessons` form remains for
  * any future unit whose structure is fixed before its lessons are written). Within a generated slot,
  * questions are taken in pool order, preferring an industry the lesson has not used yet, and no question
  * is bound to two lessons. A slot the pools cannot fill leaves the lesson shorter — never padded with a
@@ -608,9 +760,10 @@ export function buildMicroCourse(pool: QuizQuestion[], lessonPool: LessonQuestio
     return out;
   };
 
-  const bind = (unit: { id: string; title: string; intro: string; lessons: LessonSpec[] }): MicroUnit => ({
+  const bind = (unit: { id: string; title: string; level: string; intro: string; lessons: LessonSpec[] }): MicroUnit => ({
     id: unit.id,
     title: unit.title,
+    level: unit.level,
     intro: unit.intro,
     lessons: unit.lessons.map((spec) => {
       const questions = take(spec);
