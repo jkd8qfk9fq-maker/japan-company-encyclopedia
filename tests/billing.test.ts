@@ -241,6 +241,98 @@ describe("handleBilling", () => {
   });
 });
 
+describe("JCE-148 boundary cases — product judgement, event order, and the /api/plan guards", () => {
+  it("judges the plan by product alone, never by price: a mismatched price does not move the kind", () => {
+    const base = { code: CODE, customerId: null, email: null, source: "stripe", status: "active", paidUntil: PERIOD_END_MS };
+    expect(planKindOf({ ...base, productId: ANALYSIS_PRODUCT_ID, priceId: PREMIUM_PRICE })).toBe("analysis");
+    expect(planKindOf({ ...base, productId: PREMIUM_PRODUCT_ID, priceId: BETA_PRICE })).toBe("premium");
+    expect(planKindOf({ ...base, productId: "prod_unknown", priceId: BETA_PRICE })).toBe("premium");
+  });
+
+  it("records the product when Stripe expands it as an object on the price, not only as an id string", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const body = subscriptionEvent("evt_1", "customer.subscription.created", {
+      status: "active",
+      current_period_end: PERIOD_END_S,
+      items: { data: [{ price: { id: BETA_PRICE, product: { id: ANALYSIS_PRODUCT_ID } }, current_period_end: PERIOD_END_S }] },
+    });
+    await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), env, store, NOW);
+    expect((await store.get(CODE))?.productId).toBe(ANALYSIS_PRODUCT_ID);
+    const plan = await handleBilling(planRequest(CODE), env, store, NOW);
+    expect(await plan.json()).toMatchObject({ active: true, plan: "analysis" });
+  });
+
+  it("keeps the entitlement when invoice.paid lands before the subscription event (out-of-order delivery)", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const invoice = JSON.stringify({
+      id: "evt_1",
+      type: "invoice.paid",
+      data: {
+        object: {
+          subscription: CODE,
+          customer: "cus_VcP6IAqHA649zF",
+          customer_email: "reader@example.jp",
+          lines: { data: [{ period: { end: PERIOD_END_S }, price: { id: BETA_PRICE, product: ANALYSIS_PRODUCT_ID } }] },
+        },
+      },
+    });
+    await handleBilling(await webhookRequest(invoice, await sign(SECRET, invoice, NOW.getTime())), env, store, NOW);
+    const early = await store.get(CODE);
+    expect(early).toMatchObject({ status: "active", productId: ANALYSIS_PRODUCT_ID, email: "reader@example.jp" });
+    const created = subscriptionEvent("evt_2", "customer.subscription.created", { status: "active", current_period_end: PERIOD_END_S });
+    await handleBilling(await webhookRequest(created, await sign(SECRET, created, NOW.getTime())), env, store, NOW);
+    const later = await store.get(CODE);
+    // The later subscription event names no product and no e-mail: neither recorded fact is erased.
+    expect(later).toMatchObject({ status: "active", productId: ANALYSIS_PRODUCT_ID, email: "reader@example.jp" });
+    const plan = await handleBilling(planRequest(CODE), env, store, NOW);
+    expect(await plan.json()).toMatchObject({ active: true, plan: "analysis" });
+  });
+
+  it("does not consume an event whose apply fails: it answers 500 and the redelivery succeeds (JCE-148)", async () => {
+    const inner = memoryBillingStore();
+    let failUpserts = true;
+    const store = {
+      ...inner,
+      rows: inner.rows,
+      events: inner.events,
+      async upsert(row: Parameters<typeof inner.upsert>[0]) {
+        if (failUpserts) throw new Error("D1: no such column (migration unapplied)");
+        return inner.upsert(row);
+      },
+    };
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const body = subscriptionEvent("evt_1", "customer.subscription.created", {
+      status: "active",
+      current_period_end: PERIOD_END_S,
+      items: { data: [{ price: { id: BETA_PRICE, product: ANALYSIS_PRODUCT_ID }, current_period_end: PERIOD_END_S }] },
+    });
+    const first = await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), env, store, NOW);
+    expect(first.status).toBe(500);
+    expect(await store.hasEvent("evt_1")).toBe(false);
+    expect(await store.get(CODE)).toBeNull();
+    failUpserts = false;
+    const retry = await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), env, store, NOW);
+    expect(retry.status).toBe(200);
+    expect(await retry.json()).toEqual({ received: true });
+    expect((await store.get(CODE))?.productId).toBe(ANALYSIS_PRODUCT_ID);
+    expect(await store.hasEvent("evt_1")).toBe(true);
+  });
+
+  it("refuses /api/plan without an Origin header and with a non-JSON content type", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    expect((await handleBilling(planRequest(CODE, null), env, store, NOW)).status).toBe(403);
+    const wrongType = new Request(`${ORIGIN}/api/plan`, {
+      method: "POST",
+      headers: { "content-type": "text/plain", origin: ORIGIN },
+      body: JSON.stringify({ code: CODE }),
+    });
+    expect((await handleBilling(wrongType, env, store, NOW)).status).toBe(415);
+  });
+});
+
 describe("checkPlan — the client's move to this site's own check (JCE-100)", () => {
   afterEach(() => vi.unstubAllGlobals());
 

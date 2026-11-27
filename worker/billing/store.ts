@@ -20,6 +20,8 @@ export interface BillingStore {
   upsert(row: Entitlement & { now: string }): Promise<void>;
   /** True the first time an event id is recorded; false when Stripe redelivers it. */
   markEvent(id: string, type: string, now: string): Promise<boolean>;
+  /** Whether an event id is already recorded, without recording it (JCE-148). */
+  hasEvent(id: string): Promise<boolean>;
 }
 
 type D1Like = {
@@ -85,6 +87,10 @@ export function d1BillingStore(db: D1Like): BillingStore {
         return false; // the primary key already holds this event: a redelivery
       }
     },
+    async hasEvent(id) {
+      const row = await db.prepare("SELECT id FROM billing_events WHERE id = ?").bind(id).first<{ id: string }>();
+      return row !== null;
+    },
   };
 }
 
@@ -115,6 +121,9 @@ export function memoryBillingStore() {
       if (events.has(id)) return false;
       events.add(id);
       return true;
+    },
+    async hasEvent(id) {
+      return events.has(id);
     },
   };
   return store;
