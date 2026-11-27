@@ -5,7 +5,7 @@ import { AdSlot } from "@/components/ads/ad-slot";
 import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
-import { featureSections, readingMinutes } from "@/lib/feature-meta";
+import { featureSections, leadBarValue, readingMinutes } from "@/lib/feature-meta";
 import { companyRepository, termRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 import type { Feature, FeatureBlock } from "@/types/feature";
@@ -19,8 +19,9 @@ import { L } from "@/components/i18n/label";
 /**
  * A feature, laid out answer-first (JCE-111). Data-led sites that hold readers put the finding before the
  * argument: the headline figures and 「この特集のポイント」 come first, the sections are listed and linkable
- * (a sticky table of contents on wide screens, a collapsible one on phones), and a table of numbers is shown
- * as bars with the printed value beside each — the bar only draws the value, it carries no figure of its own.
+ * (a sticky table of contents on wide screens, a sticky row of chips on phones — JCE-147), and a table of
+ * numbers is shown as bars with the printed value beside each — the bar only draws the value, it carries no
+ * figure of its own, and the largest bars are drawn in the data blue so the ranking reads by colour too.
  * Long tables show their first rows and fold the rest, so the page does not become a scroll through a list.
  * Everything here is still the same data: the blocks, figures and takeaways come from feature-articles.ts.
  */
@@ -29,9 +30,10 @@ const VISIBLE_ROWS = 8;
 
 type TableRow = Extract<FeatureBlock, { type: "data-table" }>["rows"][number];
 
-function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBars: boolean; rest: string[] }) {
+function BarRow({ row, max, hasBars, lead, rest }: { row: TableRow; max: number; hasBars: boolean; lead: boolean; rest: string[] }) {
   // Name and value on one line, the bar full width beneath: on a phone a bar squeezed between the two was a few
-  // pixels wide and could not be compared. The bar uses the text colour so it reads in both themes.
+  // pixels wide and could not be compared. The lead rows — the table's largest bars — are drawn in the data
+  // blue and the rest in grey (JCE-147), so the ranking reads by colour as well as by length.
   return (
     <li className="py-3">
       <div className="flex items-baseline justify-between gap-3">
@@ -42,7 +44,7 @@ function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBa
       </div>
       {hasBars && (
         <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-muted" aria-hidden>
-          <div className="h-full rounded-full bg-foreground/70" style={{ width: `${(Math.abs(row.bar!) / max) * 100}%` }} />
+          <div className={`h-full rounded-full ${lead ? "bg-ink" : "bg-foreground/30"}`} style={{ width: `${(Math.abs(row.bar!) / max) * 100}%` }} />
         </div>
       )}
       {row.values.length > 1 && (
@@ -55,8 +57,9 @@ function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBa
 }
 
 function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table" }> }) {
-  const max = Math.max(...block.rows.map((r) => Math.abs(r.bar ?? 0)));
-  const hasBars = max > 0 && block.rows.every((r) => r.bar !== undefined);
+  const lead = leadBarValue(block.rows);
+  const hasBars = lead !== null;
+  const max = lead ?? 0;
   const [primary, ...rest] = block.columns;
 
   const head = block.rows.slice(0, VISIBLE_ROWS);
@@ -66,7 +69,7 @@ function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table"
       {block.title && <figcaption className="font-serif text-lg leading-snug font-semibold"><L s={block.title} /></figcaption>}
       <p className="mt-1 text-xs text-muted-foreground">{hasBars ? `棒の長さは「${primary}」` : primary}</p>
       <ol className="mt-3 divide-y divide-border/70">
-        {head.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} rest={rest} />)}
+        {head.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} lead={hasBars && Math.abs(row.bar!) === lead} rest={rest} />)}
       </ol>
       {tail.length > 0 && (
         <details className="group">
@@ -75,7 +78,7 @@ function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table"
             <span className="hidden group-open:inline"><T m={{ ja: "閉じる", en: "Close" }} /></span>
           </summary>
           <ol className="divide-y divide-border/70">
-            {tail.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} rest={rest} />)}
+            {tail.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} lead={hasBars && Math.abs(row.bar!) === lead} rest={rest} />)}
           </ol>
         </details>
       )}
@@ -189,12 +192,29 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
           )}
 
           {sections.length > 0 && (
-            <details className="mt-6 rounded-xl border border-border lg:hidden">
-              <summary className="flex min-h-12 cursor-pointer list-none items-center gap-2 px-4 text-sm font-semibold [&::-webkit-details-marker]:hidden">
-                <span data-l="ja"><ListOrdered className="size-4" aria-hidden /> 目次（{sections.length + 1}項目）
-              </span><span data-l="en"><ListOrdered className="size-4" aria-hidden /> Contents ({sections.length + 1} items)</span></summary>
-              <div className="border-t border-border p-2">{toc}</div>
-            </details>
+            // On phones the table of contents is a sticky row of chips (JCE-147): it stays under the header
+            // while reading, so where you are and what is left are always one tap away. Anchor links only —
+            // the wide-screen sticky list beside the article remains the full contents.
+            <nav aria-label="目次" className="sticky top-[calc(var(--header-height)+0.5rem)] z-20 mt-6 overflow-x-auto rounded-full border border-border bg-background/95 px-2 py-2 shadow-sm backdrop-blur [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
+              <ul className="flex gap-1.5">
+                {feature.takeaways && feature.takeaways.length > 0 && (
+                  <li className="shrink-0">
+                    <a href="#points" className="flex min-h-9 items-center rounded-full px-3 text-[0.8125rem] font-medium whitespace-nowrap hover:bg-muted"><T m={{ ja: "ポイント", en: "Key points" }} /></a>
+                  </li>
+                )}
+                {sections.map((s) => (
+                  <li key={s.id} className="shrink-0">
+                    <a href={`#${s.id}`} className="flex min-h-9 items-center gap-1.5 rounded-full px-3 text-[0.8125rem] font-medium whitespace-nowrap hover:bg-muted">
+                      <span className="figures text-muted-foreground">{String(s.index).padStart(2, "0")}</span>
+                      <L s={s.title} />
+                    </a>
+                  </li>
+                ))}
+                <li className="shrink-0">
+                  <a href="#feature-sources" className="flex min-h-9 items-center rounded-full px-3 text-[0.8125rem] font-medium whitespace-nowrap hover:bg-muted"><T m={{ ja: "出典", en: "Sources" }} /></a>
+                </li>
+              </ul>
+            </nav>
           )}
 
           <div className="mt-10">
