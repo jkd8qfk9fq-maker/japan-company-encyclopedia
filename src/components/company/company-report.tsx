@@ -99,10 +99,11 @@ function Composition({ title, parts, fiscalYear }: { title: React.ReactNode; par
   );
 }
 
-/** A full table folded under its chart: closed on screen, opened by the print path so the PDF holds it. */
-function Fold({ label, children }: { label: React.ReactNode; children: React.ReactNode }) {
+/** A full table folded under its chart: closed on screen, opened by the print path so the PDF holds it.
+ * On the print page (JCE-135) the fold is rendered open from the start (`defaultOpen`). */
+function Fold({ label, defaultOpen = false, children }: { label: React.ReactNode; defaultOpen?: boolean; children: React.ReactNode }) {
   return (
-    <details className="group mt-4 rounded-lg border border-border">
+    <details open={defaultOpen || undefined} className="group mt-4 rounded-lg border border-border">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-2.5 text-sm font-medium [&::-webkit-details-marker]:hidden">
         {label}
         <span className="text-xs text-muted-foreground print:hidden">
@@ -143,7 +144,23 @@ function KpiCard({ icon: Icon, label, value, note }: { icon: LucideIcon; label: 
   );
 }
 
-export function CompanyReport({ company, companies, revisions }: { company: Company; companies: Company[]; revisions: Revision[] }) {
+export function CompanyReport({
+  company,
+  companies,
+  revisions,
+  printView = false,
+}: {
+  company: Company;
+  companies: Company[];
+  revisions: Revision[];
+  /**
+   * The print page (JCE-135): the same report laid out as the sheet itself — light theme, no table of
+   * contents or chapter nav, and every fold open from the start, so a browser whose print path is
+   * unreliable still shows (and prints) the whole document. The gates are the same components with
+   * the same rules, so what is locked on the report is locked here too.
+   */
+  printView?: boolean;
+}) {
   const records = byPeriod(company.financials);
   const latest = records.at(-1);
   const lines = records.length > 0 ? printedLines(records) : [];
@@ -196,6 +213,7 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
     .filter((c) => c.shown)
     .map((c, i) => ({ ...c, number: i + 1 }));
   const ch = (id: string) => chapters.find((c) => c.id === id)!;
+  const printHref = `/companies/${company.id}/report/print`;
 
   const toc = (
     <ol className="space-y-0.5 text-sm">
@@ -212,21 +230,28 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
 
   return (
     <div className={`company-report pb-16 ${styles.report}`}>
-      <header className="bg-navy text-white print:bg-transparent print:text-foreground">
+      <header className={printView ? "border-b border-border bg-paper text-foreground" : "bg-navy text-white print:bg-transparent print:text-foreground"}>
         <div className="mx-auto max-w-6xl px-5 pt-6 pb-8 md:px-8 md:pt-8 md:pb-12">
-          <div className="flex items-center justify-between gap-4 print:hidden">
-            <Link href={`/companies/${company.id}`} className="inline-flex items-center gap-1 text-sm text-white/75 hover:text-white hover:underline">
-              <span data-l="ja"><ArrowLeft className="size-4" aria-hidden /> <L s={company.name} />のページへ
-            </span><span data-l="en">Go to the page for <ArrowLeft className="size-4" aria-hidden /> <L s={company.name} /></span></Link>
-            <ReportPrintButton className="inline-flex items-center gap-2 rounded-md border border-white/60 px-4 py-2 text-sm font-medium text-white hover:bg-white hover:text-navy" />
-          </div>
-          <p className="mt-6 text-xs font-semibold tracking-[0.25em] text-[oklch(0.82_0.08_80)] print:text-muted-foreground"><T m={{ ja: "PREMIUM ANALYSIS ／ 企業レポート", en: "PREMIUM ANALYSIS / Company report" }} /></p>
+          {!printView && (
+            <div className="flex items-center justify-between gap-4 print:hidden">
+              <Link href={`/companies/${company.id}`} className="inline-flex items-center gap-1 text-sm text-white/75 hover:text-white hover:underline">
+                <span data-l="ja"><ArrowLeft className="size-4" aria-hidden /> <L s={company.name} />のページへ
+              </span><span data-l="en">Go to the page for <ArrowLeft className="size-4" aria-hidden /> <L s={company.name} /></span></Link>
+              <div className="flex flex-col items-end gap-1">
+                <ReportPrintButton printPageHref={printHref} className="inline-flex items-center gap-2 rounded-md border border-white/60 px-4 py-2 text-sm font-medium text-white hover:bg-white hover:text-navy" />
+                <Link href={printHref} className="text-xs text-white/70 underline underline-offset-2 hover:text-white">
+                  <span data-l="ja">印刷が開かない場合は印刷用ページへ</span><span data-l="en">If printing does not open, use the print page</span>
+                </Link>
+              </div>
+            </div>
+          )}
+          <p className={`mt-6 text-xs font-semibold tracking-[0.25em] ${printView ? "text-muted-foreground" : "text-[oklch(0.82_0.08_80)] print:text-muted-foreground"}`}><T m={{ ja: "PREMIUM ANALYSIS ／ 企業レポート", en: "PREMIUM ANALYSIS / Company report" }} /></p>
           <h1 className="mt-2 font-serif text-[2rem] leading-tight font-semibold md:text-[3rem]"><L s={company.name} /></h1>
-          <p className="figures mt-2 text-sm text-white/75 print:text-muted-foreground">
+          <p className={`figures mt-2 text-sm ${printView ? "text-muted-foreground" : "text-white/75 print:text-muted-foreground"}`}>
             <span data-l="ja">{company.officialName} ・ 証券コード {company.code}
             {industryName && <> <span data-l="ja">・ {industryName}</span><span data-l="en">· {industryName}</span></>}</span><span data-l="en">{company.officialName} · Securities code {company.code}{industryName && <> <span data-l="ja">・ {industryName}</span><span data-l="en">· {industryName}</span></>}</span>
           </p>
-          <p className="mt-4 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-white/30 px-4 py-1.5 text-xs text-white/85 print:border-border print:text-muted-foreground">
+          <p className={`mt-4 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border px-4 py-1.5 text-xs ${printView ? "border-border text-muted-foreground" : "border-white/30 text-white/85 print:border-border print:text-muted-foreground"}`}>
             {latest && <span><span data-l="ja">最新期 <F s={latest.fiscalYear} /></span><span data-l="en">Latest fiscal year <F s={latest.fiscalYear} /></span></span>}
             <span aria-hidden>|</span>
             <span><span data-l="ja">データ時点 <F s={formatDateJa(company.updatedAt)} /></span><span data-l="en">Data as of <F s={formatDateJa(company.updatedAt)} /></span></span>
@@ -236,33 +261,42 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
         </div>
       </header>
 
-      <nav aria-label="章" className="border-b border-border bg-card print:hidden lg:hidden">
-        <ol className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-3 py-2 text-sm">
-          {chapters.map((c) => (
-            <li key={c.id} className="shrink-0">
-              <a href={`#${c.id}`} className="block rounded-full px-3 py-1.5 whitespace-nowrap hover:bg-muted">
-                <span className="figures text-muted-foreground">{c.number}.</span> {c.title}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      {!printView && (
+        <nav aria-label="章" className="border-b border-border bg-card print:hidden lg:hidden">
+          <ol className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-3 py-2 text-sm">
+            {chapters.map((c) => (
+              <li key={c.id} className="shrink-0">
+                <a href={`#${c.id}`} className="block rounded-full px-3 py-1.5 whitespace-nowrap hover:bg-muted">
+                  <span className="figures text-muted-foreground">{c.number}.</span> {c.title}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
 
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 pt-8 md:px-8 lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:pt-10 print:block print:px-0">
-        <aside className="hidden print:hidden lg:block" aria-label="目次">
-          <div className="sticky top-24 space-y-4">
-            <div className="rounded-xl border border-border bg-card p-2">
-              <p className="flex items-center gap-1.5 px-3 pt-2 pb-1 text-xs font-semibold tracking-[0.12em] text-muted-foreground">
-                <span data-l="ja"><ListOrdered className="size-3.5" aria-hidden /> 目次
-              </span><span data-l="en"><ListOrdered className="size-3.5" aria-hidden /> contents</span></p>
-              {toc}
+      <div className={printView ? "mx-auto max-w-4xl px-5 pt-8 md:px-8 print:px-0" : "mx-auto grid max-w-6xl gap-10 px-5 pt-8 md:px-8 lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:pt-10 print:block print:px-0"}>
+        {!printView && (
+          <aside className="hidden print:hidden lg:block" aria-label="目次">
+            <div className="sticky top-24 space-y-4">
+              <div className="rounded-xl border border-border bg-card p-2">
+                <p className="flex items-center gap-1.5 px-3 pt-2 pb-1 text-xs font-semibold tracking-[0.12em] text-muted-foreground">
+                  <span data-l="ja"><ListOrdered className="size-3.5" aria-hidden /> 目次
+                </span><span data-l="en"><ListOrdered className="size-3.5" aria-hidden /> contents</span></p>
+                {toc}
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4 text-xs leading-5 text-muted-foreground">
+                <p><T m={{ ja: "このレポートは PDF で保存できます。畳んである数字の表も、すべて開いた状態で印刷されます。", en: "This report can be saved as a PDF. Collapsed number tables are also printed fully expanded." }} /></p>
+                <ReportPrintButton printPageHref={printHref} className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md border border-border px-3 py-2 text-sm font-medium text-foreground hover:bg-muted" />
+                <p className="mt-2 text-center">
+                  <Link href={printHref} className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground">
+                    <T m={{ ja: "印刷が開かない場合は印刷用ページへ", en: "If printing does not open, use the print page" }} />
+                  </Link>
+                </p>
+              </div>
             </div>
-            <div className="rounded-xl border border-border bg-card p-4 text-xs leading-5 text-muted-foreground">
-              <p><T m={{ ja: "このレポートは PDF で保存できます。畳んである数字の表も、すべて開いた状態で印刷されます。", en: "This report can be saved as a PDF. Collapsed number tables are also printed fully expanded." }} /></p>
-              <ReportPrintButton className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md border border-border px-3 py-2 text-sm font-medium text-foreground hover:bg-muted" />
-            </div>
-          </div>
-        </aside>
+          </aside>
+        )}
 
         <div className="min-w-0 space-y-14">
           <Chapter id="overview" number={ch("overview").number} title={ch("overview").title}>
@@ -311,7 +345,7 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                   <div className="rounded-xl border border-border bg-card p-4 md:p-6">
                     <TrendChart records={records} />
                   </div>
-                  <Fold label={`5期の数字の表（${lines.length}項目・印字値）`}>
+                  <Fold label={`5期の数字の表（${lines.length}項目・印字値）`} defaultOpen={printView}>
                     <div className="overflow-x-auto">
                       <table className="w-full border-collapse text-sm">
                         <caption className="sr-only"><T m={{ ja: "5期の数字（有価証券報告書の印字値）", en: "Five fiscal years of figures (printed values from annual securities reports)" }} /></caption>
@@ -370,7 +404,7 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                       </div>
                     )}
                   </div>
-                  <Fold label={<T m={{ ja: "金額の表（印字値）", en: "Amounts table (printed values)" }} />}>
+                  <Fold label={<T m={{ ja: "金額の表（印字値）", en: "Amounts table (printed values)" }} />} defaultOpen={printView}>
                     <div className="grid gap-8 md:grid-cols-2">
                       {company.segmentRevenue && (
                         <Composition title={`事業別の${company.segmentRevenue.label}`} fiscalYear={company.segmentRevenue.fiscalYear} parts={segmentParts} />
@@ -418,7 +452,7 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                       </li>
                     ))}
                   </ul>
-                  <Fold label={<T m={{ ja: "計算式と分布の表（中央値・四分位・順位・パーセンタイル）", en: "Formulas and distribution table (median, quartiles, rank, percentile)" }} />}>
+                  <Fold label={<T m={{ ja: "計算式と分布の表（中央値・四分位・順位・パーセンタイル）", en: "Formulas and distribution table (median, quartiles, rank, percentile)" }} />} defaultOpen={printView}>
                     <p className="max-w-3xl text-xs leading-5 text-muted-foreground">
                       <span data-l="ja">業界の分布は、主たる産業が同じ掲載企業
                       {layer.industryName && `（${layer.industryName}）`}
@@ -513,7 +547,7 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                   </div>
                 </div>
               )}
-              <CompanyAnalysisSection company={company} companies={companies} analysis={analysis} folded />
+              <CompanyAnalysisSection company={company} companies={companies} analysis={analysis} folded openFolds={printView} />
             </Chapter>
           )}
 

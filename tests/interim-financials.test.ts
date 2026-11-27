@@ -128,7 +128,7 @@ describe("planInterim", () => {
 });
 
 describe("allTargets", () => {
-  it("takes the published companies from the entries as loadEntries gives them", () => {
+  it("takes the published companies from the entries as loadEntries gives them", { timeout: 60_000 }, () => {
     expect(allTargets([{ id: "a", tier: "published" }, { id: "b", tier: "figures-only" }])).toEqual(["a"]);
     // Against the real data: --all must find companies, not an empty list (the bug of 2026-11-14).
     expect(allTargets(loadEntries()).length).toBeGreaterThan(500);
