@@ -21,7 +21,6 @@ export function hasJapanese(text: string): boolean {
   return JAPANESE.test(text);
 }
 
-const JA_UNITS: Record<string, number> = { 兆: 1e12, 億: 1e8, 百万: 1e6, 万: 1e4, 千: 1e3 };
 const EN_UNITS: Record<string, number> = { trillion: 1e12, billion: 1e9, million: 1e6, thousand: 1e3 };
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 const ORDINALS = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"];
@@ -32,26 +31,69 @@ const num = (s: string) => Number(s.replace(/,/g, ""));
 /** Labels of links are names, not figures: "[[company:x|3M]]" must not count a 3. */
 const withoutMarkup = (text: string) => text.replace(REFERENCE, (_m, _k, _id, label: string) => ` ${label.replace(/\d/g, "")} `);
 
-/** The figures in Japanese prose, with 兆・億・百万・万 folded in: 「2,517億71百万円」 is one figure, 251,771,000,000. */
+const PLACE_UNITS: Record<string, number> = { 千: 1e3, 百: 1e2, 十: 1e1 };
+const BIG_UNITS: Record<string, number> = { 兆: 1e12, 億: 1e8, 万: 1e4 };
+
+/**
+ * The figures in Japanese prose, read the way Japanese reads them (JCE-136): a figure is a run of sections, each a
+ * coefficient times 兆・億・万， and a coefficient is itself built from 千・百・十 places — 「2,517億71百万円」 is
+ * 2517億 + 71百万 = 251,771,000,000, 「9,982億3千4百万円」 is 9982億 + 3400万 = 998,234,000,000, 「5億3千万円」 is
+ * 530,000,000. The earlier fold compared each unit with the one before it, so a coefficient written with places
+ * after a section （千・百 in non-monotonic order, or a trailing 万） was misread and a correct translation of such
+ * a sentence could never pass. A run counts only when it holds a digit: a bare 百万円 (a unit note, 「いずれも百万円」)
+ * or 数十万人 (a magnitude, not a printed figure) is left as the earlier reading left it, and a lone 千・百・十・万
+ * inside a word （十分・万一） is not a figure either.
+ */
 export function japaneseFigures(text: string): number[] {
   const t = withoutMarkup(text.normalize("NFKC"));
-  const out: number[] = [];
-  const re = /(\d[\d,]*(?:\.\d+)?)(兆|億|百万|万|千)?/g;
-  let pending: { value: number; unit: number; end: number } | null = null;
-  for (const m of t.matchAll(re)) {
-    const unit = m[2] ? JA_UNITS[m[2]] : 1;
-    const value = num(m[1]) * unit;
+  type Tok = { value?: number; place?: number; big?: number; start: number; end: number };
+  const tokens: Tok[] = [];
+  for (const m of t.matchAll(/(\d[\d,]*(?:\.\d+)?)|([千百十])|([兆億万])/g)) {
     const start = m.index ?? 0;
-    // A smaller unit straight after a larger one continues the same figure (2,517億 + 71百万).
-    if (pending && start === pending.end && unit < pending.unit && m[2]) {
-      pending = { value: pending.value + value, unit, end: start + m[0].length };
-      continue;
-    }
-    if (pending) out.push(pending.value);
-    pending = { value, unit: m[2] ? unit : 0, end: start + m[0].length };
+    const end = start + m[0].length;
+    if (m[1]) tokens.push({ value: num(m[1]), start, end });
+    else if (m[2]) tokens.push({ place: PLACE_UNITS[m[2]], start, end });
+    else tokens.push({ big: BIG_UNITS[m[3]], start, end });
   }
-  if (pending) out.push(pending.value);
-  return out.map(key);
+  const out: number[] = [];
+  let i = 0;
+  while (i < tokens.length) {
+    let j = i;
+    while (j + 1 < tokens.length && tokens[j + 1].start === tokens[j].end) j++;
+    const run = tokens.slice(i, j + 1);
+    i = j + 1;
+    if (!run.some((tk) => tk.value !== undefined)) continue;
+    let total = 0;
+    let coeff = 0;
+    let pending: number | null = null;
+    let sectionHas = false;
+    const takeCoeff = () => {
+      const taken = { c: coeff + (pending ?? 0), had: sectionHas };
+      coeff = 0;
+      pending = null;
+      sectionHas = false;
+      return taken;
+    };
+    for (const tk of run) {
+      if (tk.value !== undefined) {
+        if (pending !== null) coeff += pending;
+        pending = tk.value;
+        sectionHas = true;
+      } else if (tk.place !== undefined) {
+        if (pending !== null) {
+          coeff += pending * tk.place;
+          pending = null;
+        } else coeff += tk.place;
+        sectionHas = true;
+      } else if (tk.big !== undefined) {
+        const { c, had } = takeCoeff();
+        total += (had ? c : 1) * tk.big;
+      }
+    }
+    total += takeCoeff().c;
+    out.push(key(total));
+  }
+  return out;
 }
 
 const SMALL: Record<string, number> = { 千: 1e3, 百: 1e2, 十: 10 };
@@ -59,7 +101,8 @@ const BIG: Record<string, number> = { 兆: 1e12, 億: 1e8, 万: 1e4 };
 
 /**
  * The amounts in Japanese prose read the way a Japanese reader reads them: 千・百・十 make a group and 万・億・兆
- * multiply it, so 「9,982億3千4百万円」 is 998,234,000,000. japaneseFigures folds these differently (JCE-132).
+ * multiply it, so 「9,982億3千4百万円」 is 998,234,000,000. japaneseFigures read these differently until JCE-136
+ * aligned it with this reading; figuresAmbiguous below stays as the safety net comparing the two readings.
  */
 export function japaneseAmounts(text: string): number[] {
   const t = withoutMarkup(text.normalize("NFKC"));
