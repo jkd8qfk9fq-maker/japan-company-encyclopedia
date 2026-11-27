@@ -35,6 +35,7 @@ const question = (id: string) => ({
 const unit = (id: string, lessonIds: string[]): MicroUnit => ({
   id,
   title: id,
+  level: "入門級",
   intro: "",
   plannedLessons: [],
   lessons: lessonIds.map((lid) => ({

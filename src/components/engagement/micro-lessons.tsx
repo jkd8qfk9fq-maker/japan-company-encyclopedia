@@ -110,7 +110,7 @@ export function MicroLessons() {
             <div className="rounded-3xl p-5 text-white" style={{ backgroundColor: style.main }}>
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-xs font-bold tracking-[0.14em] text-white/85">単元 {ui + 1} ・ レッスン {prog.done}／{prog.total} 完了</p>
+                  <p className="text-xs font-bold tracking-[0.14em] text-white/85">単元 {ui + 1} ・ {unit.level} ・ レッスン {prog.done}／{prog.total} 完了</p>
                   <h3 className="mt-1 text-xl font-bold leading-7">{unit.title}</h3>
                   <p className="mt-1 text-sm leading-6 text-white/90">{unit.intro}</p>
                 </div>

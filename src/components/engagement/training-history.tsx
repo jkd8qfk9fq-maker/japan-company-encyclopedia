@@ -55,6 +55,12 @@ const KIND_LABELS: Record<string, string> = {
   "detail-borrowings": "借入の行を全部探す",
   "detail-goodwill": "無形固定資産の内訳を読む",
   "detail-depreciation": "帳簿価額の組み立てを読む",
+  // The JCE-145 analysis readings: two periods side by side, and the relations among the cash-flow figures.
+  "margin-shift": "利益率の変化を読む",
+  "stage-driver": "段階利益の増減を読む",
+  "segment-driver": "事業別の増減を読む",
+  "cf-investment": "投資とキャッシュ・フローの関係を読む",
+  decompose: "利益の増減を分解して読む",
 };
 
 const jstDayOf = (iso: string) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date(iso));

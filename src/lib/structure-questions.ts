@@ -10,6 +10,12 @@
  * names the general basis it rests on (the display rules of the statements themselves), and the
  * binding in src/lib/micro-lessons.ts gives it no company and no period. Company figures only ever
  * arrive through the generated questions in src/lib/lesson-questions.ts, with their citations.
+ *
+ * JCE-145: the three "order" questions below are kept as data but are no longer bound into any
+ * lesson. The course's goal is reading and analysing a filing, not memorising the arrangement of
+ * its rows; the readings those lessons practise now come from the generated analysis questions.
+ * The entries stay in the pool — the pool is the record of the authored readings, and the binding
+ * in src/lib/micro-lessons.ts simply no longer selects them.
  */
 
 export type AuthoredQuestion = {
@@ -78,6 +84,20 @@ export const STRUCTURE_QUESTIONS: AuthoredQuestion[] = [
 
   // --- 差の内訳: what sits between two stages. -------------------------------------------------------
   {
+    id: "diff-revenue-gross",
+    kind: "stage-diff",
+    prompt: "売上高と売上総利益（粗利）の差になっているのは、どれでしょう？",
+    options: [
+      { id: "cost", label: "売上原価" },
+      { id: "sga", label: "販売費及び一般管理費（販管費）" },
+      { id: "non-operating", label: "営業外損益" },
+      { id: "special", label: "特別損益" },
+    ],
+    answer: "cost",
+    explain: "売上高から売上原価（商品の仕入れや製造にかかった費用）を引いた残りが売上総利益です。粗利の大きさは、売値と原価の関係——その会社の商売の土台——を映します。販管費は、粗利と営業利益の間の段で引かれます。",
+    sourceTitle: PL,
+  },
+  {
     id: "diff-gross-operating",
     kind: "stage-diff",
     prompt: "売上総利益（粗利）と営業利益の差になっているのは、どれでしょう？",
@@ -119,6 +139,20 @@ export const STRUCTURE_QUESTIONS: AuthoredQuestion[] = [
     explain: "経常利益の下には、特別利益・特別損失（固定資産の売却益や減損損失など、一度きりの損益）が来て、税引前当期純利益になり、そこから法人税等を引いて当期純利益になります。最終利益が大きく動いた年は、この段を疑うのが読み方です。",
     sourceTitle: PL,
   },
+  {
+    id: "diff-pretax-net",
+    kind: "stage-diff",
+    prompt: "税引前当期純利益と当期純利益の差になっているのは、どれでしょう？",
+    options: [
+      { id: "tax", label: "法人税等（法人税・住民税・事業税と法人税等調整額）" },
+      { id: "special", label: "特別損益" },
+      { id: "non-operating", label: "営業外損益" },
+      { id: "sga", label: "販売費及び一般管理費（販管費）" },
+    ],
+    answer: "tax",
+    explain: "税引前当期純利益から法人税等を引いた残りが当期純利益です。特別損益は税引前の段階までに入っています。前期と比べて最終利益が動いたとき、その一部は業績ではなく税金の段の動きであることがあります。",
+    sourceTitle: PL,
+  },
 
   // --- 区分判定: which section an item belongs to. ---------------------------------------------------
   {
@@ -148,6 +182,20 @@ export const STRUCTURE_QUESTIONS: AuthoredQuestion[] = [
     answer: "special",
     explain: "減損損失は特別損失です。臨時的・異常な損益は経常利益の下の特別損益に分けて置かれるため、減損で最終利益が赤字になっても、本業の経常利益は黒字ということがあります。赤字の段を確かめるのが読み方です。",
     sourceTitle: PL,
+  },
+  {
+    id: "classify-payables-section",
+    kind: "classify",
+    prompt: "買掛金は、貸借対照表のどこに入るでしょう？",
+    options: [
+      { id: "current-liabilities", label: "流動負債" },
+      { id: "fixed-liabilities", label: "固定負債" },
+      { id: "current-assets", label: "流動資産" },
+      { id: "net-assets", label: "純資産の部" },
+    ],
+    answer: "current-liabilities",
+    explain: "買掛金は流動負債です。仕入れた商品や材料の代金のうち、まだ払っていない分で、仕入れて売って代金を回収するという営業の循環の中にある負債は流動に区分されます（正常営業循環基準）。借入金とは別の、仕入先への未払いです。",
+    sourceTitle: BS,
   },
   {
     id: "classify-receivable",

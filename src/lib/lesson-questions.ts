@@ -1,7 +1,8 @@
+import { runDecompModule } from "@/lib/analysis-decomposition";
 import { companyMetrics } from "@/lib/company-metrics";
 import { quarterlyView } from "@/lib/quarterly";
 import { formatYen } from "@/lib/utils/format";
-import type { Company, FinancialRecord, StatementLine, StatementRole } from "@/types/company";
+import type { Company, FinancialRecord, FinancialStatements, StatementLine, StatementRole } from "@/types/company";
 
 /**
  * Lesson questions (JCE-082, rebuilt in JCE-090): generated per company from the entry's own printed
@@ -15,7 +16,7 @@ import type { Company, FinancialRecord, StatementLine, StatementRole } from "@/t
  * What was dropped, and why: the four-choice "what is the latest revenue" question (figure), the issued
  * share count (shares), the per-employee value (employees), the overseas share value (overseas-ratio) and
  * the quarter's share of the previous full year (quarterly-progress) all asked for a value that the next
- * period replaces. Their readings live on in other forms — the row-finding and region questions below,
+ * period replaces. Their readings live on in other forms — the relation and region questions below,
  * and authored procedure questions in src/lib/structure-questions.ts.
  *
  * Direction questions (the predict-then-check form at the heart of the hybrid design, JCE-082) are kept,
@@ -27,6 +28,17 @@ import type { Company, FinancialRecord, StatementLine, StatementRole } from "@/t
  * Every question keeps the records' `sourceIds` and the source's own title, so the answer can always be
  * traced back to the document. Anything derived from two printed figures is a computed value: the
  * explanation carries the label 計算値 and the formula, as everywhere else on the site.
+ *
+ * JCE-145 adds the analysis kinds the 分析級 units practise: the margin's move over two periods
+ * (margin-shift), which stage's change is the largest against the last line's move (stage-driver, over
+ * the full statements), which business drove the segment table's change (segment-driver, on the A3
+ * decomposition's own values), and the relation among operating cash flow, capital expenditure and
+ * depreciation (cf-investment, over the cash-flow rows the meaning layer reads). The course's goal is
+ * reading and analysing, not recall: the row-finding kind (find-row), whose answer was a row's place,
+ * is retired with this change — its tables' readings live on in the kinds above, which ask what the
+ * figures say. One limit of the registered data is recorded in docs/decisions.md (JCE-145): segment
+ * profit is held for one year only, so segment-driver reads the segment *revenue* change — the two-year
+ * comparison the entries do hold, and the one A3 already computes.
  */
 
 export type LessonQuestionKind =
@@ -35,7 +47,6 @@ export type LessonQuestionKind =
   | "growth-employees"
   | "quarterly-direction"
   | "segment-top"
-  | "find-row"
   | "relation-stages"
   | "relation-net-assets"
   | "label-reading"
@@ -45,7 +56,11 @@ export type LessonQuestionKind =
   | "detail-working-capital"
   | "detail-borrowings"
   | "detail-goodwill"
-  | "detail-depreciation";
+  | "detail-depreciation"
+  | "margin-shift"
+  | "stage-driver"
+  | "segment-driver"
+  | "cf-investment";
 
 /** A small excerpt of a company's own table, printed figures as filed, shown with the question. */
 export type QuestionTable = {
@@ -133,7 +148,6 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
   const growthEmployees: LessonQuestion[] = [];
   const quarterlyDirection: LessonQuestion[] = [];
   const segmentTop: LessonQuestion[] = [];
-  const findRow: LessonQuestion[] = [];
   const relationStages: LessonQuestion[] = [];
   const relationNetAssets: LessonQuestion[] = [];
   const labelReading: LessonQuestion[] = [];
@@ -144,6 +158,10 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
   const detailBorrowings: LessonQuestion[] = [];
   const detailGoodwill: LessonQuestion[] = [];
   const detailDepreciation: LessonQuestion[] = [];
+  const marginShift: LessonQuestion[] = [];
+  const stageDriver: LessonQuestion[] = [];
+  const segmentDriver: LessonQuestion[] = [];
+  const cfInvestment: LessonQuestion[] = [];
 
   const ordered = [...companies].sort((a, b) => hash(`lesson-${a.id}`) - hash(`lesson-${b.id}`));
   for (const c of ordered) {
@@ -232,94 +250,68 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
       }
     }
 
-    // 項目探し: an excerpt of the company's own summary table — the five-year table of the filing's
-    // opening, as this site prints it — and the question asks for a row's place, never its value. Two
-    // tables are possible from what the records hold: the profit rows (revenue, the middle line the
-    // filing prints, net income) and the balance rows (total assets, liabilities as a computed row,
-    // net assets).
-    {
-      const variants: LessonQuestion[] = [];
-      if (latestRec.revenue !== null && latestRec.netIncome !== null) {
-        const rows: { id: string; label: string; cur: number; prev: number | null }[] = [
-          { id: "revenue", label: latestRec.revenueLabel, cur: latestRec.revenue, prev: prevRec?.revenue ?? null },
-          ...(latestRec.profit !== null && latestRec.profitLabel
-            ? [{ id: "profit", label: latestRec.profitLabel, cur: latestRec.profit, prev: prevRec?.profit ?? null }]
-            : []),
-          { id: "net", label: latestRec.netIncomeLabel, cur: latestRec.netIncome, prev: prevRec?.netIncome ?? null },
-        ];
-        const table: QuestionTable = {
-          caption: `${c.name}の「主要な経営指標等の推移」から抜粋。金額は有価証券報告書の印字値です。`,
-          columns: prevRec ? ["項目", prevRec.fiscalYear, latestRec.fiscalYear] : ["項目", latestRec.fiscalYear],
-          rows: rows.map((r) => (prevRec ? [r.label, r.prev !== null ? formatYen(r.prev) : "―", formatYen(r.cur)] : [r.label, formatYen(r.cur)])),
-        };
-        const srcIds = prevRec ? [...new Set([...prevRec.sourceIds, ...latestRec.sourceIds])] : latestRec.sourceIds;
-        variants.push({
-          ...base,
-          id: `find-row-bottom-${c.id}`,
-          kind: "find-row",
-          prompt: `${c.name}の表の抜粋です。売上から費用を引いていった最後に残る利益——最下段の行はどれでしょう？`,
-          table,
-          options: rows.map((r) => ({ id: r.id, label: r.label })),
-          answer: "net",
-          explain: `最下段は「${latestRec.netIncomeLabel}」です。表は上から、売上 → 中間の利益 → 最後の利益の順に並びます。問うているのは行の位置で、金額そのものは期が変われば変わります。`,
-          sourceIds: srcIds,
-          period: latestRec.fiscalYear,
-        });
-        if (latestRec.profit !== null && latestRec.profitLabel) {
-          variants.push({
-            ...base,
-            id: `find-row-middle-${c.id}`,
-            kind: "find-row",
-            prompt: `${c.name}の表の抜粋です。売上と純利益の間に印字されている、中間の利益の行はどれでしょう？`,
-            table,
-            options: rows.map((r) => ({ id: r.id, label: r.label })),
-            answer: "profit",
-            explain: `中間の行は「${latestRec.profitLabel}」です。この行は、会社が使う物差し（会計基準）によって名前が変わります——日本基準では経常利益、IFRS・米国基準では税引前の利益です。`,
-            sourceIds: srcIds,
-            period: latestRec.fiscalYear,
-          });
+    // 事業別の増減 (JCE-145): the segment note's own two years — which business drove the table's total
+    // change. The changes are the A3 decomposition's own rows (src/lib/analysis-decomposition.ts), so
+    // the comparability guards of the analysis layer (same standard, same revenue scope, a full-length
+    // period) decide whether the question exists at all. Segment profit is held for one year only in
+    // the entries, so the change read here is the segment revenue change (docs/decisions.md, JCE-145).
+    // The answer must be unambiguous: one business's change, in the total's direction, at least half
+    // the total's size and half again the runner-up's.
+    if (seg && seg.previous) {
+      const a3 = runDecompModule("a3", c, [c]);
+      const segSource = c.sources.find((s) => seg.sourceIds.includes(s.id)) ?? c.sources.find((s) => s.id === seg.sourceIds[0]);
+      if (a3.status === "ok" && segSource) {
+        const parts = a3.group.rows
+          .filter((r) => r.key.startsWith("a3-") && r.key.endsWith("-change") && r.key !== "a3-revenue-change")
+          .map((r) => ({ businessId: r.key.slice(3, -"-change".length), change: r.value }));
+        const total = parts.reduce((sum, p) => sum + p.change, 0);
+        const byAbs = [...parts].sort((x, y) => Math.abs(y.change) - Math.abs(x.change));
+        const driver = byAbs[0];
+        const second = byAbs[1];
+        if (
+          parts.length >= 2 && driver && second && total !== 0 && driver.change !== 0 &&
+          Math.sign(driver.change) === Math.sign(total) &&
+          Math.abs(driver.change) >= 1.5 * Math.abs(second.change) &&
+          Math.abs(driver.change) >= 0.5 * Math.abs(total)
+        ) {
+          const nameOf = (businessId: string) =>
+            c.businesses.find((b) => b.id === businessId)?.shortName ?? c.businesses.find((b) => b.id === businessId)?.name;
+          const priorById = new Map(seg.previous.items.map((i) => [i.businessId, i.amount]));
+          const rows = parts
+            .map((p) => ({ ...p, name: nameOf(p.businessId), cur: seg.items.find((i) => i.businessId === p.businessId)?.amount, prior: priorById.get(p.businessId) }))
+            .filter((p): p is { businessId: string; change: number; name: string; cur: number; prior: number } => Boolean(p.name) && p.cur !== undefined && p.prior !== undefined)
+            .sort((x, y) => y.cur - x.cur);
+          if (rows.length === parts.length && rows.length >= 2) {
+            const driverName = nameOf(driver.businessId)!;
+            const share = Math.round((driver.change / total) * 1000) / 10;
+            segmentDriver.push({
+              companyId: c.id,
+              companyName: c.name,
+              industry: primaryIndustry(c),
+              sourceIds: seg.sourceIds,
+              sourceTitle: segSource.title,
+              id: `segment-driver-${c.id}`,
+              kind: "segment-driver",
+              prompt: `${c.name}の事業別の${seg.label}（2期分）です。事業全体の増減を、いちばん大きく動かした事業はどれでしょう？`,
+              table: {
+                caption: `${c.name}の事業別情報。金額は有価証券報告書の印字値です。`,
+                columns: ["事業", seg.previous.fiscalYear, seg.fiscalYear],
+                rows: [
+                  ...rows.map((r) => [r.name, formatYen(r.prior), formatYen(r.cur)]),
+                  ["合計", formatYen(rows.reduce((s, r) => s + r.prior, 0)), formatYen(rows.reduce((s, r) => s + r.cur, 0))],
+                ],
+              },
+              options: rows
+                .slice(0, 4)
+                .sort((x, y) => hash(`${c.id}-segdrv-${x.businessId}`) - hash(`${c.id}-segdrv-${y.businessId}`))
+                .map((r) => ({ id: r.businessId, label: r.name })),
+              answer: driver.businessId,
+              explain: `事業ごとの増減は、${rows.map((r) => `${r.name} ${r.change > 0 ? "+" : ""}${formatYen(r.change)}`).join("、")}でした（計算値：各事業の最新期 − 前期）。合計の増減 ${total > 0 ? "+" : ""}${formatYen(total)} のうち、${driverName}の増減が ${share}% を占めます（計算値：${driverName}の増減 ÷ 合計の増減）。金額は有価証券報告書の事業別情報の印字値です。`,
+              period: `${seg.previous.fiscalYear} → ${seg.fiscalYear}`,
+            });
+          }
         }
       }
-      if (latestRec.totalAssets !== null && latestRec.netAssets !== null && latestRec.netAssets > 0 && latestRec.totalAssets > latestRec.netAssets) {
-        const liabilities = latestRec.totalAssets - latestRec.netAssets;
-        const table: QuestionTable = {
-          caption: `${c.name}の貸借対照表の要約（${latestRec.fiscalYear}）。総資産と純資産は印字値、負債の行はその差から出した計算値です。`,
-          columns: ["項目", latestRec.fiscalYear],
-          rows: [
-            [latestRec.totalAssetsLabel ?? "総資産", formatYen(latestRec.totalAssets)],
-            ["負債（計算値）", formatYen(liabilities)],
-            [latestRec.netAssetsLabel ?? "純資産", formatYen(latestRec.netAssets)],
-          ],
-        };
-        const bsOptions = [
-          { id: "assets", label: latestRec.totalAssetsLabel ?? "総資産" },
-          { id: "liabilities", label: "負債（計算値）" },
-          { id: "net-assets", label: latestRec.netAssetsLabel ?? "純資産" },
-        ];
-        variants.push({
-          ...base,
-          id: `find-row-net-assets-${c.id}`,
-          kind: "find-row",
-          prompt: `${c.name}の貸借対照表の要約です。調達した資金のうち、返す必要のない部分——純資産の行はどれでしょう？`,
-          table,
-          options: bsOptions,
-          answer: "net-assets",
-          explain: `純資産は「${latestRec.netAssetsLabel ?? "純資産"}」の行です。右側（調達）のうち、借りたお金ではない部分が純資産で、総資産から純資産を引いた残りが負債です（計算値：${formatYen(latestRec.totalAssets)} − ${formatYen(latestRec.netAssets)} = ${formatYen(liabilities)}）。`,
-          period: latestRec.fiscalYear,
-        });
-        variants.push({
-          ...base,
-          id: `find-row-liabilities-${c.id}`,
-          kind: "find-row",
-          prompt: `${c.name}の貸借対照表の要約です。借りたお金など、返す義務のある調達をまとめた行はどれでしょう？`,
-          table,
-          options: bsOptions,
-          answer: "liabilities",
-          explain: `返す義務のある調達は「負債」の行です。貸借対照表の右側は、返す義務のある負債と、返す必要のない純資産に分かれます。負債の金額は、総資産から純資産を引いた計算値です（${formatYen(liabilities)}）。`,
-          period: latestRec.fiscalYear,
-        });
-      }
-      if (variants.length > 0) findRow.push(variants[hash(`${c.id}-findrow`) % variants.length]!);
     }
 
     // 関係の読み（段階）: two years of the three printed lines, when the middle line and the last line
@@ -413,6 +405,42 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
           sourceIds: [...new Set([...prevRec.sourceIds, ...curRec.sourceIds])],
           period: `${prevRec.fiscalYear} → ${curRec.fiscalYear}`,
         });
+      }
+
+      // 利益率の変化 (JCE-145): the middle line's margin on revenue, two periods — the reader compares
+      // the two ratios the printed figures make, not the amounts themselves. A move under a point is
+      // not asked: at that size the reading would be a coin toss between "moved" and "barely moved".
+      if (prevRec.revenue !== null && curRec.revenue !== null && prevRec.revenue > 0 && curRec.revenue > 0 && prevRec.profit !== null && curRec.profit !== null && curRec.profitLabel) {
+        const m0 = (prevRec.profit / prevRec.revenue) * 100;
+        const m1 = (curRec.profit / curRec.revenue) * 100;
+        const d = m1 - m0;
+        if (Math.abs(d) >= 1.0) {
+          const ptText = (Math.round(Math.abs(d) * 10) / 10).toFixed(1);
+          const pctText = (v: number) => `${(Math.round(v * 10) / 10).toFixed(1)}%`;
+          marginShift.push({
+            ...base,
+            id: `margin-shift-${c.id}`,
+            kind: "margin-shift",
+            prompt: `${c.name}の2期分です。${curRec.profitLabel}の利益率（${curRec.revenueLabel}に対する割合）は、どう動いたでしょう？`,
+            table: {
+              caption: `${c.name}の2期分。金額は有価証券報告書の印字値です。`,
+              columns: ["項目", prevRec.fiscalYear, curRec.fiscalYear],
+              rows: [
+                [curRec.revenueLabel, formatYen(prevRec.revenue), formatYen(curRec.revenue)],
+                [curRec.profitLabel, formatYen(prevRec.profit), formatYen(curRec.profit)],
+              ],
+            },
+            options: [
+              { id: "up", label: `利益率は約${ptText}ポイント上がった` },
+              { id: "down", label: `利益率は約${ptText}ポイント下がった` },
+              { id: "flat", label: "利益率はほとんど変わらなかった" },
+            ],
+            answer: d > 0 ? "up" : "down",
+            explain: `前期の利益率は ${pctText(m0)}、最新期は ${pctText(m1)} で、約${ptText}ポイント${d > 0 ? "上がりました" : "下がりました"}（計算値：各期の${curRec.profitLabel} ÷ ${curRec.revenueLabel}）。金額そのものではなく、売上に対する利益の割合の動きを読むのが利益率の読み方です。もとの金額は有価証券報告書の印字値です。`,
+            sourceIds: [...new Set([...prevRec.sourceIds, ...curRec.sourceIds])],
+            period: `${prevRec.fiscalYear} → ${curRec.fiscalYear}`,
+          });
+        }
       }
     }
 
@@ -674,6 +702,107 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
             period: stmt.fiscalYear,
           });
         }
+
+        // 投資とお金の流れ (JCE-145): the cash-flow rows the meaning layer reads (JCE-102/JCE-110) —
+        // operating cash flow, the filer's own fixed-asset acquisition outflow, and depreciation. The
+        // question is the relation between the three printed figures: whether the year's outlay ran
+        // above or below the year's wear, and whether the operating inflow covered the outlay. Both
+        // relations must be clear (a quarter apart, a tenth apart) or nothing is asked; the readings
+        // state relations only — no word judges the stance, and no intent is attributed.
+        const cf = stmt.cashFlowStatement ?? [];
+        const cfOpLine = cf.find((l) => l.role === "operating-cash-flow");
+        const capexLine = cf.find((l) => l.role === "capital-expenditure");
+        const depLine = cf.find((l) => l.role === "depreciation");
+        if (cfOpLine && capexLine && depLine && cfOpLine.amount > 0 && capexLine.amount !== 0 && depLine.amount > 0) {
+          const capex = Math.abs(capexLine.amount);
+          const againstDep = capex / depLine.amount;
+          const coverage = cfOpLine.amount / capex;
+          const aboveDep = againstDep >= 1.25 ? true : againstDep <= 0.8 ? false : null;
+          const covered = coverage >= 1.1 ? true : coverage <= 0.9 ? false : null;
+          if (aboveDep !== null && covered !== null) {
+            const ratioText = (v: number) => `${(Math.round(v * 100) / 100).toFixed(2)}倍`;
+            cfInvestment.push({
+              ...sbase,
+              id: `cf-investment-${c.id}`,
+              kind: "cf-investment",
+              prompt: `${c.name}のキャッシュ・フロー計算書の抜粋です。設備投資（${capexLine.label}）と減価償却費、営業キャッシュフローの関係として、正しい読みはどれでしょう？`,
+              table: excerpt([cfOpLine, depLine, capexLine], "連結キャッシュ・フロー計算書"),
+              options: [
+                { id: "up-covered", label: "設備投資は減価償却費を上回り、その支出は営業キャッシュフローの範囲内にある" },
+                { id: "up-uncovered", label: "設備投資は減価償却費を上回るが、営業キャッシュフローだけではまかなえていない" },
+                { id: "down-covered", label: "設備投資は減価償却費を下回り、営業キャッシュフローの範囲内にある" },
+                { id: "down-uncovered", label: "設備投資は減価償却費を下回り、なお営業キャッシュフローだけではまかなえていない" },
+              ],
+              answer: aboveDep ? (covered ? "up-covered" : "up-uncovered") : covered ? "down-covered" : "down-uncovered",
+              explain: `設備投資は ${formatYen(capex)} で、減価償却費 ${formatYen(depLine.amount)} の ${ratioText(againstDep)}です（計算値：設備投資 ÷ 減価償却費）。営業キャッシュフローは ${formatYen(cfOpLine.amount)} で、設備投資の ${ratioText(coverage)}です（計算値：営業キャッシュフロー ÷ 設備投資）。設備投資の金額は、キャッシュ・フロー計算書に支出として印字された「${capexLine.label}」の絶対値です。`,
+              period: stmt.fiscalYear,
+            });
+          }
+        }
+      }
+    }
+
+    // どの段が動かしたか (JCE-145): two years of the full income statement — the reader compares each
+    // stage's own change against the last line's move and names the stage that moved most. The stages
+    // are nested, so the question asks for the largest change among them, and it is asked only when
+    // one stage's change is unambiguous: half again the runner-up's, in the last line's direction,
+    // and at least half the last line's own change.
+    {
+      const stmts = [...(c.financialStatements ?? [])].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
+      const [prevStmt, curStmt] = stmts.length >= 2 ? (stmts.slice(-2) as [FinancialStatements, FinancialStatements]) : [undefined, undefined];
+      if (prevStmt && curStmt && prevStmt.fiscalYear !== curStmt.fiscalYear) {
+        const STAGE_ROLES: StatementRole[] = ["gross-profit", "operating-income", "ordinary-income", "income-before-income-taxes"];
+        const lineOf = (s: FinancialStatements, role: StatementRole) => s.incomeStatement.find((l) => l.role === role);
+        const netPrev = lineOf(prevStmt, "net-income");
+        const netCur = lineOf(curStmt, "net-income");
+        const stages = STAGE_ROLES.filter((role) => lineOf(prevStmt, role) && lineOf(curStmt, role)).map((role) => ({
+          role,
+          label: lineOf(curStmt, role)!.label,
+          prev: lineOf(prevStmt, role)!.amount,
+          cur: lineOf(curStmt, role)!.amount,
+          change: lineOf(curStmt, role)!.amount - lineOf(prevStmt, role)!.amount,
+        }));
+        if (netPrev && netCur && stages.length >= 3) {
+          const netChange = netCur.amount - netPrev.amount;
+          const byAbs = [...stages].sort((x, y) => Math.abs(y.change) - Math.abs(x.change));
+          const driver = byAbs[0]!;
+          const second = byAbs[1]!;
+          if (
+            netChange !== 0 && driver.change !== 0 &&
+            Math.sign(driver.change) === Math.sign(netChange) &&
+            Math.abs(driver.change) >= 1.5 * Math.abs(second.change) &&
+            Math.abs(driver.change) >= 0.5 * Math.abs(netChange)
+          ) {
+            const stmtSource = c.sources.find((s) => curStmt.sourceIds.includes(s.id)) ?? c.sources.find((s) => s.id === curStmt.sourceIds[0]);
+            if (stmtSource) {
+              const revPrev = lineOf(prevStmt, "revenue");
+              const revCur = lineOf(curStmt, "revenue");
+              stageDriver.push({
+                companyId: c.id,
+                companyName: c.name,
+                industry: primaryIndustry(c),
+                sourceIds: [...new Set([...prevStmt.sourceIds, ...curStmt.sourceIds])],
+                sourceTitle: stmtSource.title,
+                id: `stage-driver-${c.id}`,
+                kind: "stage-driver",
+                prompt: `${c.name}の損益計算書（2期分）の抜粋です。当期純利益の増減に対して、増減額がいちばん大きい段階はどれでしょう？`,
+                table: {
+                  caption: `${c.name}の連結損益計算書から抜粋。金額は有価証券報告書の印字値です。`,
+                  columns: ["項目", prevStmt.fiscalYear, curStmt.fiscalYear],
+                  rows: [
+                    ...(revPrev && revCur ? [[revCur.label, formatYen(revPrev.amount), formatYen(revCur.amount)]] : []),
+                    ...stages.map((s) => [s.label, formatYen(s.prev), formatYen(s.cur)]),
+                    [netCur.label, formatYen(netPrev.amount), formatYen(netCur.amount)],
+                  ],
+                },
+                options: stages.map((s) => ({ id: s.role, label: s.label })),
+                answer: driver.role,
+                explain: `段階ごとの増減は、${stages.map((s) => `${s.label} ${s.change > 0 ? "+" : ""}${formatYen(s.change)}`).join("、")}でした（計算値：各段階の最新期 − 前期）。当期純利益の増減は ${netChange > 0 ? "+" : ""}${formatYen(netChange)} で、いちばん大きく動いたのは${driver.label}の段です。各段階はその上の段階を含んで積み上がるため、増減の大きさを段ごとに比べるのが、この読み方です。`,
+                period: `${prevStmt.fiscalYear} → ${curStmt.fiscalYear}`,
+              });
+            }
+          }
+        }
       }
     }
 
@@ -722,7 +851,6 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
     ...growthEmployees.slice(0, CAP),
     ...quarterlyDirection.slice(0, CAP),
     ...segmentTop.slice(0, CAP),
-    ...findRow.slice(0, CAP),
     ...relationStages.slice(0, CAP),
     ...relationNetAssets.slice(0, CAP),
     ...labelReading.slice(0, CAP),
@@ -733,5 +861,9 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
     ...detailBorrowings.slice(0, CAP),
     ...detailGoodwill.slice(0, CAP),
     ...detailDepreciation.slice(0, CAP),
+    ...marginShift.slice(0, CAP),
+    ...stageDriver.slice(0, CAP),
+    ...segmentDriver.slice(0, CAP),
+    ...cfInvestment.slice(0, CAP),
   ];
 }
