@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 /** 見比べ (JCE-061): the page is static; the companies come from ?ids=… and are drawn in the browser from /compare.json. */
 export default function ComparePage() {
-  // Start the light index download with the page itself (JCE-148): the tool used to wait for hydration
+  // Start the light index download with the page itself (JCE-149): the tool used to wait for hydration
   // before its first fetch began, which left the page on 「読み込んでいます…」 for seconds.
   preload("/compare-index.json", { as: "fetch", crossOrigin: "anonymous" });
   return (

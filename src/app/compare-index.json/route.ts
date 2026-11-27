@@ -2,7 +2,7 @@ import { buildCompareLightIndex } from "@/lib/compare-index";
 import { companyRepository, industryRepository } from "@/lib/repositories";
 
 /**
- * The light 見比べ index (JCE-148): id, name, industry and revenue for every released company — what the
+ * The light 見比べ index (JCE-149): id, name, industry and revenue for every released company — what the
  * tool needs to offer search and peer suggestions before any full row is downloaded.
  */
 export const dynamic = "force-static";

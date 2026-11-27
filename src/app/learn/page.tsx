@@ -33,7 +33,7 @@ const STEPS: { n: number; title: string; text: string; href: string; link: strin
 ];
 
 export default function LearnPage() {
-  // Start the course data downloads with the page itself (JCE-148): the path used to sit on
+  // Start the course data downloads with the page itself (JCE-149): the path used to sit on
   // 「レッスンを用意しています…」 while hydration finished before the first fetch even began.
   preload("/lessons.json", { as: "fetch", crossOrigin: "anonymous" });
   preload("/predictions.json", { as: "fetch", crossOrigin: "anonymous" });

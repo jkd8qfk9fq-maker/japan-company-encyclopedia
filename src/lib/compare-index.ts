@@ -33,7 +33,7 @@ export function buildCompareIndex(companies: Company[], industryName: (id: strin
   return { asOf, rows: companies.map((c) => compareRow(c, industryName)) };
 }
 
-/** The light index (JCE-148): the same rows, cut down to what searching and peer suggestions read. */
+/** The light index (JCE-149): the same rows, cut down to what searching and peer suggestions read. */
 export function buildCompareLightIndex(companies: Company[], industryName: (id: string) => string | null, asOf: string): CompareLightIndex {
   return {
     asOf,
@@ -44,7 +44,7 @@ export function buildCompareLightIndex(companies: Company[], industryName: (id: 
   };
 }
 
-/** One shard of the full rows (JCE-148): only the companies whose id hashes to `shard`. */
+/** One shard of the full rows (JCE-149): only the companies whose id hashes to `shard`. */
 export function buildCompareShard(companies: Company[], industryName: (id: string) => string | null, asOf: string, shard: number): CompareShard {
   return { asOf, rows: companies.filter((c) => compareShardOf(c.id) === shard).map((c) => compareRow(c, industryName)) };
 }

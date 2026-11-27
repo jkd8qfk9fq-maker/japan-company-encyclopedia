@@ -30,7 +30,7 @@ const METRICS: Metric[] = [
   { key: "overseas", label: "海外売上高比率", note: () => "計算値", format: (v) => `${v}%` },
 ];
 
-/** The computed figures' formulas, stated once under the table instead of inside every row heading (JCE-148). */
+/** The computed figures' formulas, stated once under the table instead of inside every row heading (JCE-149). */
 const METRIC_DEFINITIONS =
   "計算値の定義：純利益率＝純利益 ÷ 売上高（同じ期）。5期の売上高の伸び＝最新期の売上高 ÷ 5期前の売上高。海外売上高比率＝国内以外の地域の売上 ÷ 地域別の売上の合計。";
 
@@ -46,7 +46,7 @@ export function CompareTool() {
 
   useEffect(() => {
     // The address is read after hydration: the static page cannot know it, and a shared link must open as sent.
-    // The ids are known as soon as the address is read — they no longer wait on any download (JCE-148).
+    // The ids are known as soon as the address is read — they no longer wait on any download (JCE-149).
     // (Delivered through a promise callback like the fetches below: a synchronous setState in the effect
     // body is what the hooks lint forbids, and the ids still land before the first paint settles.)
     void Promise.resolve(parseIds(new URLSearchParams(window.location.search).get("ids"))).then(setIds);
@@ -55,7 +55,7 @@ export function CompareTool() {
       .then(setLight, () => setFailed(true));
   }, []);
 
-  // Full rows arrive per shard (JCE-148): only the shards holding the chosen companies are downloaded —
+  // Full rows arrive per shard (JCE-149): only the shards holding the chosen companies are downloaded —
   // at most three — and each is kept for the rest of the visit, so adding a company from an already
   // downloaded shard costs nothing.
   useEffect(() => {

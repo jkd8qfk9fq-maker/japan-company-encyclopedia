@@ -38,7 +38,7 @@ export type CompareLightIndex = { asOf: string; rows: CompareLightRow[] };
 export type CompareShard = { asOf: string; rows: CompareRow[] };
 
 /**
- * The full index is split into this many shards (JCE-148): the tool downloads only the shards holding the
+ * The full index is split into this many shards (JCE-149): the tool downloads only the shards holding the
  * companies being compared — two or three companies live in at most three shards — instead of every
  * company's row before anything can be shown. The hash is a plain string hash, identical on the server
  * that builds the shards and in the browser that asks for them; it must never change casually, or a shard

@@ -3,7 +3,7 @@ import { COMPARE_SHARDS } from "@/lib/compare";
 import { companyRepository, industryRepository } from "@/lib/repositories";
 
 /**
- * One shard of the full 見比べ rows (JCE-148): the tool downloads only the shards holding the companies
+ * One shard of the full 見比べ rows (JCE-149): the tool downloads only the shards holding the companies
  * being compared, so the page no longer waits on every company's row before it can show two or three.
  */
 export const dynamic = "force-static";
