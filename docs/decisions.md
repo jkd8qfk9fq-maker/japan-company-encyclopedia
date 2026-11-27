@@ -2594,6 +2594,8 @@ JCE-144 の継続。採番は当初 JCE-145 としたが、main 側で JCE-145�
 
 **監査第1部の修正**：推移グラフの軸上限・下限に余白を持たせ数値ラベルが切れないようにした（major1）。「[object Object]」は、モバイル見出しで React ノードを文字列連結していた箇所をラベル化して直し、あわせて表示層（L）に同文字列を除去するガードを入れた（データ側の実例は登録部へ、major2）。英語表示の空白抜け連結（「61companies」等）は対象15ファイルでテンプレートリテラル化した（major4）。赤字企業の予測は仕様（正の基準値のみ予測可）のため、基準値と理由の説明文を追加した（major5）。レッスンのフィードバックは sticky の重なりをやめ、通常フロー配置＋表示時のスクロールに変更した（major6）。企業ページの目次に「分析・レポート」への導線を追加（minor9）。復習件数は期限到来分を区別して表示（minor12）。「今日の訓練」は目標達成済みと完了を区別（minor13）。進捗バーの off-by-one を修正（minor14）。学習画面の選択色・CTA をブランド紺 #0D2B4C に統一（minor17・polish21）。単元見出しの aria 構造の重複を解消（minor24）。フッター上余白を縮小（polish22、空白の発生要素を特定できないため部分対応）。レポート指標カードの大数値は折り返しを禁止し文字サイズを段階化（polish23）。
 
+**[object Object] 破損の再発防止（登録部からの申し送り）**：破損の発生源は反映コミット e365cf99b で、フラグメントの needsReview がオブジェクト形式（{topic, detail, sourceIds, locator}）のとき、merge-fragments.mjs が `${stage}: ${w}` で文字列化し、status.notes とリサーチログに「[object Object]」として書き込んでいた（32社分は登録部がフラグメント原データから復元済み）。merge-fragments に reviewNoteText を新設し、オブジェクト形式を「topic：detail（出典: …）（箇所: …）」のテキストへ正規化、topic も detail もない項目は taxonomyGaps と同じ作法で警告に落として無視する。warnings の項目も同じ正規化を通す。あわせて、status 確定前に "[object Object]" を含む注記があればマージ自体を失敗させる assertNoStringifiedNotes を入れ、finalize.mjs の list() も非文字列を JSON で描画する多重防御にした。データファイル自体は触っていない（登録部の管轄）。
+
 **変更しなかったもの**：minor8（前期比 ▲▼ の記号慣習）と minor11（キャップストーンの前提ロック）はサイト方針・プロダクト判断のため提案として実装ログに記録。major7（印刷ボタン）は運営者が実機で確認済みのため環境限界として記録しコードは触らない。B1・B3（診断サブドメインの課金導線とスコア表示）は別アプリ、M1（Stripe の通貨・言語表示）はアカウント側設定のため、本リポジトリでは扱わない。m4（業界ページの並び替え）は第2部の割当外として未着手。
 
 詳細な項目別対応表は実装ログ（goals/japan-company-encyclopedia-market-expansion/hidden_files/overnight_2026-11-27_implementation.md）に残す。

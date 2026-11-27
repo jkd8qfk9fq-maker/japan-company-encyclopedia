@@ -406,7 +406,10 @@ function researchLog(entry, validation, merged) {
   const stageLines = Object.entries(state.stages)
     .map(([stage, s]) => `| ${stage} | ${s.status} | ${s.attempts ?? 0} | ${cell(s.note)} |`)
     .join("\n");
-  const list = (items) => (items.length === 0 ? "なし。" : items.map((w) => `- ${w}`).join("\n"));
+  // Non-strings render as JSON: an object item must never reach the log as "[object Object]"
+  // (the e365cf99b failure — merge-fragments normalizes fragment notes before they get here,
+  // and this is the document layer's own guard in case a list ever carries an object again).
+  const list = (items) => (items.length === 0 ? "なし。" : items.map((w) => `- ${typeof w === "string" ? w : JSON.stringify(w)}`).join("\n"));
 
   return `# ${entry.name ?? entry.officialName} — research log
 
