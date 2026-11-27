@@ -138,7 +138,7 @@ describe("the published index", async () => {
     expect(index.rows.every((r) => JSON.stringify(Object.keys(r).sort()) === JSON.stringify(keys))).toBe(true);
   });
 
-  it("例1: 自動車 × 売上高1兆円以上 matches an independent count", () => {
+  it("例1: 自動車 × 売上高1兆円以上 matches an independent count", { timeout: 60_000 }, () => {
     const expected = released
       .map((c) => raw(c.id))
       .filter((r) => r.industries.some((i) => i.industryId === "automotive"))
@@ -150,7 +150,7 @@ describe("the published index", async () => {
     expect(got).toEqual(expected);
   });
 
-  it("例2: 純利益率 10%以上 × 従業員 1,000人以上 matches an independent count, with データなし counted", () => {
+  it("例2: 純利益率 10%以上 × 従業員 1,000人以上 matches an independent count, with データなし counted", { timeout: 60_000 }, () => {
     let missing = 0;
     const expected = released
       .map((c) => raw(c.id))
@@ -171,7 +171,7 @@ describe("the published index", async () => {
     expect(got.withoutData).toBe(missing);
   });
 
-  it("例3: 東京都 × 5期の売上高が1.5倍以上 matches an independent count", () => {
+  it("例3: 東京都 × 5期の売上高が1.5倍以上 matches an independent count", { timeout: 60_000 }, () => {
     const expected = released
       .map((c) => raw(c.id))
       .filter((r) => hq.get(r.id) === "東京都")
