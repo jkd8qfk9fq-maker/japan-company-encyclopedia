@@ -1,9 +1,11 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { handleBilling, planOfEntitlement, verifyStripeSignature } from "../worker/billing/api";
+import { ANALYSIS_PRODUCT_ID, handleBilling, planKindOf, planOfEntitlement, PREMIUM_PRODUCT_ID, verifyStripeSignature } from "../worker/billing/api";
 import { memoryBillingStore } from "../worker/billing/store";
-import { checkPlan, OWN_PLAN_ENDPOINT, PLAN_ENDPOINT } from "@/lib/plan";
+import { analysisEntitled, checkPlan, OWN_PLAN_ENDPOINT, PLAN_ENDPOINT } from "@/lib/plan";
+import type { StoredPlan } from "@/lib/storage/stores";
 
 /** JCE-100: this site's own billing record — webhook intake, the entitlement store, its /api/plan, and the client's move to it. */
+/** JCE-140: the record also holds the subscription's product, and the two plans are judged separately. */
 
 const ORIGIN = "https://kigyo-hyakka.com";
 const SECRET = "whsec_test_secret_for_billing";
@@ -12,6 +14,9 @@ const CODE = "sub_1UbAI9Fm3JfKaAkuMuVK6CZs";
 const PERIOD_END_S = 1798761600; // 2027-01-01T00:00:00Z — after NOW (2026-11-23), so a plan ending then is paid
 const PERIOD_END_MS = PERIOD_END_S * 1000;
 const CHECK_AFTER_MS = NOW.getTime() + 3 * 24 * 60 * 60 * 1000; // min(paidUntil, now + 3 days) lands here
+// The prices as measured at Stripe on 2026-11-26: the β plan's price and the ¥390 plan's current price.
+const BETA_PRICE = "price_1UeI7zFm3JfKaAkuHmwYpG9X";
+const PREMIUM_PRICE = "price_1UeusrFm3JfKaAkuWNbxGdMb";
 
 const hex = (bytes: Uint8Array) => [...bytes].map((b) => b.toString(16).padStart(2, "0")).join("");
 
@@ -57,9 +62,18 @@ describe("verifyStripeSignature", () => {
 describe("the entitlement store", () => {
   it("keeps a field an event does not carry, and reports each event id once", async () => {
     const store = memoryBillingStore();
-    await store.upsert({ code: CODE, customerId: "cus_1", email: "a@example.jp", status: "active", paidUntil: 100, source: "stripe", now: NOW.toISOString() });
-    await store.upsert({ code: CODE, customerId: null, email: null, status: "active", paidUntil: 200, source: "stripe", now: NOW.toISOString() });
-    expect(await store.get(CODE)).toEqual({ code: CODE, customerId: "cus_1", email: "a@example.jp", status: "active", paidUntil: 200, source: "stripe" });
+    await store.upsert({ code: CODE, customerId: "cus_1", email: "a@example.jp", status: "active", paidUntil: 100, source: "stripe", productId: ANALYSIS_PRODUCT_ID, priceId: BETA_PRICE, now: NOW.toISOString() });
+    await store.upsert({ code: CODE, customerId: null, email: null, status: "active", paidUntil: 200, source: "stripe", productId: null, priceId: null, now: NOW.toISOString() });
+    expect(await store.get(CODE)).toEqual({
+      code: CODE,
+      customerId: "cus_1",
+      email: "a@example.jp",
+      status: "active",
+      paidUntil: 200,
+      source: "stripe",
+      productId: ANALYSIS_PRODUCT_ID,
+      priceId: BETA_PRICE,
+    });
     expect(await store.markEvent("evt_1", "invoice.paid", NOW.toISOString())).toBe(true);
     expect(await store.markEvent("evt_1", "invoice.paid", NOW.toISOString())).toBe(false);
     expect(await store.get("sub_unknown")).toBeNull();
@@ -67,17 +81,26 @@ describe("the entitlement store", () => {
 });
 
 describe("planOfEntitlement — the borrowed check's rule, on this record", () => {
-  const base = { code: CODE, customerId: null, email: null, source: "stripe" };
+  const base = { code: CODE, customerId: null, email: null, source: "stripe", productId: null, priceId: null };
   it("counts active and trialing as paid, until the period ends", () => {
     expect(planOfEntitlement({ ...base, status: "trialing", paidUntil: PERIOD_END_MS }, NOW.getTime())).toEqual({
       active: true,
       code: CODE,
       paidUntil: PERIOD_END_MS,
       checkAfter: Math.min(PERIOD_END_MS, NOW.getTime() + 3 * 24 * 60 * 60 * 1000),
+      plan: "premium", // no product recorded: the analysis layer stays closed (JCE-140)
     });
     expect(planOfEntitlement({ ...base, status: "active", paidUntil: NOW.getTime() }, NOW.getTime())).toEqual({ active: false });
     expect(planOfEntitlement({ ...base, status: "past_due", paidUntil: PERIOD_END_MS }, NOW.getTime())).toEqual({ active: false });
     expect(planOfEntitlement({ ...base, status: "canceled", paidUntil: PERIOD_END_MS }, NOW.getTime())).toEqual({ active: false });
+  });
+
+  it("names the plan by the recorded product (JCE-140): the β product is analysis, everything else premium", () => {
+    const paid = { status: "active", paidUntil: PERIOD_END_MS };
+    expect(planOfEntitlement({ ...base, ...paid, productId: ANALYSIS_PRODUCT_ID, priceId: BETA_PRICE }, NOW.getTime())).toMatchObject({ active: true, plan: "analysis" });
+    expect(planOfEntitlement({ ...base, ...paid, productId: PREMIUM_PRODUCT_ID, priceId: PREMIUM_PRICE }, NOW.getTime())).toMatchObject({ active: true, plan: "premium" });
+    expect(planOfEntitlement({ ...base, ...paid, productId: "prod_unknown" }, NOW.getTime())).toMatchObject({ active: true, plan: "premium" });
+    expect(planKindOf({ ...base, ...paid, productId: null })).toBe("premium");
   });
 });
 
@@ -96,7 +119,69 @@ describe("handleBilling", () => {
     const res = await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), env, store, NOW);
     expect(res.status).toBe(200);
     const plan = await handleBilling(planRequest(CODE), env, store, NOW);
-    expect(await plan.json()).toEqual({ active: true, code: CODE, paidUntil: PERIOD_END_MS, checkAfter: CHECK_AFTER_MS });
+    // No item on the event, so no product is recorded and the code reads as premium (JCE-140).
+    expect(await plan.json()).toEqual({ active: true, code: CODE, paidUntil: PERIOD_END_MS, checkAfter: CHECK_AFTER_MS, plan: "premium" });
+  });
+
+  it("records a β subscription's product, and /api/plan then answers plan: analysis (JCE-140)", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const body = subscriptionEvent("evt_1", "customer.subscription.created", {
+      status: "active",
+      current_period_end: PERIOD_END_S,
+      items: { data: [{ price: { id: BETA_PRICE, product: ANALYSIS_PRODUCT_ID }, current_period_end: PERIOD_END_S }] },
+    });
+    const res = await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), env, store, NOW);
+    expect(res.status).toBe(200);
+    const ent = await store.get(CODE);
+    expect(ent?.productId).toBe(ANALYSIS_PRODUCT_ID);
+    expect(ent?.priceId).toBe(BETA_PRICE);
+    const plan = await handleBilling(planRequest(CODE), env, store, NOW);
+    expect(await plan.json()).toEqual({ active: true, code: CODE, paidUntil: PERIOD_END_MS, checkAfter: CHECK_AFTER_MS, plan: "analysis" });
+    // And on the client, that kind is the one that opens the analysis layer.
+    const stored: StoredPlan = { code: CODE, paidUntil: PERIOD_END_MS, checkAfter: CHECK_AFTER_MS, kind: "analysis" };
+    expect(analysisEntitled(stored, NOW.getTime())).toBe(true);
+  });
+
+  it("records a ¥390 subscription as plan: premium, which never opens the analysis layer (JCE-140)", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const body = subscriptionEvent("evt_1", "customer.subscription.created", {
+      status: "active",
+      current_period_end: PERIOD_END_S,
+      items: { data: [{ price: { id: PREMIUM_PRICE, product: PREMIUM_PRODUCT_ID }, current_period_end: PERIOD_END_S }] },
+    });
+    await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), env, store, NOW);
+    const plan = await handleBilling(planRequest(CODE), env, store, NOW);
+    expect(await plan.json()).toEqual({ active: true, code: CODE, paidUntil: PERIOD_END_MS, checkAfter: CHECK_AFTER_MS, plan: "premium" });
+    const stored: StoredPlan = { code: CODE, paidUntil: PERIOD_END_MS, checkAfter: CHECK_AFTER_MS, kind: "premium" };
+    expect(analysisEntitled(stored, NOW.getTime())).toBe(false);
+  });
+
+  it("lets invoice.paid fill in the product its line names, when the subscription event carried none (JCE-140)", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const created = subscriptionEvent("evt_1", "customer.subscription.created", { status: "active", current_period_end: PERIOD_END_S });
+    await handleBilling(await webhookRequest(created, await sign(SECRET, created, NOW.getTime())), env, store, NOW);
+    expect((await store.get(CODE))?.productId).toBeNull();
+    const invoice = JSON.stringify({
+      id: "evt_2",
+      type: "invoice.paid",
+      data: {
+        object: {
+          subscription: CODE,
+          customer: "cus_VcP6IAqHA649zF",
+          lines: { data: [{ period: { end: PERIOD_END_S }, price: { id: BETA_PRICE, product: ANALYSIS_PRODUCT_ID } }] },
+        },
+      },
+    });
+    await handleBilling(await webhookRequest(invoice, await sign(SECRET, invoice, NOW.getTime())), env, store, NOW);
+    const ent = await store.get(CODE);
+    expect(ent?.productId).toBe(ANALYSIS_PRODUCT_ID);
+    expect(ent?.priceId).toBe(BETA_PRICE);
+    expect(ent?.status).toBe("active"); // the invoice still does not move the recorded status
+    const plan = await handleBilling(planRequest(CODE), env, store, NOW);
+    expect(await plan.json()).toMatchObject({ active: true, plan: "analysis" });
   });
 
   it("rejects a webhook whose signature does not match", async () => {
@@ -176,19 +261,28 @@ describe("checkPlan — the client's move to this site's own check (JCE-100)", (
 
   it("takes this site's own answer when it says paid, without asking the 診断 site", async () => {
     const calls = stubFetch({ [OWN_PLAN_ENDPOINT]: { body: paid }, [PLAN_ENDPOINT]: { body: { active: false } } });
-    expect(await checkPlan(CODE)).toEqual(paid);
+    // The stub's answer predates JCE-140 (no plan field): the kind settles as premium, never analysis.
+    expect(await checkPlan(CODE)).toEqual({ ...paid, plan: "premium" });
+    expect(calls).toEqual([OWN_PLAN_ENDPOINT]);
+  });
+
+  it("carries the kind this site's own record answers (JCE-140): a β code stays analysis", async () => {
+    const calls = stubFetch({ [OWN_PLAN_ENDPOINT]: { body: { ...paid, plan: "analysis" } }, [PLAN_ENDPOINT]: { body: paid } });
+    expect(await checkPlan(CODE)).toEqual({ ...paid, plan: "analysis" });
     expect(calls).toEqual([OWN_PLAN_ENDPOINT]);
   });
 
   it("still opens a code only the borrowed check knows (a code this record does not hold yet)", async () => {
     stubFetch({ [OWN_PLAN_ENDPOINT]: { body: { active: false } }, [PLAN_ENDPOINT]: { body: paid } });
-    expect(await checkPlan(CODE)).toEqual(paid);
+    // The borrowed check exists for the ¥390 plan, so its word makes the code premium — it opens the
+    // premium benefits, never the analysis layer (JCE-140).
+    expect(await checkPlan(CODE)).toEqual({ ...paid, plan: "premium" });
   });
 
   it("falls back when this site's endpoint is not live yet, and reports not-paid when neither says paid", async () => {
     stubFetch({ [OWN_PLAN_ENDPOINT]: { status: 503 }, [PLAN_ENDPOINT]: { body: { active: false } } });
     expect(await checkPlan(CODE)).toEqual({ active: false });
     stubFetch({ [OWN_PLAN_ENDPOINT]: "throw", [PLAN_ENDPOINT]: { body: paid } });
-    expect(await checkPlan(CODE)).toEqual(paid);
+    expect(await checkPlan(CODE)).toEqual({ ...paid, plan: "premium" });
   });
 });

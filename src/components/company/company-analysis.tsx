@@ -173,11 +173,15 @@ export function CompanyAnalysisSection({
   company,
   companies,
   folded = false,
+  openFolds = false,
   analysis: given,
 }: {
   company: Company;
   companies: Company[];
   folded?: boolean;
+  /** The print page (JCE-135): the folds are rendered open from the start, so nothing on the
+   * sheet depends on a print event expanding them. Only meaningful together with `folded`. */
+  openFolds?: boolean;
   /** The report computes the analysis once for its own summary and passes it here. */
   analysis?: CompanyAnalysis;
 }) {
@@ -235,7 +239,7 @@ export function CompanyAnalysisSection({
             </>
           );
           return folded ? (
-            <details key={p.id} className="group rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
+            <details key={p.id} open={openFolds || undefined} className="group rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-3 [&::-webkit-details-marker]:hidden">
                 <span>
                   <span className="block font-serif text-base font-semibold"><L s={p.title} /></span>
@@ -352,7 +356,7 @@ export function CompanyAnalysisSection({
         </AnalysisGate>
         );
         return folded ? (
-          <details className="group mt-3 rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
+          <details open={openFolds || undefined} className="group mt-3 rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
             <summary className="flex cursor-pointer list-none items-start justify-between gap-3 [&::-webkit-details-marker]:hidden">
               <span>
                 <span className="block font-serif text-base font-semibold"><T m={{ ja: "分布の全体像・推移・経済指標", en: "Full distribution, trends, and economic indicators" }} /></span>
