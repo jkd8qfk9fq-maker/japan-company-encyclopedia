@@ -195,15 +195,25 @@ async function handleWebhook(request: Request, env: BillingEnv, store: BillingSt
   if (typeof event.id !== "string" || typeof event.type !== "string") return json({ error: "body" }, 400);
   const nowIso = now.toISOString();
   // Stripe redelivers; the second delivery of an event must change nothing.
-  if (!(await store.markEvent(event.id, event.type, nowIso))) return json({ received: true, duplicate: true });
+  if (await store.hasEvent(event.id)) return json({ received: true, duplicate: true });
   const object = (event.data?.object ?? {}) as Record<string, unknown>;
-  if (event.type === "customer.subscription.created" || event.type === "customer.subscription.updated") {
-    await applySubscription(store, object as StripeSubscription, false, nowIso);
-  } else if (event.type === "customer.subscription.deleted") {
-    await applySubscription(store, object as StripeSubscription, true, nowIso);
-  } else if (event.type === "invoice.paid") {
-    await applyInvoicePaid(store, object as StripeInvoice, nowIso);
+  // JCE-151: the event is recorded only after it has been applied. Recording it first (the JCE-100
+  // order) lost the event for good when the apply then failed — e.g. while a migration such as 0005
+  // was still unapplied, the upsert failed, Stripe's redelivery was answered "duplicate", and the
+  // subscriber's entitlement was never written. A failed apply now answers 500 with nothing
+  // recorded, so Stripe redelivers and the retry can succeed.
+  try {
+    if (event.type === "customer.subscription.created" || event.type === "customer.subscription.updated") {
+      await applySubscription(store, object as StripeSubscription, false, nowIso);
+    } else if (event.type === "customer.subscription.deleted") {
+      await applySubscription(store, object as StripeSubscription, true, nowIso);
+    } else if (event.type === "invoice.paid") {
+      await applyInvoicePaid(store, object as StripeInvoice, nowIso);
+    }
+  } catch {
+    return json({ error: "store" }, 500);
   }
+  await store.markEvent(event.id, event.type, nowIso);
   return json({ received: true });
 }
 
