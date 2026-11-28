@@ -20,7 +20,7 @@ export function readingMinutes(feature: Feature): number {
 }
 
 /**
- * The bar value a table's lead rows carry (JCE-147): the largest absolute bar, or null when the table draws
+ * The bar value a table's lead rows carry (JCE-150): the largest absolute bar, or null when the table draws
  * no bars at all (no rows, a row without a bar, or all bars zero — the same condition BarTable has always
  * used). Rows at this value are drawn in the data blue; the rest stay grey, so the eye lands on the largest
  * figure first. The bar still only draws the printed value beside it.

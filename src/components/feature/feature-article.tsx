@@ -19,7 +19,7 @@ import { L } from "@/components/i18n/label";
 /**
  * A feature, laid out answer-first (JCE-111). Data-led sites that hold readers put the finding before the
  * argument: the headline figures and 「この特集のポイント」 come first, the sections are listed and linkable
- * (a sticky table of contents on wide screens, a sticky row of chips on phones — JCE-147), and a table of
+ * (a sticky table of contents on wide screens, a sticky row of chips on phones — JCE-150), and a table of
  * numbers is shown as bars with the printed value beside each — the bar only draws the value, it carries no
  * figure of its own, and the largest bars are drawn in the data blue so the ranking reads by colour too.
  * Long tables show their first rows and fold the rest, so the page does not become a scroll through a list.
@@ -33,7 +33,7 @@ type TableRow = Extract<FeatureBlock, { type: "data-table" }>["rows"][number];
 function BarRow({ row, max, hasBars, lead, rest }: { row: TableRow; max: number; hasBars: boolean; lead: boolean; rest: string[] }) {
   // Name and value on one line, the bar full width beneath: on a phone a bar squeezed between the two was a few
   // pixels wide and could not be compared. The lead rows — the table's largest bars — are drawn in the data
-  // blue and the rest in grey (JCE-147), so the ranking reads by colour as well as by length.
+  // blue and the rest in grey (JCE-150), so the ranking reads by colour as well as by length.
   return (
     <li className="py-3">
       <div className="flex items-baseline justify-between gap-3">
@@ -192,7 +192,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
           )}
 
           {sections.length > 0 && (
-            // On phones the table of contents is a sticky row of chips (JCE-147): it stays under the header
+            // On phones the table of contents is a sticky row of chips (JCE-150): it stays under the header
             // while reading, so where you are and what is left are always one tap away. Anchor links only —
             // the wide-screen sticky list beside the article remains the full contents.
             <nav aria-label="目次" className="sticky top-[calc(var(--header-height)+0.5rem)] z-20 mt-6 overflow-x-auto rounded-full border border-border bg-background/95 px-2 py-2 shadow-sm backdrop-blur [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">

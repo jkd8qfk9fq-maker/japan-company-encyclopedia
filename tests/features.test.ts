@@ -257,7 +257,7 @@ describe("features (JCE-074)", () => {
   });
 });
 
-describe("feature bar lead rows (JCE-147)", () => {
+describe("feature bar lead rows (JCE-150)", () => {
   // The pure rule (which value leads) is unit-tested in tests/feature-meta.test.ts, which needs no
   // company data; this file checks the rule against the published features themselves.
   it("every published feature table with bars has a lead value among its rows", () => {
