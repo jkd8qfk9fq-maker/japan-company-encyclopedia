@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChartColumn, Compass, Layers, Network, SlidersHorizontal, Sparkles, type LucideIcon } from "lucide-react";
-import { HUB_IMAGES, INDUSTRY_IMAGES } from "@/assets/industries";
+import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { CompanyMark } from "@/components/company/company-mark";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { T } from "@/components/i18n/t";
@@ -108,28 +108,14 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO (2026-11-23 redesign, after the operator's mockup): the promise in one line over the night photograph,
-          the search right under it, then the site's own figures as a strip of tiles — the place a market ticker
-          would sit on a finance site. Never a share price or index (invariant 4): only counts of what the
-          encyclopedia holds, each computed from the entries. */}
-      <section aria-labelledby="home-hero" className="relative overflow-hidden border-b border-border">
-        <Image src={HUB_IMAGES.map} alt="" fill priority placeholder="blur" sizes="100vw" className="object-cover opacity-45" />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
-        <div className="relative mx-auto max-w-7xl px-4 pt-7 pb-5 md:px-8 md:pt-14 md:pb-8">
-          <h1 id="home-hero" className="font-serif text-[1.875rem] leading-[1.3] font-semibold tracking-[0.04em] text-balance md:text-[2.75rem]">
-            <span data-l="ja">
-              日本企業を、
-              <br />
-              構造から理解する。
-            </span>
-            <span data-l="en">
-              Understand Japanese companies,
-              <br />
-              from how they are built.
-            </span>
-          </h1>
-          <p className="mt-2 text-sm text-foreground/80 md:text-base"><T m={{ ja: "何をしている会社か、誰とつながっているか。有価証券報告書から。", en: "What each company does, and who it is tied to — from its annual securities report." }} /></p>
-          <div className="mt-5 max-w-2xl">
+      {/* OPENING (JCE-154): no hero. The headline, the sub-line and the night photograph are gone at the
+          operator's instruction — the service is a SaaS its readers already understand, so the page opens
+          with working content instead of a promise: the search first, then the site's own figures as a
+          strip of tiles — the place a market ticker would sit on a finance site. Never a share price or
+          index (invariant 4): only counts of what the encyclopedia holds, each computed from the entries. */}
+      <section aria-label="検索と数字 / Search and figures" className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 pt-4 pb-4 md:px-8 md:pt-6 md:pb-6">
+          <div className="max-w-2xl">
             <SearchSuggest id="home-search" variant="hero" />
           </div>
           {examples.length > 0 && (
