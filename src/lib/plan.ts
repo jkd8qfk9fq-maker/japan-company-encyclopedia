@@ -65,6 +65,19 @@ export const ANALYSIS_FEATURES_OPEN = true;
 export function analysisEntitled(plan: StoredPlan | null, now = Date.now()): boolean {
   return ANALYSIS_FEATURES_OPEN && plan !== null && plan.kind === "analysis" && plan.paidUntil > now;
 }
+
+/**
+ * Whether this browser's stored plan removes ads (the rule of JCE-064, named in JCE-153): any real paid
+ * plan counts — the ¥1,100 analysis plan and the ¥390 premium plan alike, the union rule of JCE-140 —
+ * while it is still within its paid period. Unlike the analysis layer, the plan KIND does not matter
+ * here: paying is what removes ads. PREMIUM_FEATURES_OPEN never enters into it — that flag opens the
+ * gated features to everyone, it does not make a reader a payer, so a reader who has not paid keeps
+ * seeing ads while the gates stand open. Kept pure, like `analysisEntitled`, so the rule the ad unit
+ * renders and loads its script by is the rule the tests hold.
+ */
+export function adsSuppressed(plan: StoredPlan | null, now = Date.now()): boolean {
+  return plan !== null && plan.paidUntil > now;
+}
 const COOKIE = "yugenq_plan";
 const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
 
