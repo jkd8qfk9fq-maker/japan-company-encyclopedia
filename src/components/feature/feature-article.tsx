@@ -15,6 +15,7 @@ import { ReadingProgress } from "./reading-progress";
 import { T } from "@/components/i18n/t";
 import { F } from "@/components/i18n/figure";
 import { L } from "@/components/i18n/label";
+import { CL } from "@/components/i18n/content-label";
 
 /**
  * A feature, laid out answer-first (JCE-111). Data-led sites that hold readers put the finding before the
@@ -29,14 +30,14 @@ const VISIBLE_ROWS = 8;
 
 type TableRow = Extract<FeatureBlock, { type: "data-table" }>["rows"][number];
 
-function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBars: boolean; rest: string[] }) {
+async function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBars: boolean; rest: string[] }) {
   // Name and value on one line, the bar full width beneath: on a phone a bar squeezed between the two was a few
   // pixels wide and could not be compared. The bar uses the text colour so it reads in both themes.
   return (
     <li className="py-3">
       <div className="flex items-baseline justify-between gap-3">
         <span className="min-w-0 text-[0.9375rem] leading-snug font-medium">
-          {row.href ? <Link href={row.href} className="link-ink"><L s={row.label} /></Link> : row.label}
+          {row.href ? <Link href={row.href} className="link-ink"><CL s={row.label} /></Link> : <CL s={row.label} />}
         </span>
         <span className="figures shrink-0 text-right text-[1rem] font-semibold whitespace-nowrap">{row.values[0]}</span>
       </div>
@@ -54,7 +55,7 @@ function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBa
   );
 }
 
-function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table" }> }) {
+async function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table" }> }) {
   const max = Math.max(...block.rows.map((r) => Math.abs(r.bar ?? 0)));
   const hasBars = max > 0 && block.rows.every((r) => r.bar !== undefined);
   const [primary, ...rest] = block.columns;
@@ -63,7 +64,7 @@ function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table"
   const tail = block.rows.slice(VISIBLE_ROWS);
   return (
     <figure className="my-10 rounded-xl border border-border bg-card p-5 md:p-6">
-      {block.title && <figcaption className="font-serif text-lg leading-snug font-semibold"><L s={block.title} /></figcaption>}
+      {block.title && <figcaption className="font-serif text-lg leading-snug font-semibold"><CL s={block.title} /></figcaption>}
       <p className="mt-1 text-xs text-muted-foreground">{hasBars ? `棒の長さは「${primary}」` : primary}</p>
       <ol className="mt-3 divide-y divide-border/70">
         {head.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} rest={rest} />)}
@@ -79,7 +80,7 @@ function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table"
           </ol>
         </details>
       )}
-      <p className="mt-4 border-t border-border pt-3 text-xs leading-6 text-muted-foreground"><L s={block.note} /></p>
+      <p className="mt-4 border-t border-border pt-3 text-xs leading-6 text-muted-foreground"><CL s={block.note} /></p>
     </figure>
   );
 }
@@ -110,7 +111,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
         <li key={s.id}>
           <a href={`#${s.id}`} className="flex gap-2 rounded-md px-2 py-1.5 leading-snug hover:bg-muted">
             <span className="figures text-muted-foreground">{String(s.index).padStart(2, "0")}</span>
-            <span><L s={s.title} /></span>
+            <span><CL s={s.title} /></span>
           </a>
         </li>
       ))}
@@ -132,10 +133,10 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
         <div className="mx-auto max-w-6xl px-5 pt-8 pb-20 md:px-8 md:pt-14 md:pb-28">
           <nav aria-label="パンくず" className="text-xs text-white/70">
             <Link href="/features" className="hover:underline"><T m={{ ja: "特集", en: "Features" }} /></Link>
-            {feature.topic && <> ／ <span>{feature.topic}</span></>}
+            {feature.topic && <> ／ <span><CL s={feature.topic} /></span></>}
           </nav>
-          <h1 className="mt-4 max-w-4xl font-serif text-[1.875rem] leading-[1.35] font-semibold md:text-[3rem]"><L s={feature.title} /></h1>
-          {feature.subtitle && <p className="mt-5 max-w-3xl text-[1.0625rem] leading-[1.9] text-white/85 md:text-lg"><L s={feature.subtitle} /></p>}
+          <h1 className="mt-4 max-w-4xl font-serif text-[1.875rem] leading-[1.35] font-semibold md:text-[3rem]"><CL s={feature.title} /></h1>
+          {feature.subtitle && <p className="mt-5 max-w-3xl text-[1.0625rem] leading-[1.9] text-white/85 md:text-lg"><CL s={feature.subtitle} /></p>}
           <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/70">
             <span className="inline-flex items-center gap-1"><span data-l="ja"><Clock className="size-3.5" aria-hidden />約{minutes}分で読めます</span><span data-l="en"><Clock className="size-3.5" aria-hidden />About {minutes} min read</span></span>
             <span className="figures"><F s={formatDateJa(feature.publishedAt)} /></span>
@@ -150,7 +151,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
             {feature.keyFigures.map((k) => (
               <li key={k.label} className="rounded-xl border border-border bg-card p-5 shadow-sm md:p-6">
                 <p className="figures text-[2rem] leading-none font-semibold md:text-[2.5rem]"><F s={k.value} /></p>
-                <p className="mt-2 text-sm leading-snug text-muted-foreground"><L s={k.label} /></p>
+                <p className="mt-2 text-sm leading-snug text-muted-foreground"><CL s={k.label} /></p>
               </li>
             ))}
           </ul>
@@ -205,7 +206,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                   return (
                     <h2 key={i} id={`section-${headingIndex}`} className="mt-14 mb-5 scroll-mt-24 border-t border-foreground pt-5 font-serif text-[1.5rem] leading-snug font-semibold first:mt-0 md:text-[1.875rem]">
                       <span className="figures mb-1 block text-sm font-normal text-muted-foreground">{String(headingIndex).padStart(2, "0")}</span>
-                      <L s={block.text} />
+                      <CL s={block.text} />
                     </h2>
                   );
                 }
@@ -224,7 +225,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                       <blockquote className="font-serif text-[1.375rem] leading-[1.8] font-semibold md:text-[1.625rem]">
                         <RichText text={block.text} />
                       </blockquote>
-                      <figcaption className="mt-4 text-sm text-muted-foreground">{block.attribution}</figcaption>
+                      <figcaption className="mt-4 text-sm text-muted-foreground"><CL s={block.attribution} /></figcaption>
                       <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />
                     </figure>
                   );
@@ -238,7 +239,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                       <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "この特集の企業", en: "Companies in this feature" }} /></p>
                       {company.shortNameEn && <p className="wordmark mt-2 text-3xl" aria-hidden>{company.shortNameEn}</p>}
                       <p className="mt-1 font-serif text-xl font-semibold group-hover:underline"><L s={company.name} /></p>
-                      <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground"><L s={block.text} /></p>
+                      <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground"><CL s={block.text} /></p>
                       <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium">
                         <span data-l="ja">企業ページを見る <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en">View company page <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
                       </span>

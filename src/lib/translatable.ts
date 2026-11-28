@@ -9,6 +9,15 @@ import { hasJapanese } from "./translation-check.ts";
 const SKIP = new Set(["id", "sourceIds", "locator", "url", "companyId", "industryId", "businessIds", "termId", "status", "sources", "updatedAt", "createdAt"]);
 
 /**
+ * The fields of a built feature a reference translation may stand for (JCE-138, implemented in JCE-148): the title
+ * and the block body, with the card's own text (subtitle, topic, key figures, takeaways, image alt) beside them.
+ * A feature is built, not stored, and the rest of its shape — related ids, sources, status, the publication date —
+ * is not prose. The repository, the pipeline and the tests all collect a feature's texts through this one list, so
+ * what is translated and what may be shown stay the same set.
+ */
+export const FEATURE_TRANSLATION_FIELDS: readonly string[] = ["title", "subtitle", "topic", "heroImageAlt", "takeaways", "keyFigures", "body"];
+
+/**
  * Every Japanese string under `value`, with the first sentence of each as well when it is shorter — cards show
  * firstSentence(text), and that shorter text is looked up on its own.
  */

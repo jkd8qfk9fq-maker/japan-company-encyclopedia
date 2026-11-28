@@ -3,6 +3,7 @@
 import { Award, Check, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { T } from "@/components/i18n/t";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { LearnStep } from "@/lib/learn-course";
 import { learnStore, recordLearnAnswer } from "@/lib/storage/stores";
@@ -30,11 +31,11 @@ export function LearnCourse() {
   const done = steps.filter((s) => answers[s.question.id]).length;
   const complete = done === steps.length;
   const last = steps[steps.length - 1]!;
-  const groups: { theme: string; intro: string; steps: LearnStep[] }[] = [];
+  const groups: { theme: string; themeEn?: string; intro: string; introEn?: string; steps: LearnStep[] }[] = [];
   for (const s of steps) {
     const g = groups.at(-1);
     if (g && g.theme === s.theme) g.steps.push(s);
-    else groups.push({ theme: s.theme, intro: s.intro, steps: [s] });
+    else groups.push({ theme: s.theme, themeEn: s.themeEn, intro: s.intro, introEn: s.introEn, steps: [s] });
   }
 
   return (
@@ -74,8 +75,8 @@ export function LearnCourse() {
       {groups.map((group, gi) => (
         <section key={group.theme} aria-label={group.theme} className={gi === 0 ? "" : "border-t border-border pt-10"}>
           <p className="eyebrow" aria-hidden>Theme {gi + 1}</p>
-          <h2 className="mt-2 font-serif text-[1.375rem] font-semibold">{group.theme}</h2>
-          <p className="prose-ja mt-1 text-sm text-muted-foreground">{group.intro}</p>
+          <h2 className="mt-2 font-serif text-[1.375rem] font-semibold">{group.themeEn ? <T m={{ ja: group.theme, en: group.themeEn }} /> : group.theme}</h2>
+          <p className="prose-ja mt-1 text-sm text-muted-foreground">{group.introEn ? <T m={{ ja: group.intro, en: group.introEn }} /> : group.intro}</p>
           <div className="mt-6 grid gap-8">
             {group.steps.map((step) => {
               const q = step.question;
@@ -85,7 +86,7 @@ export function LearnCourse() {
                 <div key={q.id} id={`step-${step.n}`} className="scroll-mt-24">
                 <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">ステップ {step.n}{answered ? " ・ 完了" : ""}</p>
                 <div className="mt-2 rounded-md border border-border bg-card p-5 md:p-6">
-                  <p className="text-lg font-medium">{q.prompt}</p>
+                  <p className="text-lg font-medium">{q.promptEn ? <T m={{ ja: q.prompt, en: q.promptEn }} /> : q.prompt}</p>
                   {q.clue && <p className="mt-2 rounded-sm bg-muted/60 px-3 py-2 text-sm leading-6">「{q.clue}」</p>}
                   <ul className={`mt-3 grid gap-2 ${q.options.length === 2 ? "sm:grid-cols-2" : ""}`}>
                     {q.options.map((o) => {
@@ -108,7 +109,7 @@ export function LearnCourse() {
                                     : "border-border text-muted-foreground"
                             }`}
                           >
-                            <span>{o.label}</span>
+                            <span>{o.labelEn ? <T m={{ ja: o.label, en: o.labelEn }} /> : o.label}</span>
                             {state === "right" && <Check className="size-4 shrink-0" aria-label="正解" />}
                             {state === "wrong" && <X className="size-4 shrink-0" aria-label="あなたの答え" />}
                           </button>
@@ -127,7 +128,7 @@ export function LearnCourse() {
                             href={o.id === q.answer ? `/companies/${o.id}#${step.section}` : `/companies/${o.id}`}
                             className="underline underline-offset-2 hover:text-foreground"
                           >
-                            {o.label}を見る
+                            {o.labelEn ? <T m={{ ja: `${o.label}を見る`, en: `View ${o.labelEn}` }} /> : `${o.label}を見る`}
                           </Link>
                         ))}
                         {next && (

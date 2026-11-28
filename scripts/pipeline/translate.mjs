@@ -4,6 +4,7 @@
  *   node scripts/pipeline/translate.mjs --kind company --fields description,businesses [--status published] [--limit 100] [--concurrency 4] [--only <id,id>] [--model haiku] [--retry-model sonnet] [--dry-run]
  *   node scripts/pipeline/translate.mjs --kind industry
  *   node scripts/pipeline/translate.mjs --kind term
+ *   node scripts/pipeline/translate.mjs --kind feature
  *
  * For each entry, the Japanese texts with no stored translation are sent in batches to `claude -p` (the operator's
  * own Claude Code login, as in ai-executor.mjs; no key is handled here). What comes back is kept only if it passes
@@ -19,15 +20,22 @@
  * - The rules go in the system prompt, which the API caches across calls; the cheap model goes first and only what
  *   it fails is sent to the stronger one. The checks are the same for both.
  *
- * Files: src/data/translations/en/{companies,industries,terms}/<id>.json, keyed by hashText(japanese). Keys no longer
+ * Files: src/data/translations/en/{companies,industries,terms,features}/<id>.json, keyed by hashText(japanese). Keys no longer
  * matching a text of the entry are dropped on each run. Nothing here edits an entry.
+ *
+ * A feature is built, not stored (JCE-074), so `--kind feature` resolves its subjects by importing the built
+ * articles (JCE-148): the module hooks in src-alias-hooks.mjs give this process the app's `@/` alias and bare
+ * JSON imports. A feature's texts are its reader-facing fields only (FEATURE_TRANSLATION_FIELDS) — the same set
+ * the repository shows — and because the key is the text's hash, a figure that changes with the data takes its
+ * old translation out of use on its own (JCE-128).
  */
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { register } from "node:module";
 import { join } from "node:path";
 import { sentences } from "../../src/lib/rich-text.ts";
 import { checkTranslation, figuresAmbiguous, hashText } from "../../src/lib/translation-check.ts";
-import { translatableStrings } from "../../src/lib/translatable.ts";
+import { FEATURE_TRANSLATION_FIELDS, translatableStrings } from "../../src/lib/translatable.ts";
 import { classifyExecutorFailure, cleanEnv } from "./ai-executor.mjs";
 
 const args = process.argv.slice(2);
@@ -48,11 +56,17 @@ const BATCH_CHARS = 6000;
 const BATCH_ITEMS = 80;
 const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Tokyo" });
 
-const FOLDERS = { company: "companies", industry: "industries", term: "terms" };
+const FOLDERS = { company: "companies", industry: "industries", term: "terms", feature: "features" };
 const DATA = { company: "src/data/companies", industry: "src/data/industries", term: "src/data/terms" }[kind];
-if (!DATA) throw new Error(`unknown --kind ${kind}`);
+if (kind !== "feature" && !DATA) throw new Error(`unknown --kind ${kind}`);
 const TRANSLATIONS = "src/data/translations/en";
 const outDir = join(TRANSLATIONS, FOLDERS[kind]);
+/** The texts of one subject of this kind: a feature's are its reader-facing fields, every other kind's are all of it (or the --fields subset). */
+const stringsOf = (entry, fieldsArg) =>
+  kind === "feature" ? translatableStrings(entry, FEATURE_TRANSLATION_FIELDS) : translatableStrings(entry, fieldsArg ?? undefined);
+/** The same, keyed by the kind of the subject a stored file belongs to (the translation memory reads every kind's files). */
+const memoryStringsOf = (subjectKind, entry) =>
+  subjectKind === "feature" ? translatableStrings(entry, FEATURE_TRANSLATION_FIELDS) : translatableStrings(entry);
 
 const RULES = `You translate Japanese text from a Japanese encyclopedia of listed companies into English for readers who do not read Japanese. The text was written from each company's annual securities report (有価証券報告書). The English is shown as a labelled reference translation beside the original.
 
@@ -74,7 +88,15 @@ function loadEntries(dir) {
 }
 
 const companies = new Map(loadEntries("src/data/companies").map((e) => [e.id, e]));
-const entries = (kind === "company" ? [...companies.values()] : loadEntries(DATA))
+// A feature's subjects are the built articles: importing them needs the app's module resolution (JCE-148).
+let subjects;
+if (kind === "feature") {
+  register("./src-alias-hooks.mjs", import.meta.url);
+  subjects = (await import("../../src/data/features/index.ts")).features;
+} else {
+  subjects = kind === "company" ? [...companies.values()] : loadEntries(DATA);
+}
+const entries = subjects
   .filter((e) => (!only || only.includes(e.id)) && (!statusFilter || e.status?.state === statusFilter))
   .sort((a, b) => a.id.localeCompare(b.id))
   .slice(0, limit);
@@ -88,7 +110,7 @@ function loadFile(id) {
 
 function saveFile(entry, file) {
   // Only keys that still match a text of the entry: an edited Japanese text takes its old translation with it.
-  const live = new Set(translatableStrings(entry).map(hashText));
+  const live = new Set(stringsOf(entry).map(hashText));
   const kept = Object.fromEntries(Object.entries(file.entries).filter(([k]) => live.has(k)).sort(([a], [b]) => a.localeCompare(b)));
   if (Object.keys(kept).length === 0) return;
   mkdirSync(outDir, { recursive: true });
@@ -126,7 +148,7 @@ for (const [k, folder] of Object.entries(FOLDERS)) {
     if (subjects?.has(file.subject.id)) files.set(file.subject.id, file);
     const subject = k === "company" ? companies.get(file.subject.id) : subjects?.get(file.subject.id);
     if (!subject) continue;
-    for (const ja of translatableStrings(subject)) {
+    for (const ja of memoryStringsOf(k, subject)) {
       const en = file.entries[hashText(ja)];
       if (en && !memory.has(ja)) memory.set(ja, { en, from: k === "company" ? file.subject.id : "" });
     }
@@ -149,7 +171,7 @@ let stop = null;
 let todo = [];
 for (const entry of entries) {
   const file = files.get(entry.id);
-  const pending = translatableStrings(entry, fields ?? undefined)
+  const pending = stringsOf(entry, fields)
     .map((ja) => ({ id: entry.id, k: hashText(ja), ja }))
     .filter((i) => !file.entries[i.k] || checkTranslation(i.ja, file.entries[i.k]).length > 0)
     // A text whose amounts the checker folds differently from a reader is never sent: a translation that passed would

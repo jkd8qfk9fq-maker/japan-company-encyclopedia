@@ -464,7 +464,7 @@ export function parseContent<T>(schema: z.ZodType<T>, value: unknown, label: str
  * orphans the old translation instead of leaving it beside text it no longer matches.
  */
 export const translationFileSchema = z.strictObject({
-  subject: z.strictObject({ kind: z.enum(["company", "industry", "term"]), id: kebab }),
+  subject: z.strictObject({ kind: z.enum(["company", "industry", "term", "feature"]), id: kebab }),
   locale: z.enum(["en"]),
   method: z.literal("ai-reference-translation"),
   model: text,

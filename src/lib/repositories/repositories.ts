@@ -88,5 +88,5 @@ export interface TranslationRepository {
   /** The same lookup, synchronous, for summaries built while mapping a list (the table is in memory). */
   lookup(locale: "en", text: string): string | null;
   /** How many texts of an entry have a translation shown, out of how many it has. */
-  coverage(kind: "company" | "industry" | "term", id: string): Promise<{ translated: number; total: number }>;
+  coverage(kind: "company" | "industry" | "term" | "feature", id: string): Promise<{ translated: number; total: number }>;
 }
