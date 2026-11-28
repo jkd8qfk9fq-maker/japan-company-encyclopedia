@@ -7,6 +7,17 @@
 スクリプト側（取得2本＋検証 `scripts/indicators/validate-indicator-update.py`）は
 リポジトリに実装済みで、ローカル実走で確認してある（JCE-121 の決定記録を参照）。
 
+## 手順（GitHub Web UI、運営者が行う作業はこれだけ）
+
+1. GitHub でリポジトリを開き、`.github/workflows/refresh-financials.yml` を開く。
+2. 右上の鉛筆アイコン（Edit this file）で編集画面に入る。
+3. 下の「追加1」のスニペットを、指定の位置（最後の入力 `probe` の直後）に貼る。
+4. 下の「追加2」のジョブを、ファイルの末尾に貼る。
+5. 画面下の「Commit changes」を押し、**main へ直接コミット**する
+   （ワークフローは main に入って初めて有効になるため、ブランチ＋PR ではなく直接コミットが確実。
+   コミットメッセージは任意。例：`JCE-121: indicators ジョブと refresh_indicators 入力を追加`）。
+6. 下の「追加後の確認」を実施する。
+
 前提の確認（追加しても既存の安全装置と矛盾しないこと）:
 
 - scheduled workflow は refresh-financials.yml の1本のまま（tests/single-detector.test.ts
@@ -19,7 +30,9 @@
 
 ## 追加1: workflow_dispatch の入力を1つ足す
 
-`on.workflow_dispatch.inputs` に、既存の入力と並べて次を追加する。
+`on.workflow_dispatch.inputs` の **最後の入力 `probe` の直後**（その後に続く空行と、
+`# The workflow's default: read only.` で始まるコメントブロックの前）に、次を追加する。
+インデントは既存の入力と同じ（キーは6スペース）。
 
 ```yaml
       refresh_indicators:
@@ -154,6 +167,7 @@
 
 1. Actions タブで refresh-financials を手動実行し、`refresh_indicators` を有効にする。
    indicators ジョブが走り、異常がなければ PR が作られる（変更がなければ作られない）。
+   手動実行では detect ジョブも一緒に走るが、これは既存の通常動作で正常（読み取りのみで何も書かない）。
 2. 翌月曜 07:00 JST の定期実行で、indicators ジョブがゲートを通って走ること。
 3. 前提リポジトリ設定は refresh-financials と同じ（Settings → Actions → General →
    "Allow GitHub Actions to create and approve pull requests"）。新しい secret は不要。
