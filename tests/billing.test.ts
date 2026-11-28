@@ -241,7 +241,7 @@ describe("handleBilling", () => {
   });
 });
 
-describe("JCE-148 boundary cases — product judgement, event order, and the /api/plan guards", () => {
+describe("JCE-151 boundary cases — product judgement, event order, and the /api/plan guards", () => {
   it("judges the plan by product alone, never by price: a mismatched price does not move the kind", () => {
     const base = { code: CODE, customerId: null, email: null, source: "stripe", status: "active", paidUntil: PERIOD_END_MS };
     expect(planKindOf({ ...base, productId: ANALYSIS_PRODUCT_ID, priceId: PREMIUM_PRICE })).toBe("analysis");
@@ -290,7 +290,7 @@ describe("JCE-148 boundary cases — product judgement, event order, and the /ap
     expect(await plan.json()).toMatchObject({ active: true, plan: "analysis" });
   });
 
-  it("does not consume an event whose apply fails: it answers 500 and the redelivery succeeds (JCE-148)", async () => {
+  it("does not consume an event whose apply fails: it answers 500 and the redelivery succeeds (JCE-151)", async () => {
     const inner = memoryBillingStore();
     let failUpserts = true;
     const store = {

@@ -20,7 +20,7 @@ export interface BillingStore {
   upsert(row: Entitlement & { now: string }): Promise<void>;
   /** True the first time an event id is recorded; false when Stripe redelivers it. */
   markEvent(id: string, type: string, now: string): Promise<boolean>;
-  /** Whether an event id is already recorded, without recording it (JCE-148). */
+  /** Whether an event id is already recorded, without recording it (JCE-151). */
   hasEvent(id: string): Promise<boolean>;
 }
 

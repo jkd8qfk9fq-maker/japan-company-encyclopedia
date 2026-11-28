@@ -197,7 +197,7 @@ async function handleWebhook(request: Request, env: BillingEnv, store: BillingSt
   // Stripe redelivers; the second delivery of an event must change nothing.
   if (await store.hasEvent(event.id)) return json({ received: true, duplicate: true });
   const object = (event.data?.object ?? {}) as Record<string, unknown>;
-  // JCE-148: the event is recorded only after it has been applied. Recording it first (the JCE-100
+  // JCE-151: the event is recorded only after it has been applied. Recording it first (the JCE-100
   // order) lost the event for good when the apply then failed — e.g. while a migration such as 0005
   // was still unapplied, the upsert failed, Stripe's redelivery was answered "duplicate", and the
   // subscriber's entitlement was never written. A failed apply now answers 500 with nothing
