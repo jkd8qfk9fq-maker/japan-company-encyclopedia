@@ -106,7 +106,7 @@ export function CompanyDirectory({
 
       <p className="figures mt-4 text-xs text-muted-foreground" aria-live="polite">
         <span data-l="ja">{results.length}社
-      </span><span data-l="en">{results.length} companies</span></p>
+      </span><span data-l="en">{`${results.length} companies`}</span></p>
 
       {results.length > 0 ? (
         <>

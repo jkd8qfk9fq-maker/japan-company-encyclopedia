@@ -49,6 +49,45 @@ export const STAGE_FIELDS = {
 
 
 /**
+ * One `warnings` / `needsReview` item from a fragment, as a single line of text — or why it is
+ * unusable. Researchers write these items two ways: a plain string, or an object
+ * `{ topic, detail, sourceIds, locator }`. The object form used to fall through to
+ * `${stage}: ${w}` and land in the entry's status notes and the research log as
+ * "businessModel: [object Object]" — the hourly-push reflection e365cf99b did exactly that to
+ * 32 companies, and what a person was meant to read survived only in the fragment files
+ * (restored from them on 2026-11-27). An item with no readable text is refused here and the
+ * caller reports it as a warning, mirroring normalizeGap: degraded visibly, never stringified.
+ * @param {unknown} w
+ * @returns {{ text: string | null, problem: string | null }}
+ */
+export function reviewNoteText(w) {
+  if (typeof w === "string") return { text: w, problem: null };
+  if (!w || typeof w !== "object") return { text: null, problem: "文字列でもオブジェクトでもない" };
+  const topic = typeof (/** @type {any} */ (w).topic) === "string" ? /** @type {any} */ (w).topic.trim() : "";
+  const detail = typeof (/** @type {any} */ (w).detail) === "string" ? /** @type {any} */ (w).detail.trim() : "";
+  if (!topic && !detail) return { text: null, problem: "topic も detail もない" };
+  let text = topic && detail ? `${topic}：${detail}` : topic || detail;
+  const sourceIds = Array.isArray(/** @type {any} */ (w).sourceIds) ? /** @type {any} */ (w).sourceIds.filter((/** @type {unknown} */ s) => typeof s === "string" && s) : [];
+  if (sourceIds.length > 0) text += `（出典: ${sourceIds.join(", ")}）`;
+  const locator = typeof (/** @type {any} */ (w).locator) === "string" ? /** @type {any} */ (w).locator.trim() : "";
+  if (locator) text += `（箇所: ${locator}）`;
+  return { text, problem: null };
+}
+
+/**
+ * The last line of defence for the e365cf99b failure, checked where merged notes become the
+ * entry's status: a note that still reads "[object Object]" has already lost what a person
+ * was meant to read, and writing it would publish the loss. Fail the merge instead, naming
+ * the note, so a person fixes the fragment's shape.
+ * @param {string[]} notes
+ */
+export function assertNoStringifiedNotes(notes) {
+  for (const n of notes) {
+    if (n.includes("[object Object]")) throw new Error(`needsReview に "[object Object]" が含まれています（フラグメントの形を確認してください）: ${n}`);
+  }
+}
+
+/**
  * Put researcher-written notes on the mechanical five-year table: `[{ fiscalYear, note }]` →
  * `financials[].note`. The year must be one the table has (a note about a year that is not there
  * is a mistake worth a person's look), and a year is noted once.
@@ -165,15 +204,25 @@ export function mergeEntry(companyId) {
       seen.add(key);
     }
     for (const s of body.sources ?? []) if (!sourcesById.has(s.id)) sourcesById.set(s.id, s);
-    warnings.push(...(body.warnings ?? []).map((w) => `${stage}: ${w}`));
+    for (const w of body.warnings ?? []) {
+      const { text } = reviewNoteText(w);
+      if (text !== null) warnings.push(`${stage}: ${text}`);
+      else warnings.push(`${stage}: warnings の1件を読めませんでした — 無視しました`);
+    }
     // `needsReview` is "a person must look because something may be wrong" and is the only list
     // that sets the status. A vocabulary gap — in the old convention a needsReview string beginning
     // 「TAXONOMY:」 — is not that: nothing is wrong with the company, so it is a taxonomyGap and
     // changes no status (scripts/pipeline/taxonomy-gaps.mjs).
     for (const w of body.needsReview ?? []) {
-      const legacy = parseLegacyTaxonomyNote(w, stage);
-      if (legacy) taxonomyGaps.push(legacy);
-      else needsReview.push(`${stage}: ${w}`);
+      if (typeof w === "string") {
+        const legacy = parseLegacyTaxonomyNote(w, stage);
+        if (legacy) taxonomyGaps.push(legacy);
+        else needsReview.push(`${stage}: ${w}`);
+        continue;
+      }
+      const { text, problem } = reviewNoteText(w);
+      if (text !== null) needsReview.push(`${stage}: ${text}`);
+      else warnings.push(`${stage}: needsReview の1件を読めませんでした（${problem}）— 無視しました`);
     }
     for (const raw of body.taxonomyGaps ?? []) {
       const { gap, problem } = normalizeGap(raw, stage);
@@ -245,6 +294,7 @@ export function mergeEntry(companyId) {
   }
 
   entry.sources = [...sourcesById.values()];
+  assertNoStringifiedNotes(needsReview);
   if (needsReview.length > 0) entry.status = { state: "needs-attention", notes: needsReview };
 
   const missing = Object.keys(STAGE_FIELDS).filter((stage) => !fragments.some((f) => f.file === `${companyId}-${stage}.json`));

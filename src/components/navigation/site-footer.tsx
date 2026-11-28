@@ -8,7 +8,7 @@ export async function SiteFooter() {
   const [features, terms] = await Promise.all([featureRepository.list(), termRepository.list()]);
 
   return (
-    <footer className="mt-24 border-t border-border bg-paper">
+    <footer className="mt-16 border-t border-border bg-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-8">
         <div>
           <p className="font-serif text-lg font-semibold tracking-[0.06em]"><T m={{ ja: SITE_NAME, en: SITE_NAME_EN }} /></p>

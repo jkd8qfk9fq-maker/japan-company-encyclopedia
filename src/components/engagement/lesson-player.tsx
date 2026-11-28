@@ -2,7 +2,7 @@
 
 import { Check, Clock, X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import { courseFraction, LEARN, lessonDone, nextLessonId, POINTS, pointsBreakdown, unitFraction, unitStyle, type UnitStyle } from "@/lib/learning-ui";
 import type { QuestionTable } from "@/lib/lesson-questions";
@@ -117,6 +117,10 @@ function PlayerRun({
   const [checkedHere, setCheckedHere] = useState<Record<string, boolean>>({});
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const [finished, setFinished] = useState(false);
+  // The verdict panel sits in the flow under the question (major 6): as a sticky overlay it covered
+  // the very table and options the explanation refers back to. When a verdict appears, bring it into
+  // view instead — the question stays scrollable above it, uncovered.
+  const feedbackRef = useRef<HTMLDivElement>(null);
 
   const step = steps[idx];
   const q = step?.kind === "question" ? step.q : null;
@@ -128,6 +132,10 @@ function PlayerRun({
   const orderShown: string[] = q && isOrder ? (checkedHere[q.id] ? orderSel : prefilled && checked ? (stored?.choice ? stored.choice.split(",") : []) : orderSel) : [];
   const shownChoice = q ? (isOrder ? (orderShown.length ? orderShown.join(",") : null) : checkedHere[q.id] ? selected : prefilled && checked ? (stored?.choice ?? null) : selected) : null;
   const correct = q ? shownChoice !== null && shownChoice === q.answer : false;
+
+  useEffect(() => {
+    if (checked) feedbackRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }, [checked, idx]);
 
   if (finished) return <>{renderComplete({ answered: sessionAnswered })}</>;
   if (!step) return null;
@@ -155,8 +163,8 @@ function PlayerRun({
         <Link href={backHref} aria-label="学習ホームに戻る" className="grid size-10 shrink-0 place-items-center rounded-full" style={{ backgroundColor: LEARN.track, color: LEARN.muted }}>
           <X className="size-5" />
         </Link>
-        <div className="h-4 flex-1 overflow-hidden rounded-full" style={{ backgroundColor: LEARN.track }} role="progressbar" aria-valuenow={idx} aria-valuemax={steps.length} aria-label="レッスンの進み具合">
-          <div className="h-full rounded-full transition-all duration-300" style={{ width: `${(idx / steps.length) * 100}%`, backgroundColor: LEARN.cta }} />
+        <div className="h-4 flex-1 overflow-hidden rounded-full" style={{ backgroundColor: LEARN.track }} role="progressbar" aria-valuenow={idx + 1} aria-valuemin={1} aria-valuemax={steps.length} aria-label="レッスンの進み具合">
+          <div className="h-full rounded-full transition-all duration-300" style={{ width: `${((idx + 1) / steps.length) * 100}%`, backgroundColor: LEARN.cta }} />
         </div>
         <span className="figures text-sm font-bold" style={{ color: LEARN.muted }}>
           {idx + 1} / {steps.length}
@@ -209,7 +217,7 @@ function PlayerRun({
                             disabled={checked}
                             onClick={() => setOrderSel((s) => s.filter((x) => x !== id))}
                             className="flex min-h-12 w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left text-base font-medium"
-                            style={{ borderColor: checked ? (correct ? LEARN.cta : LEARN.wrong) : accent.main, backgroundColor: accent.soft, color: LEARN.ink }}
+                            style={{ borderColor: checked ? (correct ? LEARN.cta : LEARN.wrong) : LEARN.select, backgroundColor: LEARN.selectSoft, color: LEARN.ink }}
                           >
                             <span className="figures grid size-7 shrink-0 place-items-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: accent.main }}>{i + 1}</span>
                             <span>{o.labelEn ? <T m={{ ja: o.label, en: o.labelEn }} /> : o.label}</span>
@@ -241,8 +249,8 @@ function PlayerRun({
               {q.options.map((o) => {
                 const isChosen = shownChoice === o.id;
                 const isRight = o.id === q.answer;
-                const border = !checked ? (isChosen ? accent.main : LEARN.line) : isRight ? LEARN.cta : isChosen ? LEARN.wrong : LEARN.line;
-                const bg = !checked ? (isChosen ? accent.soft : "#ffffff") : isRight ? LEARN.ctaSoft : isChosen ? LEARN.wrongSoft : "#ffffff";
+                const border = !checked ? (isChosen ? LEARN.select : LEARN.line) : isRight ? LEARN.cta : isChosen ? LEARN.wrong : LEARN.line;
+                const bg = !checked ? (isChosen ? LEARN.selectSoft : "#ffffff") : isRight ? LEARN.ctaSoft : isChosen ? LEARN.wrongSoft : "#ffffff";
                 return (
                   <li key={o.id}>
                     <button
@@ -266,7 +274,7 @@ function PlayerRun({
       </div>
 
       {q && checked ? (
-        <div className="sticky bottom-0 -mx-1 px-1 pb-1">
+        <div ref={feedbackRef} className="-mx-1 scroll-mt-4 px-1 pb-1">
           <div className="rounded-3xl p-5" style={{ backgroundColor: correct ? LEARN.ctaSoft : LEARN.wrongSoft }}>
             <p className="flex items-center gap-2 text-lg font-bold" style={{ color: correct ? LEARN.ctaDark : LEARN.wrong }}>
               {correct ? <Check className="size-6" /> : <X className="size-6" />}
@@ -388,7 +396,7 @@ export function LessonPlayer({ lessonId }: { lessonId: string }) {
         const now = microProgressStore.get();
         const answeredHere = lesson.questions.filter((x) => now.answers[x.id]);
         const correctHere = answeredHere.filter((x) => now.answers[x.id]?.correct).length;
-        const points = pointsBreakdown(now, verifiedCount);
+        const points = pointsBreakdown(now, verifiedCount, units);
         const course = courseFraction(units, now);
         const unitProg = unitFraction(unit, now);
         const nextId = nextLessonId(units, now);
@@ -494,7 +502,7 @@ export function ReviewPlayer() {
         onSessionAnswer={() => {}}
         renderComplete={({ answered }) => (
           <CompleteShell title="復習が終わりました">
-            <PointsCard total={pointsBreakdown(microProgressStore.get(), verifiedCount).total} rows={[{ label: `復習で答えた（${answered}問 × ${POINTS.answer}）`, points: answered * POINTS.answer }]} />
+            <PointsCard total={pointsBreakdown(microProgressStore.get(), verifiedCount, units).total} rows={[{ label: `復習で答えた（${answered}問 × ${POINTS.answer}）`, points: answered * POINTS.answer }]} />
             <Link href="/learn" className={nextActionClass} style={{ backgroundColor: LEARN.cta, boxShadow: `0 4px 0 ${LEARN.ctaDark}` }}>
               学習ホームへ戻る
             </Link>

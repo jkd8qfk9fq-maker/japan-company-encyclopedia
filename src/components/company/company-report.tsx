@@ -20,6 +20,7 @@ import { DataProvenance } from "./data-provenance";
 import { ReportPrintButton } from "./report-print-button";
 import { Donut, PerspectiveRadar, PositionBar, TrendChart } from "./report-charts";
 import styles from "./company-report.module.css";
+import { PREMIUM_FEATURES_OPEN } from "@/lib/premium-open";
 import { T } from "@/components/i18n/t";
 import { F } from "@/components/i18n/figure";
 import { L } from "@/components/i18n/label";
@@ -138,7 +139,9 @@ function KpiCard({ icon: Icon, label, value, note }: { icon: LucideIcon; label: 
         <Icon className="size-4 text-ink" aria-hidden />
         {label}
       </p>
-      <p className="figures mt-2 text-[1.375rem] leading-tight font-semibold md:text-[1.625rem]"><F s={value} /></p>
+      {/* One line at every width (audit part 1, polish 23): a 兆-scale value wrapped mid-figure in the
+          two-column phone grid, so the size steps down on the smallest screens instead of breaking. */}
+      <p className="figures mt-2 text-[1.0625rem] leading-tight font-semibold whitespace-nowrap sm:text-[1.375rem] md:text-[1.625rem]"><F s={value} /></p>
       {note && <p className="figures mt-1 text-xs text-muted-foreground">{note}</p>}
     </li>
   );
@@ -574,9 +577,11 @@ export function CompanyReport({
             <DataProvenance company={company} metrics={layer.metrics} revisions={revisions} />
             <footer className="mt-8 border-t border-border pt-4 text-xs leading-5 text-muted-foreground">
               <p>
+                {/* While the gates stand open (JCE-075), printing this report is not a plan benefit — anyone
+                    may — so the footer says just that; the benefit wording returns with the gates. */}
                 <span data-l="ja">日本企業百科事典のプレミアムレポートです。数値は有価証券報告書など上記の出典に印字された値と、そこから計算した値（計算値）だけを使い、株価・評価・推奨は含みません。データ時点: <F s={formatDateJa(company.updatedAt)} />。
-                プレミアムプランの特典として、このレポートは印刷して第三者への提示にも使えます。
-              </span><span data-l="en">A Premium report from the Japan Company Encyclopedia. It uses only values printed in the sources above, such as annual securities reports, and values computed from them (computed values), and includes no stock prices, ratings, or recommendations. Data as of <F s={formatDateJa(company.updatedAt)} />. As a Premium plan benefit, this report can be printed and shown to third parties.</span></p>
+                {PREMIUM_FEATURES_OPEN ? "このレポートは印刷して第三者への提示にも使えます。" : "プレミアムプランの特典として、このレポートは印刷して第三者への提示にも使えます。"}
+              </span><span data-l="en">A Premium report from the Japan Company Encyclopedia. It uses only values printed in the sources above, such as annual securities reports, and values computed from them (computed values), and includes no stock prices, ratings, or recommendations. Data as of <F s={formatDateJa(company.updatedAt)} />. {PREMIUM_FEATURES_OPEN ? "This report can be printed and shown to third parties." : "As a Premium plan benefit, this report can be printed and shown to third parties."}</span></p>
             </footer>
           </Chapter>
         </div>

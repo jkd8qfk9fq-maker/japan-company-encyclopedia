@@ -28,7 +28,7 @@ export default async function CompaniesPage() {
       <p className="eyebrow" aria-hidden>Companies</p>
       <h1 className="mt-1 flex items-baseline gap-3 font-serif text-[1.75rem] font-semibold md:text-[2.5rem]">
         <span data-l="ja">企業
-        <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en">{companies.length.toLocaleString("ja-JP")} companies</span></span></span><span data-l="en">Companies <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en">{companies.length.toLocaleString("ja-JP")} companies</span></span></span>
+        <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en">{`${companies.length.toLocaleString("ja-JP")} companies`}</span></span></span><span data-l="en">Companies <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en">{`${companies.length.toLocaleString("ja-JP")} companies`}</span></span></span>
       </h1>
       {/*
         JCE-080: the header is compressed (the hub intro's type tier, tighter margins) so the search

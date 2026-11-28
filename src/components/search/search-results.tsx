@@ -57,6 +57,15 @@ export function SearchResults({ entries }: { entries: SearchEntry[] }) {
           <div className="rounded-lg border border-border bg-card px-4 py-6">
             <p className="text-base font-semibold">「{deferred}」に一致する項目は見つかりませんでした。</p>
             <p className="mt-3 text-muted-foreground">企業名または証券コードを確認してください。</p>
+            <p className="mt-4">
+              例：<button type="button" className="link-ink" onClick={() => setQuery("トヨタ")}>トヨタ</button>
+              、<button type="button" className="link-ink" onClick={() => setQuery("7974")}>7974</button>
+              、<button type="button" className="link-ink" onClick={() => setQuery("自動車")}>自動車</button>
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              探し方が分からないときは、<Link href="/companies" className="link-ink">企業一覧</Link>
+              や<Link href="/industries" className="link-ink">業界一覧</Link>からたどることもできます。
+            </p>
           </div>
         ) : (
           <div>

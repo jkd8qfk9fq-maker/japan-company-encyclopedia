@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { MicroUnit } from "@/lib/micro-lessons";
-import { unitStyle } from "@/lib/learning-ui";
+import { courseFraction, doneLessonDays, unitFraction, unitStyle } from "@/lib/learning-ui";
 import { METRIC_LABELS, verifyPrediction, type PredictionData } from "@/lib/predictions";
 import { REVIEW_INTERVALS_DAYS } from "@/lib/review-queue";
 import { jstToday, microProgressStore, predictionsStore } from "@/lib/storage/stores";
@@ -87,6 +87,11 @@ export function TrainingHistory() {
 
   const totalAnswers = Object.keys(progress.answers).length;
   const hasRecord = totalAnswers > 0 || predictions.length > 0 || Object.keys(progress.lessons).length > 0;
+  // The counts shown below are the path's counts (M4): answers and finished lessons of the current
+  // course only, judged the way learning-ui judges them. The raw store keeps ids from earlier course
+  // versions, and counting its keys read those as lessons finished and questions answered that the
+  // path above does not show — "26/35" under a ring that said "4/35". `hasRecord` stays raw on
+  // purpose: a record made only under an old course is still a record, it just adds nothing here.
 
   // Question id → the company and the reading it practises, from the bound course. A structure question
   // (JCE-090) is about no company: it counts toward the spread of readings, never toward a company's trail.
@@ -103,7 +108,17 @@ export function TrainingHistory() {
     const q = questionOf.get(id);
     if (q) kindCounts.set(q.kind, (kindCounts.get(q.kind) ?? 0) + 1);
   }
-  const stageCounts = REVIEW_INTERVALS_DAYS.map((_, stage) => Object.values(progress.review).filter((s) => s.stage === stage).length);
+  // The review queue's counts are scoped to the current course too, once it is loaded: an entry for a
+  // question the course no longer asks can never come back, so it is not part of the reader's queue.
+  const reviewEntries = units
+    ? Object.entries(progress.review).filter(([id]) => questionOf.has(id))
+    : Object.entries(progress.review);
+  const stageCounts = REVIEW_INTERVALS_DAYS.map((_, stage) => reviewEntries.filter(([, s]) => s.stage === stage).length);
+  // How many of the queue is actually due today — the distinction /learn/review draws and this card
+  // did not (audit part 1, minor 12): "復習中の問題は6問" beside "復習する問題は、まだありません" read
+  // as a contradiction until the due share is stated.
+  const dueNow = reviewEntries.filter(([, s]) => s.due <= today).length;
+  const courseAnswers = Object.entries(progress.answers).filter(([id]) => questionOf.has(id));
 
   let checkedCount = 0;
   let pendingCount = 0;
@@ -128,8 +143,8 @@ export function TrainingHistory() {
     this: days.filter((d) => monthOf(d) === thisMonth).length,
     last: days.filter((d) => monthOf(d) === lastMonth).length,
   });
-  const answerMonths = countByMonth(Object.values(progress.answers).map((a) => a.day));
-  const lessonMonths = countByMonth(Object.values(progress.lessons));
+  const answerMonths = countByMonth(courseAnswers.map(([, a]) => a.day));
+  const lessonMonths = countByMonth(doneLessonDays(units ?? [], progress));
   const predictionMonths = countByMonth(predictions.map((p) => jstDayOf(p.recordedAt)));
 
   // --- The per-company trail. ---
@@ -185,8 +200,8 @@ export function TrainingHistory() {
             <>
               <dl className="figures mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  { label: "レッスン完了", value: `${Object.keys(progress.lessons).length}／${units.reduce((s, u) => s + u.lessons.length, 0)}` },
-                  { label: "答えた問題", value: `${totalAnswers} 問` },
+                  { label: "レッスン完了", value: `${courseFraction(units, progress).done}／${courseFraction(units, progress).total}` },
+                  { label: "答えた問題", value: `${courseAnswers.length} 問` },
                   { label: "検証を終えた予測", value: `${checkedCount} 件` },
                   { label: "検証待ちの予測", value: `${pendingCount} 件` },
                 ].map((s) => (
@@ -200,7 +215,7 @@ export function TrainingHistory() {
                 {units
                   .filter((u) => u.lessons.length > 0)
                   .map((u, ui) => {
-                    const done = u.lessons.filter((l) => progress.lessons[l.id]).length;
+                    const done = unitFraction(u, progress).done;
                     return (
                       <div key={u.id}>
                         <p className="figures flex items-baseline justify-between text-sm">
@@ -242,7 +257,7 @@ export function TrainingHistory() {
                       .filter((u) => u.lessons.length > 0)
                       .map((u) => (
                         <li key={u.id}>
-                          単元「{u.title}」：レッスン {u.lessons.filter((l) => progress.lessons[l.id]).length}／{u.lessons.length} 完了
+                          単元「{u.title}」：レッスン {unitFraction(u, progress).done}／{u.lessons.length} 完了
                         </li>
                       ))}
                   </ul>
@@ -250,11 +265,13 @@ export function TrainingHistory() {
               </div>
             )}
 
-            {Object.keys(progress.review).length > 0 && (
+            {reviewEntries.length > 0 && (
               <div className="rounded-md border border-border bg-card p-4 md:p-5">
                 <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">復習の定着</p>
                 <p className="figures mt-2 text-sm leading-6">
-                  復習中の問題は {Object.keys(progress.review).length} 問です（次の復習までの間隔：
+                  復習中の問題は {reviewEntries.length} 問です。
+                  {dueNow > 0 ? `うち ${dueNow} 問は、復習の時期が来ています。` : "まだ復習の時期が来ている問題はありません。"}
+                  （次の復習までの間隔：
                   {REVIEW_INTERVALS_DAYS.map((d, i) => `${d}日 ${stageCounts[i]} 問`).join("・")}）。
                   間隔が広がった問題は、間をあけても思い出せた問題です。
                 </p>

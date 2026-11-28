@@ -67,7 +67,7 @@ export default async function IndustriesPage() {
             nothing here ranks industries. Now that most industries are researched, the exception is what gets a mark.
           */}
           <ul className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4">
-            {industries.map((industry) => {
+            {industries.map((industry, i) => {
               const members = membersOf(industry.id);
               const lines = linesOf(industry.id);
               return (
@@ -80,11 +80,12 @@ export default async function IndustriesPage() {
                       src={INDUSTRY_IMAGES[industry.id]}
                       alt=""
                       fill
+                      priority={i < 4}
                       placeholder="blur"
                       sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 33vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     />
-                    <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/0" />
+                    <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10" />
                     <span className="relative flex flex-col p-3 sm:p-4">
                       <span className="wordmark text-[0.8125rem] tracking-[0.06em] opacity-85 sm:text-sm" aria-hidden>
                         {industry.nameEn}
@@ -98,8 +99,8 @@ export default async function IndustriesPage() {
                         </span>
                       )}
                       <span className="mt-2 flex flex-wrap items-center gap-1.5 text-[0.6875rem]">
-                        <span className="figures rounded-full bg-white/90 px-2 py-0.5 text-black"><span data-l="ja">{industry.companyCount}社</span><span data-l="en">{industry.companyCount} companies</span></span>
-                        {lines > 0 && <span className="figures rounded-full border border-white/70 px-2 py-0.5"><span data-l="ja">線 {lines}本</span><span data-l="en">{lines} lines</span></span>}
+                        <span className="figures rounded-full bg-white/90 px-2 py-0.5 text-black"><span data-l="ja">{industry.companyCount}社</span><span data-l="en">{`${industry.companyCount} companies`}</span></span>
+                        {lines > 0 && <span className="figures rounded-full border border-white/70 px-2 py-0.5"><span data-l="ja">線 {lines}本</span><span data-l="en">{`${lines} lines`}</span></span>}
                         {!industry.researched && <span className="rounded-full bg-black/45 px-2 py-0.5 ring-1 ring-white/60"><T m={{ ja: "解説は準備中", en: "Explanation coming soon" }} /></span>}
                       </span>
                     </span>
@@ -108,6 +109,12 @@ export default async function IndustriesPage() {
               );
             })}
           </ul>
+          {/* The tiles' counts are `listIndustryPages`' companyCount: every industry a company relates to
+              (src/lib/industries.ts), not its primary industry only — the note keeps the total from being
+              read against the published-company count, which is primary-based. */}
+          <p className="mt-4 text-xs leading-5 text-muted-foreground">
+            <T m={{ ja: "各業界の社数は、その業界に関係する企業を数えています。複数の業界に関係する企業はそれぞれの業界に数えるため、合計は掲載企業数より多くなります。", en: "Each industry's count covers every company related to that industry. A company related to several industries is counted in each of them, so the counts add up to more than the number of published companies." }} />
+          </p>
         </CompanySection>
 
         <CompanySection

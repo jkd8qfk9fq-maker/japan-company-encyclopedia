@@ -66,7 +66,7 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
               <span className="flex min-w-0 flex-col">
                 <span className="font-serif text-[0.9375rem] leading-snug font-semibold">{i.name}</span>
                 <span className={cn("figures text-xs", selected === i.id ? "opacity-80" : "text-muted-foreground")}>
-                  <span data-l="ja">{i.companies.length}社{lines > 0 ? `・線 ${lines}本` : ""}</span><span data-l="en">{i.companies.length} companies{lines > 0 ? `・線 ${lines}本` : ""}</span>
+                  <span data-l="ja">{i.companies.length}社{lines > 0 ? `・線 ${lines}本` : ""}</span><span data-l="en">{`${i.companies.length} companies`}{lines > 0 ? `・線 ${lines}本` : ""}</span>
                 </span>
               </span>
             </button>
@@ -162,7 +162,7 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
             <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-foreground pb-3">
               <h3 id="industry-panel-heading" className="font-serif text-2xl font-semibold">
                 <span data-l="ja">{industry.name}の企業
-                <span className="figures ml-3 text-sm font-normal text-muted-foreground"><span data-l="ja">{industry.companies.length}社</span><span data-l="en">{industry.companies.length} companies</span></span></span><span data-l="en">{industry.name} companies <span className="figures ml-3 text-sm font-normal text-muted-foreground"><span data-l="ja">{industry.companies.length}社</span><span data-l="en">{industry.companies.length} companies</span></span></span>
+                <span className="figures ml-3 text-sm font-normal text-muted-foreground"><span data-l="ja">{industry.companies.length}社</span><span data-l="en">{`${industry.companies.length} companies`}</span></span></span><span data-l="en">{industry.name} companies <span className="figures ml-3 text-sm font-normal text-muted-foreground"><span data-l="ja">{industry.companies.length}社</span><span data-l="en">{`${industry.companies.length} companies`}</span></span></span>
               </h3>
               <Link href={`/industries/${industry.id}`} className="link-ink inline-flex min-h-11 items-center text-sm">
                 <span data-l="ja">{industry.name}業界のページへ

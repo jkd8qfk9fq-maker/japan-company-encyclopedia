@@ -1,9 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
+  courseAnswerCount,
   courseFraction,
+  doneLessonDays,
   learningDays,
   learningDaysThisWeek,
   lessonDone,
+  lessonDoneDay,
   nodeStates,
   pointsBreakdown,
   unitStyle,
@@ -103,6 +106,40 @@ describe("the weekly rhythm", () => {
     // 2026-11-22 is a Sunday; its JST week runs Mon 2026-11-16 – Sun 2026-11-22.
     expect(learningDaysThisWeek(p, "2026-11-22")).toBe(2);
     expect(learningDaysThisWeek(p, "2026-11-30")).toBe(0);
+  });
+});
+
+describe("the one counting (M4): stale ids in the store are not progress", () => {
+  const units = [unit("u1", ["l1", "l2"])];
+  // A store carried over from an earlier course version: 25 finished-lesson records and 30 answers for
+  // lessons and questions the current course no longer has, beside one genuinely finished lesson.
+  const staleLessons = Object.fromEntries(Array.from({ length: 25 }, (_, i) => [`old-${i + 1}`, "2026-11-10"]));
+  const staleAnswers = Object.fromEntries(Array.from({ length: 30 }, (_, i) => [`old-q${i + 1}`, answer("2026-11-10")]));
+  const p = progress({
+    answers: { ...staleAnswers, "l1-q1": answer("2026-11-20"), "l1-q2": answer("2026-11-20") },
+    lessons: { ...staleLessons, l1: "2026-11-20" },
+    review: { "old-q1": { stage: 3, due: "2026-11-24" }, "l1-q1": { stage: 1, due: "2026-11-24" } },
+  });
+
+  it("counts finished lessons by lessonDone against the current course, not by the lessons map's keys", () => {
+    expect(Object.keys(p.lessons)).toHaveLength(26); // the raw count the record once showed as 26/35
+    expect(courseFraction(units, p)).toEqual({ done: 1, total: 2 });
+    expect(doneLessonDays(units, p)).toEqual(["2026-11-20"]);
+  });
+
+  it("counts answers of the current course only", () => {
+    expect(courseAnswerCount(units, p)).toBe(2);
+  });
+
+  it("breaks points down on the same counting when the course is given", () => {
+    // 2 course answers ×2 + 1 finished lesson ×10 + the one course review stage ×3 = 4 + 10 + 3.
+    expect(pointsBreakdown(p, 0, units)).toEqual({ answers: 4, lessons: 10, review: 3, verified: 0, total: 17 });
+  });
+
+  it("falls back to the last answer's day for a finished lesson with no recorded day", () => {
+    const noRecord = progress({ answers: { "l1-q1": answer("2026-11-18"), "l1-q2": answer("2026-11-20") } });
+    expect(lessonDoneDay(units[0].lessons[0], noRecord)).toBe("2026-11-20");
+    expect(lessonDoneDay(units[0].lessons[1], noRecord)).toBeUndefined();
   });
 });
 

@@ -2,6 +2,7 @@ import type { FinancialDeepDive as DeepDive, Trend } from "@/lib/financial-deep-
 import { formatYen } from "@/lib/utils/format";
 import { T } from "@/components/i18n/t";
 import { L } from "@/components/i18n/label";
+import { PREMIUM_FEATURES_OPEN } from "@/lib/premium-open";
 
 /**
  * 財務の深掘り (JCE-044), drawn on the server: one small chart per reading, the company in ink and the industry
@@ -81,7 +82,12 @@ export function FinancialDeepDiveBlock({ deepDive }: { deepDive: DeepDive }) {
   const byKey = new Map(deepDive.trends.map((t) => [t.key, t]));
   return (
     <div className="mb-12">
-      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "財務の深掘り（プレミアム）", en: "Financial deep dive (Premium)" }} /></h3>
+      {/* Same rule as the industry comparison above it: while the gates stand open (JCE-075) the heading
+          drops the premium label and says it is open free; closing the flag brings the label back. */}
+      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={PREMIUM_FEATURES_OPEN ? { ja: "財務の深掘り", en: "Financial deep dive" } : { ja: "財務の深掘り（プレミアム）", en: "Financial deep dive (Premium)" }} /></h3>
+      {PREMIUM_FEATURES_OPEN && (
+        <p className="mt-1 text-xs text-muted-foreground"><T m={{ ja: "現在、無料で公開しています。", en: "Currently open to everyone, free of charge." }} /></p>
+      )}
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
         <span data-l="ja">5期の数値から、会社の構造がどう動いているかを読む。濃い線がこの会社、薄い線が{deepDive.industryName}業界の掲載企業の中央値（同じ期の位置どうし）。▲▼は最新期の中央値との差で、良し悪しの判定ではありません。
       </span><span data-l="en">Reads how the company&apos;s structure is shifting from 5 fiscal years of figures. The dark line is this company; the light line is the median of listed companies in the {deepDive.industryName} industry (compared at the same point in each fiscal year). ▲▼ show the difference from the latest fiscal year&apos;s median and are not a judgment of good or bad.</span></p>

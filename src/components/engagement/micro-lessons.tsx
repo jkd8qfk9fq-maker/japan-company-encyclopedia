@@ -6,9 +6,12 @@ import { useEffect, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import {
   courseFraction,
+  courseQuestionIds,
+  doneLessonDays,
   LEARN,
   learningDays,
   learningDaysThisWeek,
+  lessonDoneDay,
   nodeStates,
   nextLessonId,
   pointsBreakdown,
@@ -57,12 +60,15 @@ export function MicroLessons() {
   const states = nodeStates(units, progress);
   const course = courseFraction(units, progress);
   const nextId = nextLessonId(units, progress);
-  const dueCount = dueReviewIds(progress.review, today).length;
+  // Only questions the current course still asks can come back in the review player, so only those are
+  // counted as due — the queue in the store can hold ids an earlier course version left behind (M4).
+  const questionIds = courseQuestionIds(units);
+  const dueCount = dueReviewIds(progress.review, today).filter((id) => questionIds.has(id)).length;
   const nextLesson = units.flatMap((u) => u.lessons).find((l) => l.id === nextId) ?? null;
 
   const verified = predictions.map((p) => ({ p, v: predData?.[p.companyId] ? verifyPrediction(p, predData[p.companyId]) : null }));
   const verifiedCount = verified.filter((x) => x.v?.status === "verified").length;
-  const points = pointsBreakdown(progress, verifiedCount);
+  const points = pointsBreakdown(progress, verifiedCount, units);
   const weekDays = learningDaysThisWeek(progress, today);
   const totalDays = learningDays(progress).length;
 
@@ -96,7 +102,7 @@ export function MicroLessons() {
           so opening the app answers "what do I do now" before the path is read. Nothing is lost by leaving one. */}
       <TodayPlan
         nextLesson={nextLesson}
-        lessonDoneToday={Object.values(progress.lessons).includes(today)}
+        lessonDoneToday={doneLessonDays(units, progress).includes(today)}
         quizAnswered={quiz[today]}
         dueCount={dueCount}
       />
@@ -106,12 +112,12 @@ export function MicroLessons() {
         const prog = unitFraction(unit, progress);
         const guideOpen = guidebook === unit.id;
         return (
-          <section key={unit.id} id={`micro-${unit.id}`} aria-label={unit.title} className="mt-10 scroll-mt-24">
+          <section key={unit.id} id={`micro-${unit.id}`} aria-labelledby={`micro-${unit.id}-title`} className="mt-10 scroll-mt-24">
             <div className="rounded-3xl p-5 text-white" style={{ backgroundColor: style.main }}>
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs font-bold tracking-[0.14em] text-white/85">単元 {ui + 1} ・ {unit.level} ・ レッスン {prog.done}／{prog.total} 完了</p>
-                  <h3 className="mt-1 text-xl font-bold leading-7">{unit.title}</h3>
+                  <h3 id={`micro-${unit.id}-title`} className="mt-1 text-xl font-bold leading-7">{unit.title}</h3>
                   <p className="mt-1 text-sm leading-6 text-white/90">{unit.intro}</p>
                 </div>
                 <button
@@ -163,7 +169,7 @@ export function MicroLessons() {
                           {lesson.title}
                         </span>
                       </div>
-                      {isSelected && <NodeDetail lesson={lesson} state={state} doneDay={progress.lessons[lesson.id]} />}
+                      {isSelected && <NodeDetail lesson={lesson} state={state} doneDay={lessonDoneDay(lesson, progress)} />}
                     </li>
                   );
                 })}
@@ -319,22 +325,27 @@ function TodayPlan({
   quizAnswered: { correct: boolean } | undefined;
   dueCount: number;
 }) {
-  const rows: { key: string; href: string; label: string; detail: string; done: boolean }[] = [
+  // `done` is the row's own completion and alone earns the check. `satisfied` is today's quota met
+  // another way: it counts toward the 残り total but draws no check — the next lesson is by definition
+  // not finished, and marking it （済み） read as if it were (audit part 1, minor 13).
+  const rows: { key: string; href: string; label: string; detail: string; done: boolean; satisfied: boolean }[] = [
     nextLesson
       ? {
           key: "lesson",
           href: `/learn/lesson/${nextLesson.id}`,
           label: lessonDoneToday ? "次のレッスン（今日は1本終えました）" : "次のレッスン",
           detail: `${nextLesson.title}（約${nextLesson.minutes}分）`,
-          done: lessonDoneToday,
+          done: false,
+          satisfied: lessonDoneToday,
         }
-      : { key: "lesson", href: "/learn/review", label: "レッスン", detail: "全レッスンを終えました。復習で定着させます", done: true },
+      : { key: "lesson", href: "/learn/review", label: "レッスン", detail: "全レッスンを終えました。復習で定着させます", done: true, satisfied: false },
     {
       key: "quiz",
       href: "/quiz",
       label: "今日の1問",
       detail: quizAnswered ? `回答済み（${quizAnswered.correct ? "正解" : "不正解。解説を読み直せます"}）` : "30秒。日本時間の0時に新しい問題になります",
       done: Boolean(quizAnswered),
+      satisfied: false,
     },
     {
       key: "review",
@@ -342,9 +353,10 @@ function TodayPlan({
       label: "復習",
       detail: dueCount > 0 ? `${dueCount}問が復習の時期です` : "今日の復習はありません",
       done: dueCount === 0,
+      satisfied: false,
     },
   ];
-  const left = rows.filter((r) => !r.done).length;
+  const left = rows.filter((r) => !r.done && !r.satisfied).length;
   return (
     <section id="review-queue" aria-labelledby="today-plan" className="mt-6 scroll-mt-24">
       <div className="flex items-baseline justify-between gap-3">
@@ -354,12 +366,14 @@ function TodayPlan({
         </p>
       </div>
       <ul className="mt-3 grid gap-2">
-        {rows.map((row) => (
+        {rows.map((row) => {
+          const calm = row.done || row.satisfied;
+          return (
           <li key={row.key}>
             <Link
               href={row.href}
               className="flex min-h-14 items-center gap-3 rounded-2xl border-2 px-4 py-3"
-              style={{ borderColor: row.done ? LEARN.line : LEARN.cta, backgroundColor: row.done ? "#fff" : LEARN.ctaSoft }}
+              style={{ borderColor: calm ? LEARN.line : LEARN.cta, backgroundColor: calm ? "#fff" : LEARN.ctaSoft }}
             >
               <span
                 className="grid size-8 shrink-0 place-items-center rounded-full border-2"
@@ -371,14 +385,15 @@ function TodayPlan({
               <span className="min-w-0 flex-1">
                 <span className="block text-sm font-bold" style={{ color: LEARN.navy }}>
                   {row.label}
-                  <span className="sr-only">{row.done ? "（済み）" : "（まだ）"}</span>
+                  <span className="sr-only">{row.done ? "（済み）" : row.satisfied ? "（今日の目標は達成済み）" : "（まだ）"}</span>
                 </span>
                 <span className="block text-xs leading-5" style={{ color: LEARN.muted }}>{row.detail}</span>
               </span>
-              <ChevronRight className="size-5 shrink-0" style={{ color: row.done ? LEARN.muted : LEARN.ctaDark }} aria-hidden />
+              <ChevronRight className="size-5 shrink-0" style={{ color: calm ? LEARN.muted : LEARN.ctaDark }} aria-hidden />
             </Link>
           </li>
-        ))}
+          );
+        })}
       </ul>
     </section>
   );

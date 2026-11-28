@@ -86,6 +86,10 @@ export default async function FeaturesPage() {
           </nav>
         )}
 
+        <p className="mt-8 text-xs leading-6 text-muted-foreground">
+          <T m={{ ja: "特集ごとに対象となる企業（母数）と指標の定義は異なります。各特集の冒頭と表の注記に、対象範囲と算出方法を明示しています。見出しの数字にも、対象の企業数を併記しています。", en: "Each feature covers a different set of companies and defines its figures its own way; the scope and method are stated in each feature's opening text and table notes, and headline figures carry their company count." }} />
+        </p>
+
         {!lead ? (
           <p className="mt-14 border-t border-foreground pt-8 text-muted-foreground"><T m={{ ja: "特集はまだ公開していません。", en: "No features have been published yet." }} /></p>
         ) : (
@@ -148,7 +152,7 @@ export default async function FeaturesPage() {
                             <Link href={`/features/${first.id}`} className="flex h-full flex-col items-center gap-1.5 rounded-lg bg-card px-1 py-3 text-center text-xs font-medium shadow-sm hover:bg-muted">
                               <Icon className="size-5" aria-hidden />
                               {topic}
-                              {count > 1 && <span className="figures text-[0.6875rem] text-muted-foreground"><span data-l="ja">{count}本</span><span data-l="en">{count} features</span></span>}
+                              {count > 1 && <span className="figures text-[0.6875rem] text-muted-foreground"><span data-l="ja">{count}本</span><span data-l="en">{`${count} features`}</span></span>}
                             </Link>
                           </li>
                         );
