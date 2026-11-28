@@ -2583,3 +2583,19 @@ JCE-146 の継続。同じドライバ（`.i18n-work/driver.mjs`、translate.mjs
 **全面英語化の現在地（実測）**：description 2,127/2,127（完了）、businesses 60,492/60,495（検査器限界の 3 件を除き完了）、history 99,756/99,762（同 6 件を除き完了）、businessModel 56,332/56,365（同 33 件を除き完了）、perspectives 14,636/14,705（同 69 件を除き完了）。企業コンテンツの全分野が、検査器限界分を除き完訳に到達した。
 
 **残件**：特集記事の英語化（対象種別 feature の追加という設計判断を含む）、/learn のレッスン本文・設問文の英語化。再開手順は JCE-137 と同じ。
+
+## JCE-148 — 2026-11-28: 特集記事の英語化（対象種別 feature の追加）と /learn の英語化（テーマ・導入文＋設問文のテンプレート側対応）
+
+JCE-138 の設計を実装した。企業コンテンツの完訳（JCE-147）を受けて、英語が効いていなかった残り2面――特集記事と /learn――に保存訳と辞書の経路を通した。
+
+**特集（実装）**：(1) `TranslationKind` に `feature` を追加し、subject をビルド済み特集に解決する（`static-repositories.ts` の `featureMap`）。保存先は `src/data/translations/en/features/<id>.json` で、`translationFileSchema` の kind 列挙にも `feature` を足した。(2) 特集の翻訳対象は `FEATURE_TRANSLATION_FIELDS`（`src/lib/translatable.ts`：title・subtitle・topic・heroImageAlt・takeaways・keyFigures・body）に限定する。特集は保存エントリではなくビルド生成物で、関連 id・出典・status・公開日は本文ではないため、リポジトリ・パイプライン・テストが同じ1つのリストで収集する。(3) パイプライン（`scripts/pipeline/translate.mjs`）の対象種別に `feature` を追加した。ビルド済み特集の取得はアプリ自身のモジュール解決が要るため、`scripts/pipeline/src-alias-hooks.mjs`（`@/` エイリアスと属性なし JSON import を解決する module hooks）をこのスクリプトのプロセス内だけに登録して `src/data/features` を import する。数値はビルドごとに変わりうるが、キーは原文ハッシュであり、原文が変われば旧訳は自動的に対象外になる（JCE-128 の原則どおり）。(4) 表示側：本文（段落・引用・ポイント）は既存の `RichText` が全体マップを引くため保存訳がそのまま出る。見出し・タイトル・表の題と注・行ラベル等、これまで `<L>`（辞書）で描いていた特集固有の文字列は、新設の `<CL>`（`src/components/i18n/content-label.tsx`：保存訳があればそれを、無ければ辞書と図形整形にフォールバック）に切り替えた。カード（`FeatureCard`）も同じ切り替えに伴い async 化した（呼び出しは全てサーバーコンポーネント）。
+
+**特集の翻訳結果（実測）**：対象は公開特集6件・577文字列。prepare で翻訳メモリの使い回し91件を保存し、送信447件（9,374字）を6バッチで翻訳、collect で450件（1文目導出30件を含む）を保存、却下36件のリトライで36件全てを保存した。**577/577 で完訳、検査を通らず残る文は0件**。内訳：overseas-sales-geography 58、average-salary-by-industry 83、five-year-revenue-growth 109、employees-by-industry 138、how-many-companies-pay-dividends 106、revenue-per-employee-by-industry 83。
+
+**/learn 第1段（テーマ名・導入文）**：LEARN_THEMES のテーマ名・導入文10件は辞書（`UI_DICTIONARY_EN`）に既に収録されていたが、コース画面はクライアントコンポーネントが `/learn.json` の生文字列を描いており辞書を引いていなかった。`learn.json` のルート（サーバー側）で各ステップに `themeEn`/`introEn` を辞書から解決して付け、画面は `<T>` で描くようにした。辞書そのものはブラウザバンドルに入らない（`<L>` がサーバー専用である理由と同じ）。
+
+**/learn 第2段（設問文）**：設問は企業データからのテンプレート生成（`src/lib/engagement-data.ts`）のため、文単位の保存訳では追従できない。テンプレート側で英語を並行生成する形にした：`QuizQuestion.promptEn` を全6種別（revenue・overseas・segment・quarterly・describe・decompose）に付け、選択肢には各社の英語名（`nameEn`）を `labelEn` として付けた。decompose の利益行は `profitLineKind` が認める3種（営業利益・経常利益・税引前利益）に限られるため英語は固定対応表で足り、社名の英語名が無い会社では promptEn を付けない。実測ではプール435問すべてに promptEn が付き、選択肢の labelEn も全件に付いた。表示はコース画面・今日の1問・レッスンプレイヤー（プール由来の MicroQuestion に `promptEn` を引き継ぐ）の3面で `<T>` に切り替えた。
+
+**残る部分（正確な範囲）**：(1) 設問の解説文（explain）と describe の手がかり文（clue）は日本語のまま。解説は各社の印字ラベル・会計期間の表記・事業名を差し込むため、その英語はルックアップではなく並行生成が要り、clue は社名を伏せて切り詰めた派生文で、原文の保存訳を照合できない。(2) マイクロレッスンの著作カリキュラム（JCE-145 の単元・レッスン本文・ガイド・著作設問と LessonQuestion 由来の設問）は、テンプレート生成ではなく著作コンテンツであり、今回の範囲外とした。レッスン内のプール由来の設問だけが promptEn を持つ。(3) 特集ページのメタデータ（title/description）は他のページと同様に日本語のまま（JCE-138 の対象外指定どおり）。
+
+**ゲート**：translations.test.ts 15件・i18n.test.ts 6件を含む対象テスト合格（companies の full-scan は既知の VM 環境起因の5秒タイムアウトが並行実行時に出るため、タイムアウト延長で全件合格を実測）、tsc クリーン、eslint 0 errors。data-integrity は CI で確認する。

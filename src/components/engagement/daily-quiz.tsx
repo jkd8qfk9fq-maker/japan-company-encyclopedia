@@ -3,6 +3,7 @@
 import { Check, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { T } from "@/components/i18n/t";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { QuizQuestion } from "@/lib/engagement-data";
 import { buildCourseSteps } from "@/lib/learn-course";
@@ -46,7 +47,7 @@ export function DailyQuiz({ compact = false }: { compact?: boolean }) {
   return (
     <div className={`rounded-md border border-border bg-card ${compact ? "p-4" : "p-5 md:p-6"}`}>
       <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">今日の1問</p>
-      <p className={`mt-2 font-medium ${compact ? "" : "text-lg"}`}>{shown.prompt}</p>
+      <p className={`mt-2 font-medium ${compact ? "" : "text-lg"}`}>{shown.promptEn ? <T m={{ ja: shown.prompt, en: shown.promptEn }} /> : shown.prompt}</p>
       {shown.clue && <p className="mt-2 rounded-sm bg-muted/60 px-3 py-2 text-sm leading-6">「{shown.clue}」</p>}
       <ul className={`mt-3 grid gap-2 ${shown.options.length === 2 ? "sm:grid-cols-2" : ""}`}>
         {shown.options.map((o) => {
@@ -72,7 +73,7 @@ export function DailyQuiz({ compact = false }: { compact?: boolean }) {
                         : "border-border text-muted-foreground"
                 }`}
               >
-                <span>{o.label}</span>
+                <span>{o.labelEn ? <T m={{ ja: o.label, en: o.labelEn }} /> : o.label}</span>
                 {state === "right" && <Check className="size-4 shrink-0" aria-label="正解" />}
                 {state === "wrong" && <X className="size-4 shrink-0" aria-label="あなたの答え" />}
               </button>
@@ -85,9 +86,9 @@ export function DailyQuiz({ compact = false }: { compact?: boolean }) {
           <p className="font-medium">{answered.correct ? "正解です。" : "残念、こちらが正解でした。"}</p>
           <p className="text-muted-foreground">{shown.explain}</p>
           <p className="flex flex-wrap gap-x-4 gap-y-1">
-            {(shown.links ?? shown.options.map((o) => ({ href: `/companies/${o.id}`, label: `${o.label}を見る` }))).map((l) => (
+            {(shown.links ?? shown.options.map((o) => ({ href: `/companies/${o.id}`, label: `${o.label}を見る`, labelEn: o.labelEn ? `View ${o.labelEn}` : undefined }))).map((l) => (
               <Link key={l.href} href={l.href} className="underline underline-offset-2 hover:text-foreground">
-                {l.label}
+                {l.labelEn ? <T m={{ ja: l.label, en: l.labelEn }} /> : l.label}
               </Link>
             ))}
           </p>

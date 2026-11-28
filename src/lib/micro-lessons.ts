@@ -46,12 +46,14 @@ export type MicroQuestion = {
   /** The reading the question practises — the training history groups by it. */
   kind: string;
   prompt: string;
+  /** The prompt in English, carried from the pool question it came from (JCE-148); authored and lesson questions have none yet. */
+  promptEn?: string;
   clue?: string;
   /** How the question is answered: pick one, or arrange the options into the filing's own order. */
   format?: "choice" | "order";
   /** An excerpt of a company's table, printed figures as filed, when the reading uses the real thing. */
   table?: QuestionTable;
-  options: { id: string; label: string }[];
+  options: { id: string; label: string; labelEn?: string }[];
   answer: string;
   explain: string;
   /** The company the question is about — null for an authored structure question, which is about no company. */
@@ -667,6 +669,7 @@ const fromPool = (q: QuizQuestion): MicroQuestion => ({
   id: q.id,
   kind: q.kind,
   prompt: q.prompt,
+  promptEn: q.promptEn,
   clue: q.clue,
   options: q.options,
   answer: q.answer,

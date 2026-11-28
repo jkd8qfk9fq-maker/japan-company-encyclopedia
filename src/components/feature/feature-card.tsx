@@ -7,7 +7,7 @@ import { formatDateJa } from "@/lib/utils/format";
 import type { Feature } from "@/types/feature";
 import { T } from "@/components/i18n/t";
 import { F } from "@/components/i18n/figure";
-import { L } from "@/components/i18n/label";
+import { CL } from "@/components/i18n/content-label";
 
 /**
  * A feature as it is listed (JCE-111, JCE-113). Three shapes, after the magazine and news sites readers already
@@ -48,7 +48,7 @@ function Meta({ feature }: { feature: Feature }) {
   );
 }
 
-function LeadCard({ feature, index }: { feature: Feature; index: number }) {
+async function LeadCard({ feature, index }: { feature: Feature; index: number }) {
   const [first, ...more] = feature.keyFigures ?? [];
   return (
     <Link
@@ -62,23 +62,23 @@ function LeadCard({ feature, index }: { feature: Feature; index: number }) {
       <div className="flex flex-col p-6 md:p-8">
         <Meta feature={feature} />
         <h3 className="mt-3 font-serif text-[1.5rem] leading-snug font-semibold group-hover:underline group-hover:underline-offset-4 md:text-[1.875rem]">
-          <L s={feature.title} />
+          <CL s={feature.title} />
         </h3>
-        {feature.subtitle && <p className="mt-4 text-[0.9375rem] leading-7 text-muted-foreground"><L s={feature.subtitle} /></p>}
+        {feature.subtitle && <p className="mt-4 text-[0.9375rem] leading-7 text-muted-foreground"><CL s={feature.subtitle} /></p>}
         <span className="mt-auto inline-flex items-center gap-1.5 border-t border-border pt-4 text-sm font-semibold text-navy dark:text-foreground">
           <span data-l="ja">続きを読む <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en">Read more <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
         </span>
       </div>
       {first && (
         <div className="m-4 mt-0 flex flex-col rounded-xl bg-muted/60 p-5 md:col-span-2 md:mt-4 lg:col-span-1 lg:ml-0">
-          {feature.topic && <p className="text-xs font-semibold text-muted-foreground">{feature.topic}</p>}
+          {feature.topic && <p className="text-xs font-semibold text-muted-foreground"><CL s={feature.topic} /></p>}
           <p className="figures mt-2 text-[2.75rem] leading-none font-semibold text-navy dark:text-foreground"><F s={first.value} /></p>
-          <p className="mt-2 text-xs leading-snug text-muted-foreground"><L s={first.label} /></p>
+          <p className="mt-2 text-xs leading-snug text-muted-foreground"><CL s={first.label} /></p>
           {more.length > 0 && (
             <dl className="mt-4 space-y-3 border-t border-border pt-4">
               {more.map((k) => (
                 <div key={k.label}>
-                  <dt className="text-xs leading-snug text-muted-foreground"><L s={k.label} /></dt>
+                  <dt className="text-xs leading-snug text-muted-foreground"><CL s={k.label} /></dt>
                   <dd className="figures mt-0.5 text-lg font-semibold"><F s={k.value} /></dd>
                 </div>
               ))}
@@ -90,26 +90,26 @@ function LeadCard({ feature, index }: { feature: Feature; index: number }) {
   );
 }
 
-function RowCard({ feature, index }: { feature: Feature; index: number }) {
+async function RowCard({ feature, index }: { feature: Feature; index: number }) {
   return (
     <Link href={`/features/${feature.id}`} className="group flex items-center gap-4 py-5 md:gap-6">
       <Picture feature={feature} index={index} sizes="(min-width: 768px) 13rem, 7rem" className="aspect-[4/3] w-28 shrink-0 rounded-lg sm:w-40 md:w-52" />
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-2">
-          {feature.topic && <span className="rounded-full bg-muted px-2.5 py-0.5 text-[0.6875rem] font-semibold">{feature.topic}</span>}
+          {feature.topic && <span className="rounded-full bg-muted px-2.5 py-0.5 text-[0.6875rem] font-semibold"><CL s={feature.topic} /></span>}
           <Meta feature={feature} />
         </div>
         <h3 className="mt-1.5 font-serif text-[1.0625rem] leading-snug font-semibold group-hover:underline group-hover:underline-offset-4 md:text-xl">
-          <L s={feature.title} />
+          <CL s={feature.title} />
         </h3>
-        {feature.subtitle && <p className="mt-1.5 line-clamp-2 hidden text-sm leading-6 text-muted-foreground sm:block"><L s={feature.subtitle} /></p>}
+        {feature.subtitle && <p className="mt-1.5 line-clamp-2 hidden text-sm leading-6 text-muted-foreground sm:block"><CL s={feature.subtitle} /></p>}
       </div>
       <ChevronRight className="hidden size-8 shrink-0 rounded-full bg-muted p-1.5 text-muted-foreground transition-transform group-hover:translate-x-0.5 md:block" aria-hidden />
     </Link>
   );
 }
 
-export function FeatureCard({ feature, index, size = "default" }: { feature: Feature; index: number; size?: "default" | "lead" | "row" }) {
+export async function FeatureCard({ feature, index, size = "default" }: { feature: Feature; index: number; size?: "default" | "lead" | "row" }) {
   if (size === "lead") return <LeadCard feature={feature} index={index} />;
   if (size === "row") return <RowCard feature={feature} index={index} />;
   const lead = feature.keyFigures?.[0];
@@ -117,16 +117,16 @@ export function FeatureCard({ feature, index, size = "default" }: { feature: Fea
     <Link href={`/features/${feature.id}`} className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
       <div className="relative">
         <Picture feature={feature} index={index} sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw" className="aspect-[16/9]" />
-        {feature.topic && <span className="absolute top-3 left-3 rounded-full bg-navy/90 px-3 py-1 text-xs font-semibold text-white">{feature.topic}</span>}
+        {feature.topic && <span className="absolute top-3 left-3 rounded-full bg-navy/90 px-3 py-1 text-xs font-semibold text-white"><CL s={feature.topic} /></span>}
       </div>
       <div className="flex flex-1 flex-col p-5">
         {lead && (
           <p className="flex items-baseline gap-2">
             <span className="figures text-2xl leading-none font-semibold"><F s={lead.value} /></span>
-            <span className="text-xs leading-snug text-muted-foreground"><L s={lead.label} /></span>
+            <span className="text-xs leading-snug text-muted-foreground"><CL s={lead.label} /></span>
           </p>
         )}
-        <h3 className="mt-3 font-serif text-lg leading-snug font-semibold group-hover:underline group-hover:underline-offset-4"><L s={feature.title} /></h3>
+        <h3 className="mt-3 font-serif text-lg leading-snug font-semibold group-hover:underline group-hover:underline-offset-4"><CL s={feature.title} /></h3>
         <p className="mt-auto flex items-center justify-between pt-4">
           <Meta feature={feature} />
           <span className="inline-flex items-center gap-1 text-xs font-medium">

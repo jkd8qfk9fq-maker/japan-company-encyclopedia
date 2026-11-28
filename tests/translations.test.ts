@@ -2,10 +2,11 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { companies } from "@/data/companies";
+import { features } from "@/data/features";
 import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
 import { parseContent, translationFileSchema } from "@/lib/content/schemas";
-import { translatableStrings } from "@/lib/translatable";
+import { FEATURE_TRANSLATION_FIELDS, translatableStrings } from "@/lib/translatable";
 import { checkTranslation, englishFigures, figuresAmbiguous, hashText, japaneseAmounts, japaneseFigures } from "@/lib/translation-check";
 
 // JCE-128: reference translations are shown only when they pass these checks; the files must hold nothing else.
@@ -71,13 +72,15 @@ describe("checkTranslation", () => {
 
 const ROOT = join(process.cwd(), "src", "data", "translations", "en");
 const SUBJECTS = {
-  companies: { kind: "company", get: new Map<string, unknown>(companies.map((c) => [c.id, c])) },
-  industries: { kind: "industry", get: new Map<string, unknown>(industries.map((i) => [i.id, i])) },
-  terms: { kind: "term", get: new Map<string, unknown>(terms.map((t) => [t.id, t])) },
+  companies: { kind: "company", fields: undefined, get: new Map<string, unknown>(companies.map((c) => [c.id, c])) },
+  industries: { kind: "industry", fields: undefined, get: new Map<string, unknown>(industries.map((i) => [i.id, i])) },
+  terms: { kind: "term", fields: undefined, get: new Map<string, unknown>(terms.map((t) => [t.id, t])) },
+  // A feature's texts are its reader-facing fields only — the same list the repository collects (JCE-148).
+  features: { kind: "feature", fields: FEATURE_TRANSLATION_FIELDS, get: new Map<string, unknown>(features.map((f) => [f.id, f])) },
 } as const;
 
 describe("translation files", () => {
-  for (const [folder, { kind, get }] of Object.entries(SUBJECTS)) {
+  for (const [folder, { kind, fields, get }] of Object.entries(SUBJECTS)) {
     const dir = join(ROOT, folder);
     const names = existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith(".json")) : [];
 
@@ -96,7 +99,7 @@ describe("translation files", () => {
         const file = translationFileSchema.parse(JSON.parse(readFileSync(join(dir, name), "utf8")));
         const subject = get.get(file.subject.id);
         if (!subject) continue;
-        for (const ja of translatableStrings(subject)) {
+        for (const ja of translatableStrings(subject, fields)) {
           const en = file.entries[hashText(ja)];
           if (!en) continue;
           const problems = checkTranslation(ja, en);

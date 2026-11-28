@@ -33,8 +33,12 @@ export type LearnStep = {
   /** 1-based position in the course. */
   n: number;
   theme: string;
+  /** The theme's name in English, resolved from the interface dictionary where the course is served (JCE-148). */
+  themeEn?: string;
   /** The theme's one-line guide, shown where the theme begins. */
   intro: string;
+  /** The guide in English, resolved with the name (JCE-148). */
+  introEn?: string;
   kind: QuizQuestion["kind"];
   /** Company-page section the question came from (an anchor on /companies/<answer>). */
   section: string;

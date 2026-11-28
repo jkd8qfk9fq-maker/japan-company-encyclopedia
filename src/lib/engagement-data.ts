@@ -154,9 +154,17 @@ export type QuizQuestion = {
   id: string;
   kind: "revenue" | "overseas" | "describe" | "segment" | "quarterly" | "decompose";
   prompt: string;
+  /**
+   * The prompt in English, from the same template with the industry's and companies' English names (JCE-148).
+   * The prompt is the one part of a generated question a template can carry across: the explanation and the
+   * "describe" clue interpolate the filings' own labels, periods and segment names, whose English is a parallel
+   * generation, not a lookup — they stay Japanese. Absent where the template would have to name a company whose
+   * filing gives no English name.
+   */
+  promptEn?: string;
   /** For "describe": the company's own description with its name hidden. */
   clue?: string;
-  options: { id: string; label: string }[];
+  options: { id: string; label: string; labelEn?: string }[];
   answer: string;
   /** What the answer rests on, in the entries' words and printed figures. */
   explain: string;
@@ -168,8 +176,11 @@ export type QuizQuestion = {
   /** The period the figures belong to — both companies' years when they differ. Always shown. */
   period: string;
   /** Where the answer screen links to; absent, each option is a company and links to its page. */
-  links?: { href: string; label: string }[];
+  links?: { href: string; label: string; labelEn?: string }[];
 };
+
+/** An option's English label: the English name the company's filing gives, when it gives one (JCE-148). */
+const labelEnOf = (c: Company) => (c.nameEn ? { labelEn: c.nameEn } : {});
 
 const yen = (v: number) => {
   const oku = Math.round(v / 1e8);
@@ -215,7 +226,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         id: `revenue-${a.c.id}-${b.c.id}`,
         kind: "revenue",
         prompt: `${industryName}の2社。最新期の売上高が大きいのはどっち？`,
-        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name })),
+        promptEn: `Two ${INDUSTRY_LABELS[ind].nameEn} companies. Which had higher revenue in its latest fiscal year?`,
+        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name, ...labelEnOf(x.c) })),
         answer: big.c.id,
         explain: `${big.c.name}：${big.r!.revenueLabel} ${yen(big.r!.revenue!)}（${big.r!.fiscalYear}）／${small.c.name}：${small.r!.revenueLabel} ${yen(small.r!.revenue!)}（${small.r!.fiscalYear}）。どちらも有価証券報告書の数値です。`,
         industry: ind,
@@ -240,7 +252,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         id: `overseas-${a.c.id}-${b.c.id}`,
         kind: "overseas",
         prompt: `売上のうち海外の割合が高いのはどっち？`,
-        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name })),
+        promptEn: `Which company earns a larger share of its revenue overseas?`,
+        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name, ...labelEnOf(x.c) })),
         answer: hi.c.id,
         explain: `${hi.c.name}：${hi.o.percent}%（${hi.o.fiscalYear}）／${lo.c.name}：${lo.o.percent}%（${lo.o.fiscalYear}）。計算値：${hi.o.formula}。`,
         industry: ind,
@@ -274,7 +287,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         id: `segment-${a.c.id}-${b.c.id}`,
         kind: "segment",
         prompt: `${industryName}の2社。売上のうち、いちばん大きな事業が占める割合が高いのはどっち？`,
-        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name })),
+        promptEn: `Two ${INDUSTRY_LABELS[ind].nameEn} companies. In which one does the largest business account for a larger share of revenue?`,
+        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name, ...labelEnOf(x.c) })),
         answer: hi.c.id,
         explain: `${hi.c.name}：最大の事業は「${hi.topName}」で ${hi.share}%（${hi.fiscalYear}）／${lo.c.name}：「${lo.topName}」で ${lo.share}%。計算値：事業別の${hi.label}のうち最大の事業の金額 ÷ 事業別の合計。`,
         industry: ind,
@@ -307,7 +321,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         id: `quarterly-${a.c.id}-${b.c.id}`,
         kind: "quarterly",
         prompt: `${industryName}の2社。今期の四半期（累計）で、前年の同じ時期より売上の伸びが大きいのはどっち？`,
-        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name })),
+        promptEn: `Two ${INDUSTRY_LABELS[ind].nameEn} companies. Which grew its revenue more in the current fiscal year's cumulative quarter than in the same period a year earlier?`,
+        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name, ...labelEnOf(x.c) })),
         answer: hi.c.id,
         explain: `${side(hi)}／${side(lo)}。計算値：今期の売上 ÷ 前年の同じ時期の売上 − 1。四半期の売上は決算短信と半期報告書の数値です。`,
         industry: ind,
@@ -336,11 +351,12 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         .find((r) => r.sourceIds.some((id) => businessSourceIds.includes(id)));
       const title = rec ? sourceTitleOf(c, rec.sourceIds) : undefined;
       if (!rec || !title) continue;
-      const options = [c, ...others].sort((a, b) => hash(`${c.id}:${a.id}`) - hash(`${c.id}:${b.id}`)).map((x) => ({ id: x.id, label: x.name }));
+      const options = [c, ...others].sort((a, b) => hash(`${c.id}:${a.id}`) - hash(`${c.id}:${b.id}`)).map((x) => ({ id: x.id, label: x.name, ...labelEnOf(x) }));
       questions.push({
         id: `describe-${c.id}`,
         kind: "describe",
         prompt: `次の説明はどの会社？（${industryName}）`,
+        promptEn: `Which company is this describing? (${INDUSTRY_LABELS[ind].nameEn})`,
         clue: hidden,
         options,
         answer: c.id,
@@ -372,13 +388,18 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
       const title = sourceTitleOf(x.c, x.change.sourceIds);
       if (!title) continue;
       const line = x.change.title.replace(/の増減$/, "");
+      // The decomposed line is one of the three kinds profitLineKind admits, so its English is a fixed map (JCE-148).
+      const lineEn = { 営業利益: "operating income", 経常利益: "ordinary income", 税引前利益: "income before income taxes" }[line];
       questions.push({
         id: `decompose-${x.c.id}`,
         kind: "decompose",
         prompt: `${x.c.name}の${line}は前期から${x.change.value > 0 ? "増えました" : "減りました"}。この増減に大きく効いたのは？`,
+        ...(x.c.nameEn && lineEn
+          ? { promptEn: `${x.c.nameEn}'s ${lineEn} ${x.change.value > 0 ? "increased" : "decreased"} from the previous fiscal year. What contributed more to that change?` }
+          : {}),
         options: [
-          { id: "a1-revenue-effect", label: "売上の増減" },
-          { id: "a1-margin-effect", label: "利益率の変化" },
+          { id: "a1-revenue-effect", label: "売上の増減", labelEn: "The change in revenue" },
+          { id: "a1-margin-effect", label: "利益率の変化", labelEn: "The change in profit margin" },
         ],
         answer: x.answer,
         explain: `${sentenceText(x.sentence)}（計算値。売上の増減による分 ＝ 売上高の増減 ×（前期と最新期の利益率の平均）、利益率の変化による分 ＝ 利益率の増減 ×（前期と最新期の売上高の平均）。二つを足すと${line}の増減になります。）`,
@@ -386,7 +407,13 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         sourceIds: x.change.sourceIds,
         sourceTitle: title,
         period: x.change.fiscalYear,
-        links: [{ href: `/companies/${x.c.id}/report`, label: `${x.c.name}の分析（この会社の今）を見る` }],
+        links: [
+          {
+            href: `/companies/${x.c.id}/report`,
+            label: `${x.c.name}の分析（この会社の今）を見る`,
+            ...(x.c.nameEn ? { labelEn: `See the analysis of ${x.c.nameEn} (where the company stands now)` } : {}),
+          },
+        ],
       });
     }
   }

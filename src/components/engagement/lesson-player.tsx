@@ -13,6 +13,7 @@ import { jstToday, microProgressStore, predictionsStore, recordMicroAnswer, reco
 import { loadLessons, loadPredictions } from "./load";
 import { LearnButton, ProgressRing } from "./learn-ui";
 import { F } from "@/components/i18n/figure";
+import { T } from "@/components/i18n/t";
 
 /**
  * The lesson player (JCE-088): one step on one screen — read, predict, immediate feedback — instead of the
@@ -183,7 +184,7 @@ function PlayerRun({
         {q && (
           <div>
             <p className="text-xs font-bold tracking-[0.14em]" style={{ color: accent.main }}>{isOrder ? "並べ替えて、確かめる" : PREDICT_KINDS.has(q.kind) ? "予測して、確かめる" : "読み方を確かめる"}</p>
-            <p className="mt-3 text-xl font-bold leading-8" style={{ color: LEARN.ink }}>{q.prompt}</p>
+            <p className="mt-3 text-xl font-bold leading-8" style={{ color: LEARN.ink }}>{q.promptEn ? <T m={{ ja: q.prompt, en: q.promptEn }} /> : q.prompt}</p>
             {q.period && <p className="figures mt-2 text-sm" style={{ color: LEARN.muted }}>対象期間：<F s={q.period} /></p>}
             {q.clue && (
               <p className="mt-3 rounded-2xl px-4 py-3 text-sm leading-6" style={{ backgroundColor: accent.soft, color: LEARN.ink }}>「{q.clue}」</p>
@@ -211,7 +212,7 @@ function PlayerRun({
                             style={{ borderColor: checked ? (correct ? LEARN.cta : LEARN.wrong) : accent.main, backgroundColor: accent.soft, color: LEARN.ink }}
                           >
                             <span className="figures grid size-7 shrink-0 place-items-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: accent.main }}>{i + 1}</span>
-                            <span>{o.label}</span>
+                            <span>{o.labelEn ? <T m={{ ja: o.label, en: o.labelEn }} /> : o.label}</span>
                           </button>
                         </li>
                       );
@@ -229,7 +230,7 @@ function PlayerRun({
                         className="flex min-h-12 w-full items-center rounded-2xl border-2 px-4 py-3 text-left text-base font-medium"
                         style={{ borderColor: LEARN.line, backgroundColor: "#ffffff", color: LEARN.ink }}
                       >
-                        {o.label}
+                        {o.labelEn ? <T m={{ ja: o.label, en: o.labelEn }} /> : o.label}
                       </button>
                     </li>
                   ))}
@@ -251,7 +252,7 @@ function PlayerRun({
                       className="flex min-h-12 w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left text-base font-medium"
                       style={{ borderColor: border, backgroundColor: bg, color: LEARN.ink }}
                     >
-                      <span>{o.label}</span>
+                      <span>{o.labelEn ? <T m={{ ja: o.label, en: o.labelEn }} /> : o.label}</span>
                       {checked && isRight && <Check className="size-5 shrink-0" style={{ color: LEARN.cta }} aria-label="正解" />}
                       {checked && isChosen && !isRight && <X className="size-5 shrink-0" style={{ color: LEARN.wrong }} aria-label="あなたの答え" />}
                     </button>

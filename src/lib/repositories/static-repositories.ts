@@ -8,7 +8,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { headquartersSchema, parseContent, translationFileSchema, websitesSchema } from "@/lib/content/schemas";
 import { checkTranslation, hashText } from "@/lib/translation-check";
-import { translatableStrings } from "@/lib/translatable";
+import { FEATURE_TRANSLATION_FIELDS, translatableStrings } from "@/lib/translatable";
 import { toPlainText } from "@/lib/rich-text";
 import { isReleased } from "@/lib/release";
 import type { Company, RelatedCompany } from "@/types/company";
@@ -159,7 +159,7 @@ export const websiteRepository: WebsiteRepository = {
   },
 };
 
-type TranslationKind = "company" | "industry" | "term";
+type TranslationKind = "company" | "industry" | "term" | "feature";
 const TRANSLATION_ROOT = join(process.cwd(), "src", "data", "translations");
 
 /**
@@ -176,16 +176,19 @@ function translations() {
     company: (id) => companyMap.get(id),
     industry: (id) => industryMap.get(id),
     term: (id) => termMap.get(id),
+    // A feature is built, not stored (JCE-074): the subject is the built article, and only its reader-facing
+    // fields are texts (FEATURE_TRANSLATION_FIELDS, JCE-148).
+    feature: (id) => featureMap.get(id),
   };
   for (const kind of Object.keys(subjects) as TranslationKind[]) {
-    const folder = { company: "companies", industry: "industries", term: "terms" }[kind];
+    const folder = { company: "companies", industry: "industries", term: "terms", feature: "features" }[kind];
     const dir = join(TRANSLATION_ROOT, "en", folder);
     if (!existsSync(dir)) continue;
     for (const name of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
       const file = parseContent(translationFileSchema, JSON.parse(readFileSync(join(dir, name), "utf8")), `translations/en/${folder}/${name}`);
       const subject = subjects[kind](file.subject.id);
       if (!subject) continue;
-      const sources = translatableStrings(subject);
+      const sources = kind === "feature" ? translatableStrings(subject, FEATURE_TRANSLATION_FIELDS) : translatableStrings(subject);
       let translated = 0;
       for (const ja of sources) {
         const en = file.entries[hashText(ja)];
