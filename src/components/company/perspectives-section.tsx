@@ -12,11 +12,12 @@ import type { Source } from "@/types/source";
 import { T } from "@/components/i18n/t";
 import { F } from "@/components/i18n/figure";
 import { L } from "@/components/i18n/label";
+import { type Message } from "@/lib/i18n";
 
-const ITEMS: { key: keyof Perspectives; question: string; label: React.ReactNode; icon: LucideIcon }[] = [
-  { key: "strategy", question: "どうやって成長する？", label: <T m={{ ja: "成長戦略", en: "Growth strategy" }} />, icon: TrendingUp },
-  { key: "competitiveAdvantage", question: "なぜ勝てる？", label: <T m={{ ja: "競争優位性", en: "Competitive advantage" }} />, icon: ShieldCheck },
-  { key: "industryPosition", question: "業界の中での立ち位置", label: <T m={{ ja: "業界内の位置づけ", en: "Position in the industry" }} />, icon: MapPin },
+const ITEMS: { key: keyof Perspectives; question: string; label: Message; icon: LucideIcon }[] = [
+  { key: "strategy", question: "どうやって成長する？", label: { ja: "成長戦略", en: "Growth strategy" }, icon: TrendingUp },
+  { key: "competitiveAdvantage", question: "なぜ勝てる？", label: { ja: "競争優位性", en: "Competitive advantage" }, icon: ShieldCheck },
+  { key: "industryPosition", question: "業界の中での立ち位置", label: { ja: "業界内の位置づけ", en: "Position in the industry" }, icon: MapPin },
 ];
 
 /**
@@ -47,7 +48,9 @@ export async function PerspectivesSection({ company }: { company: Company }) {
               answers rather than a long column of text; a wide screen stacks them as before. CSS only (scroll snap). */}
           {present.length > 1 && (
             <p className="mb-2 flex items-center gap-1.5 text-xs text-muted-foreground lg:hidden">
-              {present.map((i) => i.label).join("・")}
+              {/* Labels are plain messages, joined as strings: joining the <T> elements themselves rendered
+                  "[object Object]" in the page (JCE-152). */}
+              <T m={{ ja: present.map((i) => i.label.ja).join("・"), en: present.map((i) => i.label.en).join("・") }} />
               <span aria-hidden className="inline-flex items-center gap-0.5 border-l border-border pl-1.5">
                 <span data-l="ja">横にスワイプ
                 <ArrowRight className="size-3" /></span><span data-l="en">Swipe sideways <ArrowRight className="size-3" /></span>
@@ -56,7 +59,7 @@ export async function PerspectivesSection({ company }: { company: Company }) {
           )}
           <div
             role="region"
-            aria-label={present.map((i) => i.label).join("・")}
+            aria-label={present.map((i) => i.label.ja).join("・")}
             tabIndex={0}
             className="-mx-5 flex snap-x snap-mandatory items-start gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 md:-mx-8 md:scroll-px-8 md:px-8 lg:mx-0 lg:block lg:space-y-6 lg:overflow-visible lg:px-0 lg:pb-0"
           >
@@ -220,7 +223,7 @@ function PerspectiveCard({
   number: number;
   total: number;
   question: string;
-  label: React.ReactNode;
+  label: Message;
   icon: LucideIcon;
   perspective: Perspective;
   sources: Source[];
@@ -237,7 +240,7 @@ function PerspectiveCard({
         </span>
         <div className="min-w-0 flex-1">
           <h3 className="text-base font-semibold sm:text-lg md:text-xl"><L s={question} /></h3>
-          <p className="text-xs text-muted-foreground">{label}</p>
+          <p className="text-xs text-muted-foreground"><T m={label} /></p>
         </div>
         <span className="figures shrink-0 text-xs text-muted-foreground">
           {number}
