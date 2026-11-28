@@ -20,8 +20,8 @@ describe("premium benefits", () => {
 
   it("draw no ad, label or frame for a reader with the plan, and load no ad script for them", () => {
     const unit = readFileSync("src/components/ads/ad-unit.tsx", "utf8");
-    expect(unit).toContain("if (plan) return null;");
-    expect(unit).toMatch(/if \(pushed\.current \|\| planStore\.get\(\)\) return;/);
+    expect(unit).toContain("if (adsSuppressed(plan)) return null;");
+    expect(unit).toMatch(/if \(pushed\.current \|\| adsSuppressed\(planStore\.get\(\)\)\) return;/);
     expect(readFileSync("src/components/ads/ad-slot.tsx", "utf8")).not.toContain("<aside");
   });
 });
