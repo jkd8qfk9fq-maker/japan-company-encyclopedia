@@ -19,6 +19,18 @@ export function readingMinutes(feature: Feature): number {
   return Math.max(1, Math.round(chars / CHARS_PER_MINUTE));
 }
 
+/**
+ * The bar value a table's lead rows carry (JCE-150): the largest absolute bar, or null when the table draws
+ * no bars at all (no rows, a row without a bar, or all bars zero — the same condition BarTable has always
+ * used). Rows at this value are drawn in the data blue; the rest stay grey, so the eye lands on the largest
+ * figure first. The bar still only draws the printed value beside it.
+ */
+export function leadBarValue(rows: { bar?: number }[]): number | null {
+  if (rows.length === 0 || rows.some((r) => r.bar === undefined)) return null;
+  const max = Math.max(...rows.map((r) => Math.abs(r.bar!)));
+  return max > 0 ? max : null;
+}
+
 /** The body's headings as anchors, in order — `section-1`, `section-2`, … by position among the headings. */
 export function featureSections(feature: Feature): { id: string; title: string; index: number }[] {
   return feature.body

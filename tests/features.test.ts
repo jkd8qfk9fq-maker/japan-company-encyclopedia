@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { companies } from "@/data/companies";
 import { features } from "@/data/features";
 import { companyMetrics } from "@/lib/company-metrics";
+import { leadBarValue } from "@/lib/feature-meta";
 import { buildIndustryFigures, median } from "@/lib/industry-figures";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { isReleased } from "@/lib/release";
@@ -253,6 +254,21 @@ describe("features (JCE-074)", () => {
     // The headline figure of the overseas feature is the median the body states.
     const overseas = features.find((f) => f.id === "overseas-sales-geography")!;
     expect(prose("overseas-sales-geography")).toContain(overseas.keyFigures![0]!.value);
+  });
+});
+
+describe("feature bar lead rows (JCE-150)", () => {
+  // The pure rule (which value leads) is unit-tested in tests/feature-meta.test.ts, which needs no
+  // company data; this file checks the rule against the published features themselves.
+  it("every published feature table with bars has a lead value among its rows", () => {
+    for (const f of features) {
+      for (const b of f.body) {
+        if (b.type !== "data-table") continue;
+        const lead = leadBarValue(b.rows);
+        if (lead === null) continue;
+        expect(b.rows.some((r) => Math.abs(r.bar!) === lead), `${f.id}: ${b.title ?? ""}`).toBe(true);
+      }
+    }
   });
 });
 
