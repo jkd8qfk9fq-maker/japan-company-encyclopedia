@@ -35,12 +35,19 @@ export const unitStyle = (unitIndex: number): UnitStyle => UNIT_STYLES[unitIndex
 
 /** The one call-to-action colour of the learning area, and the feedback colours of the player. */
 export const LEARN = {
-  cta: "#3fa91c",
-  ctaDark: "#2e7d12",
-  ctaSoft: "#eaf7e3",
+  // Brand-aligned (audit part 1, polish 21): the primary action, the progress bar and the "correct"
+  // verdict wear the encyclopedia's navy #0D2B4C and its sky tint, not a separate green system. The
+  // wrong-answer red stays — it is a functional signal, not a brand colour. Unit accents (UNIT_STYLES)
+  // stay as the path's per-unit identity; the SELECTION state no longer borrows them (minor 17), so a
+  // chosen option reads the same in every lesson: `select` / `selectSoft` below.
+  cta: "#0D2B4C",
+  ctaDark: "#071A30",
+  ctaSoft: "#E8F1FA",
+  select: "#0D2B4C",
+  selectSoft: "#E8F1FA",
   wrong: "#e5484d",
   wrongSoft: "#fdecec",
-  navy: "#16324f",
+  navy: "#0D2B4C",
   ink: "#22303c",
   muted: "#5b6b7a",
   line: "#e3eaf1",
@@ -69,10 +76,22 @@ export type PointsBreakdown = {
   total: number;
 };
 
-export function pointsBreakdown(progress: MicroProgress, verifiedCount: number): PointsBreakdown {
-  const answers = Object.keys(progress.answers).length * POINTS.answer;
-  const lessons = Object.keys(progress.lessons).length * POINTS.lessonDone;
-  const review = Object.values(progress.review).reduce((sum, s) => sum + s.stage, 0) * POINTS.reviewStage;
+/**
+ * Points, on the same counting as every other progress display (M4). The store is append-only and is
+ * never pruned when the course changes, so it can hold answers, lesson records and review entries for
+ * questions and lessons the current course no longer has; counting those raw keys once inflated the
+ * totals against the path's ring (which counts only lessons the current course judges done). When the
+ * caller has the course — every production caller does — the breakdown counts only the current course:
+ * answers to its questions, lessons `lessonDone` judges finished, and review stages of its questions.
+ * Without a course the raw store counts are used, which is exact only for a store with no stale ids.
+ */
+export function pointsBreakdown(progress: MicroProgress, verifiedCount: number, units?: MicroUnit[]): PointsBreakdown {
+  const answers = (units ? courseAnswerCount(units, progress) : Object.keys(progress.answers).length) * POINTS.answer;
+  const lessons = (units ? courseFraction(units, progress).done : Object.keys(progress.lessons).length) * POINTS.lessonDone;
+  const reviewStages = units
+    ? [...courseQuestionIds(units)].reduce((sum, id) => sum + (progress.review[id]?.stage ?? 0), 0)
+    : Object.values(progress.review).reduce((sum, s) => sum + s.stage, 0);
+  const review = reviewStages * POINTS.reviewStage;
   const verified = verifiedCount * POINTS.verified;
   return { answers, lessons, review, verified, total: answers + lessons + review + verified };
 }
@@ -131,6 +150,48 @@ export function unitFraction(unit: MicroUnit, progress: MicroProgress): { done: 
 export function courseFraction(units: MicroUnit[], progress: MicroProgress): { done: number; total: number } {
   const parts = units.map((u) => unitFraction(u, progress));
   return { done: parts.reduce((s, p) => s + p.done, 0), total: parts.reduce((s, p) => s + p.total, 0) };
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// The one counting every progress display shares (M4). The store's `lessons` map is a record of the day a
+// lesson was finished, not the definition of finished: the definition is `lessonDone` above, judged from
+// the answers against the current course. Displays that counted the map's keys (or every answer key) read
+// stale ids left by earlier course versions as progress the path does not show — the same reader saw
+// "4/35" on the ring and "26/35" in the record. So: lesson counts always go through `courseFraction` /
+// `unitFraction`, answer counts through `courseAnswerCount`, and a finished lesson's day through
+// `lessonDoneDay` (the recorded day, falling back to its last answer's day for a lesson finished before
+// the day was recorded, or whose record a course change orphaned).
+
+/** The question ids the current course asks — the scope of every answer and review count. */
+export function courseQuestionIds(units: MicroUnit[]): Set<string> {
+  const ids = new Set<string>();
+  for (const unit of units) for (const lesson of unit.lessons) for (const q of lesson.questions) ids.add(q.id);
+  return ids;
+}
+
+/** Answers that belong to the current course: its questions, answered (the first answer is the one kept). */
+export function courseAnswerCount(units: MicroUnit[], progress: MicroProgress): number {
+  const ids = courseQuestionIds(units);
+  return Object.keys(progress.answers).filter((id) => ids.has(id)).length;
+}
+
+/** The JST day a finished lesson was finished on, or undefined while it is not `lessonDone`. */
+export function lessonDoneDay(lesson: MicroLesson, progress: MicroProgress): string | undefined {
+  if (!lessonDone(lesson, progress)) return undefined;
+  const recorded = progress.lessons[lesson.id];
+  if (recorded) return recorded;
+  const days = lesson.questions.map((q) => progress.answers[q.id]?.day).filter((d): d is string => Boolean(d));
+  return days.length ? days.sort().at(-1) : undefined;
+}
+
+/** One day per lesson the current course judges finished — the monthly "lessons finished" count's input. */
+export function doneLessonDays(units: MicroUnit[], progress: MicroProgress): string[] {
+  const days: string[] = [];
+  for (const unit of units) for (const lesson of unit.lessons) {
+    const day = lessonDoneDay(lesson, progress);
+    if (day) days.push(day);
+  }
+  return days;
 }
 
 // ---------------------------------------------------------------------------------------------------------------

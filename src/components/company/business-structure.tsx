@@ -108,7 +108,7 @@ function Columns({ company, branches, via }: { company: Company; branches: Busin
                     <li key={item}>{item}</li>
                   ))}
                   {items.length > MAX_LEAVES && (
-                    <li className="figures text-xs"><span data-l="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en">{items.length - MAX_LEAVES} more</span></li>
+                    <li className="figures text-xs"><span data-l="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en">{`${items.length - MAX_LEAVES} more`}</span></li>
                   )}
                 </ul>
               )}
@@ -148,7 +148,7 @@ function Spine({ company, branches, via }: { company: Company; branches: Busines
                       <li key={item}>{item}</li>
                     ))}
                     {items.length > MAX_LEAVES && (
-                      <li className="figures text-xs leading-6"><span data-l="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en">{items.length - MAX_LEAVES} more</span></li>
+                      <li className="figures text-xs leading-6"><span data-l="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en">{`${items.length - MAX_LEAVES} more`}</span></li>
                     )}
                   </ul>
                 )}

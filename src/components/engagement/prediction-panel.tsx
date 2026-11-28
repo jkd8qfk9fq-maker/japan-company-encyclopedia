@@ -138,6 +138,20 @@ export function PredictionPanel({ companyId, data }: { companyId: string; data: 
         {metrics.length === 0 && (
           <p className="text-sm leading-6 text-muted-foreground">最新期の数字が、予測の基準にできる形で掲載されていないため、いまは予測を受け付けていません。</p>
         )}
+        {/* Why a metric can be missing (audit part 1, major 5): predictableMetrics only takes a metric
+            whose latest printed value is positive — from a loss, "up" and "down" stop meaning what they
+            mean from a profit, and the verification's change rate would mislead. That is a rule, not a
+            gap in the entry, so the panel says so instead of silently offering fewer buttons. */}
+        {latest.netIncome !== null && latest.netIncome <= 0 && (
+          <p className="text-sm leading-6 text-muted-foreground">
+            純利益は、最新期（<F s={latest.fiscalYear} />）が {formatYen(latest.netIncome)} で0以下のため、予測の対象にしていません。マイナスを基準にした増減は、黒字のときの増減と同じようには読めないため、基準がプラスの数字のときだけ予測を受け付けています。
+          </p>
+        )}
+        {latest.revenue !== null && latest.revenue <= 0 && (
+          <p className="text-sm leading-6 text-muted-foreground">
+            売上は、最新期（<F s={latest.fiscalYear} />）が {formatYen(latest.revenue)} で0以下のため、予測の対象にしていません。基準がプラスの数字のときだけ予測を受け付けています。
+          </p>
+        )}
       </div>
 
       {past.length > 0 && (

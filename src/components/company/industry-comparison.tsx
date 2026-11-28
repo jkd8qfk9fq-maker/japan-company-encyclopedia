@@ -4,6 +4,7 @@ import type { Compared, IndustryComparison as Comparison } from "@/lib/industry-
 import { formatYen } from "@/lib/utils/format";
 import { T } from "@/components/i18n/t";
 import { F } from "@/components/i18n/figure";
+import { PREMIUM_FEATURES_OPEN } from "@/lib/premium-open";
 
 /**
  * 業界比較 (JCE-043), drawn on the server: where the company's printed figures sit among its industry's released
@@ -27,7 +28,7 @@ function Card({ label, item, format, higherIs }: { label: React.ReactNode; item:
         {up === null ? <T m={{ ja: "業界の中央値と同じ", en: "Same as industry median" }} /> : `${up ? "▲" : "▼"} ${format(Math.abs(diff))}（vs. 業界の中央値 ${format(item.industryMedian)}）`}
       </p>
       <p className="figures mt-0.5 text-xs text-muted-foreground">
-        <span data-l="ja">{item.members}社中 {item.rank}位（{higherIs}）・<F s={item.fiscalYear} /></span><span data-l="en">No. {item.rank} of {item.members} companies ({higherIs}) · <F s={item.fiscalYear} /></span>
+        <span data-l="ja">{item.members}社中 {item.rank}位（{higherIs}）・<F s={item.fiscalYear} /></span><span data-l="en">{`No. ${item.rank} of ${item.members} companies (${higherIs})`} · <F s={item.fiscalYear} /></span>
       </p>
     </div>
   );
@@ -37,15 +38,20 @@ export function IndustryComparisonBlock({ comparison }: { comparison: Comparison
   const c = comparison;
   return (
     <div className="mb-12">
-      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "業界比較（プレミアム）", en: "Industry comparison (Premium)" }} /></h3>
+      {/* While the gates stand open (JCE-075), the heading must not call the block premium: it drops the
+          label and says it is open free instead. Closing the flag brings the premium label back. */}
+      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={PREMIUM_FEATURES_OPEN ? { ja: "業界比較", en: "Industry comparison" } : { ja: "業界比較（プレミアム）", en: "Industry comparison (Premium)" }} /></h3>
+      {PREMIUM_FEATURES_OPEN && (
+        <p className="mt-1 text-xs text-muted-foreground"><T m={{ ja: "現在、無料で公開しています。", en: "Currently open to everyone, free of charge." }} /></p>
+      )}
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
         <span data-l="ja"><Link href={`/industries/${c.industryId}#figures`} className="underline underline-offset-2 hover:text-foreground">
           <span data-l="ja">{c.industryName}業界
-        </span><span data-l="en">{c.industryName} industry</span></Link>
+        </span><span data-l="en">{`${c.industryName} industry`}</span></Link>
         の掲載企業{c.members}社の中での位置。順位は大きさの順であって、良し悪しの判定ではありません。
       </span><span data-l="en">Position among the {c.members} companies listed in <Link href={`/industries/${c.industryId}#figures`} className="underline underline-offset-2 hover:text-foreground">
           <span data-l="ja">{c.industryName}業界
-        </span><span data-l="en">{c.industryName} industry</span></Link>. Rank reflects size, not a judgment of good or bad.</span></p>
+        </span><span data-l="en">{`${c.industryName} industry`}</span></Link>. Rank reflects size, not a judgment of good or bad.</span></p>
       <div className="mt-4 grid grid-cols-2 gap-x-4 sm:grid-cols-3">
         {c.revenue && (
           <div className="border-t border-foreground py-3 pr-3 sm:py-4">
@@ -68,7 +74,7 @@ export function IndustryComparisonBlock({ comparison }: { comparison: Comparison
           <p className="text-sm font-medium"><T m={{ ja: "5期の売上高の推移（指数）", en: "5-year revenue trend (index)" }} /></p>
           <p className="mt-1 text-xs text-muted-foreground">
             <span data-l="ja">5期前＝100。濃い線がこの会社、薄い線が{c.industryName}業界（5期そろった{c.index.industry.companies}社の合計）。
-          </span><span data-l="en">5 years ago = 100. The dark line is this company; the light line is the {c.industryName} industry (total of {c.index.industry.companies} companies with all 5 years available).</span></p>
+          </span><span data-l="en">{`5 years ago = 100. The dark line is this company; the light line is the ${c.industryName} industry (total of ${c.index.industry.companies} companies with all 5 years available).`}</span></p>
           <div className="mt-2">
             <IndexSparkline series={c.index.company} reference={c.index.industry} width={320} height={140} />
           </div>

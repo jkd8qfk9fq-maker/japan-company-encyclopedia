@@ -58,6 +58,13 @@ export default async function AnalysisPage() {
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
         業界ページから、その業界の企業一覧と数字へ進めます。各社の分析は企業レポートの中にあります。
       </p>
+      {/* The counts beside the industries below are the primary-industry counts computed at the top of this
+          page (a company is counted only in its primary industry), unlike the industry pages' lists, which
+          count every related industry. All INDUSTRY_IDS are listed, with 0社 where no company has that
+          primary industry. */}
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">
+        下の社数は、主たる業界（主業種）で集計しています。複数の業界に関係する企業も、主たる業界にのみ数えています（業界ページの企業一覧は、関係する業界すべてで数えた表示です）。
+      </p>
       <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
         {INDUSTRY_IDS.map((id) => {
           const linked = indicatorsForIndustry(id);

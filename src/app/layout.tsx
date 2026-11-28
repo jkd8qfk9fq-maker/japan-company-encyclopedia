@@ -11,6 +11,7 @@ import { localeCss } from "@/lib/i18n";
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
+import { ThemeSync } from "@/components/settings/theme-setting";
 import { MailSync } from "@/components/engagement/mail-notify";
 import { PushSync } from "@/components/engagement/push-controls";
 
@@ -88,6 +89,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <style dangerouslySetInnerHTML={{ __html: localeCss() }} />
       </head>
       <body className="flex min-h-dvh flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
+        {/* Re-applies the stored theme after hydration, in case the class the script above set is dropped. */}
+        <ThemeSync />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"

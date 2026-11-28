@@ -216,7 +216,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                       <p className="text-[1.0625rem] leading-[2] tracking-[0.02em] md:text-[1.125rem]">
                         <RichText text={block.text} />
                       </p>
-                      {block.sourceIds && <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />}
+                      {block.sourceIds && <SourceList sources={feature.sources} sourceIds={block.sourceIds} variant="refs" className="mt-1" />}
                     </div>
                   );
                 case "quote":
@@ -226,7 +226,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                         <RichText text={block.text} />
                       </blockquote>
                       <figcaption className="mt-4 text-sm text-muted-foreground"><CL s={block.attribution} /></figcaption>
-                      <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />
+                      <SourceList sources={feature.sources} sourceIds={block.sourceIds} variant="refs" className="mt-1" />
                     </figure>
                   );
                 case "data-table":
@@ -253,7 +253,9 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
           <AdSlot placement="feature-inline" />
 
           <div id="feature-sources" className="scroll-mt-24">
-            <SourceList sources={feature.sources} className="mt-12 border-t border-border pt-4" />
+            <div id="sources" className="scroll-mt-24">
+              <SourceList sources={feature.sources} variant="index" className="mt-12 border-t border-border pt-4" />
+            </div>
           </div>
 
           {(companies.length > 0 || feature.relatedIndustries.length > 0 || terms.length > 0) && (

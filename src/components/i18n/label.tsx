@@ -10,6 +10,11 @@ import { UI_DICTIONARY_EN } from "@/lib/ui-dictionary-en";
 export function L({ s }: { s: string }) {
   // A few call sites pass values the types call strings but data can leave as numbers; show those as they are.
   if (typeof s !== "string") return <>{s}</>;
-  const en = UI_DICTIONARY_EN[s] ?? (figureEn(s) !== s ? figureEn(s) : undefined);
-  return en ? <T m={{ ja: s, en }} /> : <>{s}</>;
+  // Display guard (audit part 1, major 2): a stringified object must never reach a reader. Registered data
+  // still holds the literal "[object Object]" in some businessModel / businessStructure texts (the data fix
+  // is the registration department's); until it lands, the token is stripped here — every data string on a
+  // company page reaches the page through this component or through RichText, which renders via L too.
+  const clean = s.includes("[object Object]") ? s.replaceAll("[object Object]", "") : s;
+  const en = UI_DICTIONARY_EN[clean] ?? (figureEn(clean) !== clean ? figureEn(clean) : undefined);
+  return en ? <T m={{ ja: clean, en }} /> : <>{clean}</>;
 }

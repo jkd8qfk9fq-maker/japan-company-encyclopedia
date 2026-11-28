@@ -1,6 +1,6 @@
 import { companyMetrics } from "@/lib/company-metrics";
 import { revenueGrowth5y } from "@/lib/industry-figures";
-import type { CompareIndex, CompareRow } from "@/lib/compare";
+import { compareShardOf, type CompareIndex, type CompareLightIndex, type CompareRow, type CompareShard } from "@/lib/compare";
 import type { Company } from "@/types/company";
 
 /** SERVER ONLY (build time): one row per released company, from the figures its page already shows. */
@@ -31,4 +31,20 @@ export function compareRow(company: Company, industryName: (id: string) => strin
 
 export function buildCompareIndex(companies: Company[], industryName: (id: string) => string | null, asOf: string): CompareIndex {
   return { asOf, rows: companies.map((c) => compareRow(c, industryName)) };
+}
+
+/** The light index (JCE-149): the same rows, cut down to what searching and peer suggestions read. */
+export function buildCompareLightIndex(companies: Company[], industryName: (id: string) => string | null, asOf: string): CompareLightIndex {
+  return {
+    asOf,
+    rows: companies.map((c) => {
+      const r = compareRow(c, industryName);
+      return { id: r.id, name: r.name, industry: r.industry, revenue: r.revenue };
+    }),
+  };
+}
+
+/** One shard of the full rows (JCE-149): only the companies whose id hashes to `shard`. */
+export function buildCompareShard(companies: Company[], industryName: (id: string) => string | null, asOf: string, shard: number): CompareShard {
+  return { asOf, rows: companies.filter((c) => compareShardOf(c.id) === shard).map((c) => compareRow(c, industryName)) };
 }

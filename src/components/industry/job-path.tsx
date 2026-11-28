@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { TrackedLink } from "@/components/analytics/tracked-link";
-import type { Company } from "@/types/company";
+import type { Company, IndustryId } from "@/types/company";
 import { T } from "@/components/i18n/t";
 
 const SHINDAN_URL = "https://shindan.kigyo-hyakka.com/";
@@ -8,15 +8,21 @@ const SHINDAN_URL = "https://shindan.kigyo-hyakka.com/";
 /**
  * 就活で業界を調べる順番 (P2-2, 2026-11-17): read how the industry works, line up its largest companies, then check
  * the fit on the 企業タイプ診断. The three are the largest by latest printed revenue — a size, not a recommendation.
+ *
+ * The examples are drawn from the industry's PRIMARY members: `companies` is every related company (listByIndustry),
+ * so an any-relation pick can surface a giant from another industry (日本製鉄 on the IT page, audit m6) and present
+ * it as this industry's exemplar. Primary members with revenue are the pool; the full related list is only the
+ * fallback when fewer than two primary members carry revenue.
  */
-export function JobPath({ industryName, companies }: { industryName: string; companies: Company[] }) {
+export function JobPath({ industryName, industryId, companies }: { industryName: string; industryId: IndustryId; companies: Company[] }) {
   const latestRevenue = (c: Company) => [...c.financials].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1)?.revenue ?? null;
-  const largest = companies
-    .map((c) => ({ c, revenue: latestRevenue(c) }))
-    .filter((x): x is { c: Company; revenue: number } => x.revenue !== null)
-    .sort((a, b) => b.revenue - a.revenue)
-    .slice(0, 3)
-    .map((x) => x.c);
+  const byRevenue = (pool: Company[]) =>
+    pool
+      .map((c) => ({ c, revenue: latestRevenue(c) }))
+      .filter((x): x is { c: Company; revenue: number } => x.revenue !== null)
+      .sort((a, b) => b.revenue - a.revenue);
+  const primary = byRevenue(companies.filter((c) => c.industries.some((r) => r.industryId === industryId && r.primary)));
+  const largest = (primary.length >= 2 ? primary : byRevenue(companies)).slice(0, 3).map((x) => x.c);
 
   return (
     <section aria-labelledby="job-path" className="mt-10 rounded-md border border-border bg-paper p-5 md:p-6">

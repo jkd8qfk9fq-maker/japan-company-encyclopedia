@@ -106,6 +106,7 @@ export function ScreeningTool() {
               );
             })}
           </div>
+          <p className="mt-2 text-xs leading-5 text-muted-foreground">選んだ業界に関係する企業を表示します（主業種が別の企業も含みます）。各社の行に、関係する業界をすべて併記しています。</p>
         </fieldset>
         <label className="block text-sm">
           <span className="font-medium">本社の都道府県</span>
@@ -179,7 +180,15 @@ export function ScreeningTool() {
             <li key={r.id} className="py-3">
               <Link href={`/companies/${r.id}`} className="font-medium underline-offset-2 hover:underline">{r.name}</Link>
               <p className="text-xs text-muted-foreground">
-                {names.get(r.industries[0] ?? "") ?? "—"}・{r.prefecture ?? "本社所在地なし"}{r.fiscalYear ? `・${r.fiscalYear}` : ""}
+                {r.industries.length > 0
+                  ? r.industries.map((id, i) => (
+                      <span key={id}>
+                        {i > 0 && "・"}
+                        {c.industries.includes(id) ? <span className="font-semibold text-foreground">{names.get(id) ?? id}</span> : (names.get(id) ?? id)}
+                      </span>
+                    ))
+                  : "—"}
+                ・{r.prefecture ?? "本社所在地なし"}{r.fiscalYear ? `・${r.fiscalYear}` : ""}
               </p>
               <dl className="mt-1 grid grid-cols-2 gap-x-4 gap-y-0.5 text-xs sm:grid-cols-5">
                 <div><dt className="inline text-muted-foreground">売上高 </dt><dd className="inline figures">{r.revenue !== null ? formatYen(r.revenue) : "データなし"}</dd></div>

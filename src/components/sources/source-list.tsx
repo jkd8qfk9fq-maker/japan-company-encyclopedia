@@ -29,8 +29,11 @@ export function SourceList({
    * full list once at the bottom, so the line "出典を見る" does not repeat under every section.
    * Only for sources that are in that page's index: a tie written in another company's entry
    * rests on that company's sources, which are not in this page's index, and keeps "details".
+   * "index": the numbered full list itself — each entry carries the `source-<id>` anchor the
+   * "refs" lines point at, in this same order. For pages (features) whose sources have no
+   * per-section usage map, unlike the company SourceIndex.
    */
-  variant?: "details" | "refs";
+  variant?: "details" | "refs" | "index";
 }) {
   const shown = sourceIds
     ? sourceIds
@@ -66,6 +69,36 @@ export function SourceList({
           <T m={{ ja: "出典一覧", en: "Sources" }} />
         </a></span>
       </p>
+    );
+  }
+
+  if (variant === "index") {
+    return (
+      <ol className={`space-y-5 ${className ?? ""}`}>
+        {shown.map((source, i) => (
+          <li key={source.id} id={`source-${source.id}`} className="grid scroll-mt-40 grid-cols-[2rem_1fr] gap-x-2">
+            <span className="figures pt-0.5 text-sm text-muted-foreground">[{i + 1}]</span>
+            <div>
+              <p className="leading-7 font-medium"><DocTitle title={source.title} /></p>
+              <p className="text-xs leading-5 text-muted-foreground">
+                <DocTitle title={source.publisher} />
+                {source.publishedAt && <> · <F s={formatDateJa(source.publishedAt)} /></>}
+                {" · "}<span data-l="ja">最終確認 <F s={formatDateJa(source.accessedAt)} /></span><span data-l="en">Last checked <F s={formatDateJa(source.accessedAt)} /></span>
+              </p>
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-ink mt-1 inline-flex min-h-8 items-center gap-1 text-xs break-all"
+              >
+                <span data-l="ja">原文を開く
+                <ExternalLink className="size-3" aria-hidden />
+                <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en">Open original<ExternalLink className="size-3" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ol>
     );
   }
 

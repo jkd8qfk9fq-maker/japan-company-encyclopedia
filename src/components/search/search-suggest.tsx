@@ -19,6 +19,9 @@ const KIND_LABEL: Record<SearchKind, Message> = {
 
 /** An attribute cannot hold <T>, so the field reads the chosen language for its placeholder (JCE-123). */
 const PLACEHOLDER: Message = { ja: "企業名・証券コード・業界・用語で検索", en: "Company, code or industry" };
+/** The header field is narrow (w-56): the full placeholder is cut mid-word there, so the header uses a short form.
+ * The visually-hidden label keeps the full text. */
+const PLACEHOLDER_SHORT: Message = { ja: "企業名・証券コード", en: "Company or code" };
 const MAX = 8;
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -52,7 +55,8 @@ export function SearchSuggest({
   placeholder?: string;
 }) {
   const language = useLocalStore(settingsStore).language;
-  const placeholder = placeholderProp ?? PLACEHOLDER[language];
+  const label = placeholderProp ?? PLACEHOLDER[language];
+  const placeholder = placeholderProp ?? (variant === "header" ? PLACEHOLDER_SHORT : PLACEHOLDER)[language];
   const router = useRouter();
   const listId = useId();
   const [entries, setEntries] = useState<SearchEntry[] | null>(null);
@@ -85,7 +89,7 @@ export function SearchSuggest({
       }}
     >
       <label htmlFor={id} className="sr-only">
-        {placeholder}
+        {label}
       </label>
       <div className={cn("relative", variant === "hero" && "min-w-0 flex-1")}>
         <Search

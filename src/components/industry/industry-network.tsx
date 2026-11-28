@@ -28,6 +28,26 @@ const around = (i: number, n: number, offset = 0) => -Math.PI / 2 + ((i + offset
 const clampZoom = (k: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, k));
 
 /**
+ * How many company labels are drawn at a given zoom. The member chips sit on one ring, so at the fit-to-page
+ * zoom neighbouring names overlap however they are placed; labels are therefore rationed by tie count (the
+ * order `members` is already sorted in) and released as the reader zooms in — where, because a chip's drawn
+ * size stops growing with the zoom (see `chipScale` below), the gaps between chips grow faster than the
+ * chips themselves and the names separate.
+ */
+const labelBudget = (k: number) => (k < 1.4 ? 12 : k < 2.3 ? 20 : MAX_COMPANIES);
+
+/** How much of the drawing's bounding box must stay inside the view when panning, in viewBox units. */
+const PAN_KEEP = 60;
+
+/**
+ * A generous bound on where anything is drawn, from the layout's own constants: outer chips sit on
+ * `on(360, 285)` and no chip is wider than ~200 units, members on `on(200, 176)` or inside it, the centre
+ * at (CX, CY). The fitted viewBox is tighter; this bound only has to contain the drawing (with a margin
+ * smaller than PAN_KEEP, so the clamp below still guarantees part of the real drawing stays in view).
+ */
+const DRAWING_BOUNDS = { minX: CX - 480, maxX: CX + 480, minY: CY - 330, maxY: CY + 330 };
+
+/**
  * The estimated width of a label, without measuring: the drawing is server-rendered, so there is no canvas to
  * measure with. Half-width characters (ASCII) count as 0.55 of the font size, everything else — Japanese text is
  * full width — as the whole size. Every frame below is sized from this estimate, so a name is never cut off.
@@ -50,10 +70,13 @@ const svgPoint = (svg: SVGSVGElement, clientX: number, clientY: number): Point |
  * industry's frame carrying how many ties reach it. Ties between two companies of this industry are drawn across
  * the inner ring. Nothing is placed or sized by anything but those ties; a company with none is drawn without lines.
  *
- * Every node is a frame with its whole name inside it — the centre circle is sized to the industry's name, companies
- * and other industries are chips — because a name cut off beside a dot cannot be read where lines cross it. The reader
- * can drag the map and zoom it with the wheel or a pinch (JCE-134); the first rendering is still the server's, links
- * included, and the list under the map carries the same industries and counts.
+ * Every labelled node is a frame with its whole name inside it — the centre circle is sized to the industry's name,
+ * companies and other industries are chips — because a name cut off beside a dot cannot be read where lines cross
+ * it. On a crowded ring not every company can be labelled at once, so companies past the zoom's label budget are
+ * dots (still links, named by their title) until zooming releases their labels. The reader can drag the map —
+ * clamped so the drawing can never be panned out of sight — and zoom it with the wheel or a pinch (JCE-134); the
+ * first rendering is still the server's, links included, and the list under the map carries the same industries
+ * and counts.
  */
 export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; data: IndustryMapData }) {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -65,8 +88,16 @@ export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; 
   const suppressClick = useRef(false);
 
   const applyView = useCallback((next: View) => {
-    viewRef.current = next;
-    setView(next);
+    // Pan clamp: the drawing may slide, but at least PAN_KEEP units of its bounds stay inside the fitted
+    // viewBox's span on every side, so no pan can carry the whole map — or its edge nodes with it — out of
+    // sight. The viewBox always lies inside DRAWING_BOUNDS, so clamping against the viewBox span is done
+    // through the bounds themselves: tx is limited as if the view were the bounds' own span.
+    const b = DRAWING_BOUNDS;
+    const tx = Math.min(Math.max(next.tx, b.minX + PAN_KEEP - next.k * b.maxX), b.maxX - PAN_KEEP - next.k * b.minX);
+    const ty = Math.min(Math.max(next.ty, b.minY + PAN_KEEP - next.k * b.maxY), b.maxY - PAN_KEEP - next.k * b.minY);
+    const clamped = { k: next.k, tx, ty };
+    viewRef.current = clamped;
+    setView(clamped);
   }, []);
 
   // Zoom by a factor, keeping the drawing point under `at` (in viewBox coordinates) where it is.
@@ -142,7 +173,16 @@ export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; 
     return ra - rb || a.name.localeCompare(b.name, "ja");
   });
   const memberAngle = new Map(ordered.map((m, i) => [m.id, around(i, ordered.length)]));
-  const memberAt = new Map(ordered.map((m) => [m.id, on(170, 150, memberAngle.get(m.id)!)]));
+  // Neighbours alternate between two radii 30 units apart — more than a chip's height — so two adjacent
+  // names can share an angle without their frames touching; only every second neighbour can collide.
+  const memberAt = new Map(
+    ordered.map((m, i) => {
+      const lift = i % 2 === 0 ? 0 : 30;
+      return [m.id, on(170 + lift, 150 + lift * 0.88, memberAngle.get(m.id)!)] as const;
+    }),
+  );
+  // Label priority is the tie-count order `members` was sorted in before the ring regrouping above.
+  const labelRank = new Map(members.map((m, i) => [m.id, i]));
 
   // Each outer industry faces the companies tied to it (the circular mean of their angles), then neighbours are
   // pushed apart so no two frames overlap.
@@ -201,10 +241,17 @@ export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; 
   const maxY = Math.max(...boxes.map((b) => b.y1)) + PAD;
   const viewBox = `${minX} ${minY} ${maxX - minX} ${maxY - minY}`;
   const viewCenter = { x: (minX + maxX) / 2, y: (minY + maxY) / 2 };
+  // Frames and the centre stop growing once the zoom passes 1: past that point the reader's zoom widens the
+  // gaps between nodes while the names keep the size they had, so names that overlapped at the first view
+  // separate as the map is enlarged — and the centre circle no longer swells to fill the screen.
+  const chipScale = 1 / Math.max(1, view.k);
+  const labelsShown = labelBudget(view.k);
   const href = (path: string) => `${BASE_PATH}${path}`;
 
   const onPointerDown = (e: ReactPointerEvent<SVGSVGElement>) => {
-    e.currentTarget.setPointerCapture(e.pointerId);
+    // A press that starts on a node link is not captured by the svg: capturing retargets the pointer events
+    // (and with them the click) to the svg itself, which can swallow the link's navigation.
+    if (!(e.target as Element).closest("a")) e.currentTarget.setPointerCapture(e.pointerId);
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     dragMoved.current = 0;
     setDragging(true);
@@ -301,23 +348,39 @@ export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; 
                   />
                 );
               })}
-              <ellipse cx={CX} cy={CY} rx={170} ry={150} stroke="var(--border)" strokeWidth={1} />
+              <ellipse cx={CX} cy={CY} rx={185} ry={163} stroke="var(--border)" strokeWidth={1} />
             </g>
 
-            <circle cx={CX} cy={CY} r={centerR} fill="var(--foreground)" />
-            <text x={CX} y={CY} textAnchor="middle" dominantBaseline="central" fontSize={17} fontWeight={700} fill="var(--background)">
-              {name.get(industryId)}
-            </text>
+            <g transform={`translate(${CX} ${CY}) scale(${chipScale})`}>
+              <circle r={centerR} fill="var(--foreground)" />
+              <text textAnchor="middle" dominantBaseline="central" fontSize={17} fontWeight={700} fill="var(--background)">
+                {name.get(industryId)}
+              </text>
+            </g>
 
             {ordered.map((m) => {
               const p = memberAt.get(m.id)!;
               const w = memberChipW.get(m.id)!;
+              // Companies past the zoom's label budget are drawn as a dot on the ring: still a link to the
+              // company page, with the name as its title, until zooming in releases its label.
+              if ((labelRank.get(m.id) ?? 0) >= labelsShown) {
+                return (
+                  <a key={m.id} href={href(`/companies/${m.id}`)} aria-label={`${m.name}の企業ページ`}>
+                    <title>{m.name}</title>
+                    <circle cx={p.x} cy={p.y} r={6} fill="var(--card)" stroke="var(--border)" />
+                    <circle cx={p.x} cy={p.y} r={2} fill="var(--foreground)" />
+                  </a>
+                );
+              }
               return (
-                <a key={m.id} href={href(`/companies/${m.id}`)}>
-                  <rect x={p.x - w / 2} y={p.y - 11} width={w} height={22} rx={11} fill="var(--card)" stroke="var(--border)" />
-                  <text x={p.x} y={p.y} fontSize={11.5} textAnchor="middle" dominantBaseline="central" fill="var(--foreground)">
-                    {m.name}
-                  </text>
+                <a key={m.id} href={href(`/companies/${m.id}`)} aria-label={`${m.name}の企業ページ`}>
+                  <title>{m.name}</title>
+                  <g transform={`translate(${p.x} ${p.y}) scale(${chipScale})`}>
+                    <rect x={-w / 2} y={-11} width={w} height={22} rx={11} fill="var(--card)" stroke="var(--border)" />
+                    <text fontSize={11.5} textAnchor="middle" dominantBaseline="central" fill="var(--foreground)">
+                      {m.name}
+                    </text>
+                  </g>
                 </a>
               );
             })}
@@ -325,17 +388,20 @@ export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; 
             {others.map(([id, count]) => {
               const p = otherAt.get(id)!;
               const chip = otherChip.get(id)!;
-              const x0 = p.x - chip.w / 2;
+              const x0 = -chip.w / 2;
               return (
-                <a key={id} href={href(`/industries/${id}`)}>
-                  <rect x={x0} y={p.y - 13} width={chip.w} height={26} rx={13} fill="var(--card)" stroke="var(--border)" />
-                  <circle cx={x0 + 17} cy={p.y} r={5} fill={tone.get(id)} />
-                  <text x={x0 + 28} y={p.y} fontSize={12.5} fontWeight={700} dominantBaseline="central" fill="var(--foreground)">
-                    {name.get(id)}
-                  </text>
-                  <text x={x0 + 28 + chip.nameW + 6} y={p.y} fontSize={11.5} dominantBaseline="central" fill="var(--muted-foreground)">
-                    {count}
-                  </text>
+                <a key={id} href={href(`/industries/${id}`)} aria-label={`${name.get(id)}業界のページ`}>
+                  <title>{name.get(id)}</title>
+                  <g transform={`translate(${p.x} ${p.y}) scale(${chipScale})`}>
+                    <rect x={x0} y={-13} width={chip.w} height={26} rx={13} fill="var(--card)" stroke="var(--border)" />
+                    <circle cx={x0 + 17} r={5} fill={tone.get(id)} />
+                    <text x={x0 + 28} fontSize={12.5} fontWeight={700} dominantBaseline="central" fill="var(--foreground)">
+                      {name.get(id)}
+                    </text>
+                    <text x={x0 + 28 + chip.nameW + 6} fontSize={11.5} dominantBaseline="central" fill="var(--muted-foreground)">
+                      {count}
+                    </text>
+                  </g>
                 </a>
               );
             })}
@@ -361,8 +427,8 @@ export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; 
       <figcaption className="mt-3 text-xs leading-5 text-muted-foreground">
         <span data-l="ja">中心が{name.get(industryId)}業界、内側の枠がこの業界の企業（主な業界で数えて{members.length}社
         {(self?.companies.filter((c) => c.primary).length ?? 0) > members.length ? <T m={{ ja: "まで表示", en: "Showing up to" }} /> : ""}
-        ）、外側の枠が取引でつながる業界です。線は有価証券報告書に「仕入先」「顧客」と書かれた関係で、枠の数字はその数です。ドラッグで移動、ホイールやピンチで拡大縮小できます。
-      </span><span data-l="en">The center is the {name.get(industryId)} industry, the inner frames are companies in this industry ({members.length} companies counted by main industry{(self?.companies.filter((c) => c.primary).length ?? 0) > members.length ? <T m={{ ja: "まで表示", en: "Showing up to" }} /> : ""}), and the outer frames are industries connected through trade. Lines are relationships described as &quot;suppliers&quot; or &quot;customers&quot; in annual securities reports, and the numbers in the frames are their counts. Drag to move the map, and zoom with the wheel or a pinch.</span></figcaption>
+        ）、外側の枠が取引でつながる業界です。線は有価証券報告書に「仕入先」「顧客」と書かれた関係で、枠の数字はその数です。ドラッグで移動、ホイールやピンチで拡大縮小できます。企業の枠や点はその企業のページへのリンクです。最初の表示では名前が重ならないよう、つながりの多い企業から表示し、拡大するにつれて残りの企業の名前も順に表示されます。
+      </span><span data-l="en">The center is the {name.get(industryId)} industry, the inner frames are companies in this industry ({members.length} companies counted by main industry{(self?.companies.filter((c) => c.primary).length ?? 0) > members.length ? <T m={{ ja: "まで表示", en: "Showing up to" }} /> : ""}), and the outer frames are industries connected through trade. Lines are relationships described as &quot;suppliers&quot; or &quot;customers&quot; in annual securities reports, and the numbers in the frames are their counts. Drag to move the map, and zoom with the wheel or a pinch. Each company frame or dot links to that company&apos;s page. So names do not overlap, the first view labels the most-connected companies first, and zooming in reveals the remaining companies&apos; names in turn.</span></figcaption>
       {others.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-2 text-xs">
           {others.map(([id, count]) => (

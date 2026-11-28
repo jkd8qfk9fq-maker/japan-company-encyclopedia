@@ -122,7 +122,7 @@ export function ConnectionNetwork({ company, lanes }: { company: Company; lanes:
               className="flex min-h-12 w-28 items-center justify-center rounded-md border border-border bg-card text-sm hover:border-foreground"
             >
               <span data-l="ja">ほか{rest}社
-            </span><span data-l="en">{rest} more companies</span></a>
+            </span><span data-l="en">{`${rest} more companies`}</span></a>
           </li>
         )}
       </ul>
